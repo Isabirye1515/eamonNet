@@ -1,0 +1,527 @@
+@use '@carbon/react';
+// src/styles.scss
+
+// Import Bootstrap Sass (You may need to adjust the path based on your project setup)
+@import "~bootstrap/scss/bootstrap";
+body {
+    background-color:rgb(36, 19, 131);
+  }
+  // src/styles.scss
+
+.custom-tile {
+    padding: 2rem; // Adjust padding as needed
+  background-color: rgba(38, 15, 136, 0.7); // Add a semi-transparent background to ensure text readability
+  border-radius: 8px;
+  background-image: url("../src/assets/pics/m.jpg");
+  background-size: cover; // Ensure the background image covers the entire tile
+  background-repeat: no-repeat; // Prevent image repetition
+  background-position: center; // Center the background image
+  box-shadow: 0em 0.01em 0.5em #ccc;
+  // Optional: Ensure text is readable over the image
+  color: #333; // Adjust text color for contrast
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); // Optional: Add text shadow for better readability
+  
+  // Ensure the tile spans the full width of its container
+  width: 100%;
+  box-sizing: border-box; 
+  h1, h2 {
+    font-size: 100%;
+  margin: 0.5rem 0; // Adjust margins
+  font-weight: bold; 
+  font-family: 'Times New Roman', Times, serif;// Example font styling
+  color: #d1e614;
+}
+    
+  b{
+    font-size: 100%;
+    margin: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ddd;
+  }
+    em {
+        font-size: 100%;
+      display: block; // Ensures it behaves like a block element
+      margin-top: 1rem; // Margin for spacing
+      font-style: italic;
+      color: darkcyan;
+    }
+    
+    // Ensure it spans full width and adjusts responsively
+    width: 100%;
+    max-height: 1024px;
+    box-sizing: border-box; // Include padding and border in element's total width and height
+  }
+  h1, h2 {
+    font-size: 100%;
+  margin: 0.5rem 0; // Adjust margins
+  font-weight: bold; 
+  font-family: 'Times New Roman', Times, serif;// Example font styling
+  color: #f4f4f4;
+}
+.hero{
+    background-color: aqua;
+    background-image: url("../src/assets/pics/e.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80%;
+  }
+h1,h2,h3,h4,em{
+    color:#fff;
+    
+}
+/* Your app custom styles here */
+.datas {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line if necessary */
+    justify-content: space-around; /* Distributes space between items */
+    padding: 20px;
+    box-shadow: 0em 0.01em 0.5em #100766;
+  }
+  
+  .data {
+    text-align: center; /* Centers the text under each image */
+    margin: 5px;
+    width: 30%; /* Controls the width of each image block */
+    border: 2px solid #0056b3;
+    border-radius: 4%;
+    box-shadow: 0em 0.01em 0.5em #100766;
+  }
+  
+  .data img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: adds rounded corners to the images */
+  }
+  /* Custom CSS for the small search bar */
+.small-searchbar {
+    width: 200px; /* Adjust width */
+    height: 30px; /* Adjust height */
+    margin: 0 auto; /* Center the search bar */
+    position:absolute;
+    right: 10%;
+  }
+  
+  .small-searchbar .searchbar-input {
+    font-size: 12px; /* Smaller font size */
+    padding: 5px; /* Adjust padding */
+    
+  }
+  .label{
+    color:rgb(171, 155, 230);
+    font-size: 24px;
+    margin :5px;
+    
+  }
+  .welcome {
+    margin-top: 60px;
+    height: 60vh;
+    background-color: blue;
+    box-shadow: .1em .1em 1em #ccc;
+    background-image: url("../src/assets/pics/d.jpg");
+    background-size: cover;
+    background-position: left;
+  }
+.button-group{
+  display: flex;
+  flex-direction: row;
+  
+  align-items: center;
+}
+  .address {
+    background-image: url("../src/assets/pics/c.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    min-height: 680px;
+  }
+  .reg-nav{
+    background-image: url("../src/assets/pics/b.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    min-height: 680px;
+    padding:20px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    box-shadow: 0em 0.01em 0.5em #100766;
+  }
+  .address {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0em 0.01em 0.5em #100766;
+    margin-bottom: 10%;
+  }
+  
+  .address-div {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .address-div:hover {
+    background-color: #171585;
+  }
+  
+  .address-div h3 {
+    font-size: 18px;
+    color: #e0d4d4;
+  }
+  
+  .address-div b {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .address-div a {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .address-div a:hover {
+    color: #0056b3;
+  }
+  
+  .address-div a::before {
+    content: "";
+    display: inline-block;
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+ 
+  /* Container */
+div {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Block Header */
+  .block-header {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #e0e0e0;
+    padding-bottom: 10px;
+  }
+  .side{
+    width: 100%;
+    border-radius: 2%;
+    border:2px solid #100766;
+    display: flex;
+    background-color: #797676;
+  }
+  /* Text Blocks */
+  .service {
+    background-color: #1d1591;
+    margin: 20px auto;
+    padding: 20px;
+    min-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .block-strong p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: justify;
+    margin: 0;
+  }
+  .meet{
+    margin-left:45%;
+    width:600px;
+    position:absolute;
+    background-image: url("../src/assets/pics/a.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+      }
+      
+  
+  /* Hover Effect on Block */
+ 
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .block-header {
+      font-size: 1.5rem;
+    }
+    .address-div,.address-div h3{
+        width: 100%;
+    }
+    .block-strong p {
+      font-size: 1rem;
+    }
+  }
+  
+  
+  /* Footer Styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  Button:hover{
+    color:#0056b3;
+    border-radius: 10%;
+    width:100x;
+    
+  }
+  /* Footer Links */
+  .footer a {
+    color: #00aaff;
+    text-decoration: none;
+    margin: 10px;
+    display: inline-block;
+  }
+  
+  .footer a:hover {
+    color: #fff;
+  }
+  
+  /* Button Styling */
+  .footer button {
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .footer button:hover {
+    background-color: #0077cc;
+  }
+  
+  /* Ordered List (Working Days) */
+  .footer ol {
+    list-style-type: decimal;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+  
+  .footer li {
+    margin: 5px 0;
+    font-size: 1.1rem;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .footer {
+      padding: 15px;
+    }
+  
+    .footer button {
+      font-size: 0.9rem;
+    }
+  
+    .footer li {
+      font-size: 1rem;
+    }
+  }
+  /* Welcome Section Styling */
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff; /* Light blue background */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+  }
+  
+  /* Welcome Heading */
+  .welcome h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Welcome Div */
+  .welcome-div {
+    background-color: #00aaff; /* Bright color to make the section pop */
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .welcome h1 {
+      font-size: 2rem;
+    }
+    .meet{
+        width:40%;
+        margin: 45%;
+      }
+      .meet h2{
+        font-size: 50%;
+      }
+    .welcome-div {
+      padding: 15px;
+    }
+  }/* General h2 Styling */
+h2 {
+    font-size: 2.5rem;            /* Large font size */
+    color: #333;                  /* Dark gray for readability */
+    text-align: center;           /* Centered text */
+    margin: 20px 0;               /* Spacing above and below */
+    font-weight: 700;             /* Bold font */
+    letter-spacing: 1px;          /* Slight spacing between letters */
+    line-height: 1.3;             /* Comfortable line height */
+    text-transform: uppercase;    /* Convert text to uppercase for emphasis */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+  }
+  
+  /* Optional Styling for Special Effects */
+  h2.highlight {
+    color: #00aaff;               /* Bright blue for emphasis */
+    background-color: #f0f8ff;    /* Light background color to make it pop */
+    padding: 10px 20px;           /* Padding for extra spacing */
+    border-radius: 5px;           /* Rounded corners */
+    display: inline-block;        /* Ensure the background wraps tightly around the text */
+  }
+  
+  /* Mobile Responsive h2 Styling */
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem;            /* Adjust font size for smaller screens */
+      margin: 15px 0;             /* Slightly reduce margin */
+    }
+  }
+  /* Container for Swiper */
+.swiper-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Swiper Slides */
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+  }
+  
+  /* Navigation buttons */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #007aff; /* Change the color to your desired color */
+    background-color: rgba(255, 255, 255, 0.7); /* Background color */
+    border-radius: 50%; /* Rounded buttons */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Ensure buttons are above the slides */
+  }
+  
+  /* Hide default button icons and use your own if needed */
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 20px; /* Adjust font size for the arrow */
+  }
+  
+  /* Pagination dots */
+  .swiper-pagination-bullet {
+    background: #007aff; /* Color of the active dot */
+    opacity: 0.7; /* Default opacity */
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #007aff; /* Color of the active dot */
+  }
+  
+  /* Optional: Style for Swiper's scrollbar (if used) */
+  .swiper-scrollbar {
+    background: #f5f5f5;
+    height: 8px;
+    border-radius: 10px;
+  }
+  
+  .swiper-scrollbar-drag {
+    background: #007aff;
+    border-radius: 10px;
+  }
+  
+  
+  .images {
+    position: relative;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    box-shadow: 0em 0.01em 0.5em #100766;
+  }
+  image{
+    box-shadow: 0em 0.01em 0.5em #100766;
+  }
+  .swiper-container {
+    padding:3%;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8;
+  }
+  
+  .swiper-slide-active {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  
+  .swiper-slide img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 640px) {
+    .swiper-slide {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .swiper-slide {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
