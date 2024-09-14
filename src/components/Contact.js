@@ -133,7 +133,7 @@ function Contact() {
           <br />
 
           <div className="button-group">
-            <Button style={{marginRight:"30%"}}  color="blue" type="submit">Submit</Button><br />
+            <Button style={{marginRight:"20%"}}  color="blue" type="submit">Submit</Button><br />
             <Button color="red" type="button" onClick={() => setFormData({ name: '', email: '', contact: '', comment: '' })}>
               Reset
             </Button>

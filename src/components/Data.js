@@ -149,7 +149,7 @@ function Data() {
       </Swiper>
       <center>
       <div className='button-group'>
-      <Button  style={{marginRight:"30%"}}  onClick={handlePrevSlide} >Previous</Button>
+      <Button  style={{marginRight:"20%"}}  onClick={handlePrevSlide} >Previous</Button>
       <Button onClick={handleNextSlide} >Next</Button>
       </div>
       </center>

@@ -17,7 +17,8 @@ import {
   SideNav,
   SideNavItems,
   SideNavMenu,
-  SideNavMenuItem
+  SideNavMenuItem,
+  Button
 } from '@carbon/react';
 import { Switcher } from '@carbon/icons-react';
 import Faqs from './components/Faqs';
@@ -60,29 +61,8 @@ function App() {
           />
           Eamon Dreads Saloon
         </HeaderName>
-        <HeaderGlobalBar>
-          <HeaderGlobalAction aria-label="App Switcher" onClick={handleSideBar} tooltipAlignment="end">
-            <Switcher size={20} />
-          </HeaderGlobalAction>
-        </HeaderGlobalBar>
+       
       </Header>
-      
-      {/* Side Navigation */}
-      {side && (
-        <SideNav aria-label="Side navigation" isRail  style={{backgroundColor:"#100766", position:"absolute"}} >
-          <SideNavItems>
-            <SideNavMenu title="ACKNOWLEDGEMENT">
-              <SideNavMenuItem onClick={handleFaqs}>FAQS</SideNavMenuItem>
-              <SideNavMenuItem onClick={handleTeam}>ABOUT</SideNavMenuItem>
-            </SideNavMenu>
-          <div className='side' >
-          {faqs && <Faqs />}
-          {team && <About />}
-          </div>
-            
-          </SideNavItems>
-        </SideNav>
-      )}
 
       <Content>
         <HeroSection />
@@ -91,6 +71,14 @@ function App() {
         <Contact />
         <Blog />
         <Data />
+        <div className='button-group' >
+          <Button  style={{marginRight:"20%"}} onClick={handleFaqs}>FAQS </Button>
+          <Button  onClick={handleTeam}>ABOUT </Button>
+        </div>
+        <div className='side' >
+          {faqs && <Faqs />}
+          {team && <About />}
+          </div>
       </Content>
       <Footer />
     </>
