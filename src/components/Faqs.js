@@ -13,7 +13,7 @@ export default function Faqs() {
       <h1 style={{color:"#aaa", marginLeft:"3%"}}>Questions and answers:</h1>
       {faqs.map((faq) => (
         <div key={faq.id}>
-          <p style={{color:"#fff", marginLeft:"3%"}}><strong>Q:</strong> {faq.question}</p>
+          <p style={{color:"#000", marginLeft:"3%"}}><strong>Q:</strong> {faq.question}</p>
           <h1 style={{color:"#007aff", marginLeft:"3%"}}><strong>A:</strong> {faq.answer}</h1>
         </div>
       ))}

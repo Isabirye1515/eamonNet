@@ -76,7 +76,7 @@ function App() {
         <div className='side' >
         <div className='button-group' >
           <Button  style={{marginRight:"20%"}} onClick={handleFaqs}>FAQS </Button>
-          <Button  onClick={handleTeam}>ABOUT </Button>
+          <Button  onClick={handleTeam}>ABOUT US </Button>
         </div>
        
           {faqs && <Faqs />}
