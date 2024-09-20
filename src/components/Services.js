@@ -26,7 +26,7 @@ export default function Services() {
         {services.map((service) => (
           <div  key={service.id}>
             <div className="image-container">
-              <img src={service.photo}  height={200} width={200} alt={service.name} className="simg" />
+              <img src={service.photo}  height="100%" width="100%" alt={service.name} className="simg" />
               <div className="overlay">
                 <p>{service.name}</p>
 
