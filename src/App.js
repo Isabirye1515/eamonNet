@@ -7,6 +7,8 @@ import Benefits from './components/Benefits';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import "./App.css";
+
 
 import {
   Content,
@@ -50,8 +52,8 @@ function App() {
   return (
     <>
       {/* UI Shell Header */}
-      <Header aria-label="Carbon UI Shell">
-        <HeaderName href="#" prefix="EA">
+      <Header aria-label="Carbon UI Shell" style={{backgroundColor:"blue"}}> 
+        <HeaderName  prefix='' >
           <img 
             src={himage} 
             alt="himage" 
@@ -65,17 +67,18 @@ function App() {
       </Header>
 
       <Content>
-        <HeroSection />
+        <HeroSection /> 
         <Services />
         <Benefits />
         <Contact />
         <Blog />
         <Data />
+        <div className='side' >
         <div className='button-group' >
           <Button  style={{marginRight:"20%"}} onClick={handleFaqs}>FAQS </Button>
           <Button  onClick={handleTeam}>ABOUT </Button>
         </div>
-        <div className='side' >
+       
           {faqs && <Faqs />}
           {team && <About />}
           </div>

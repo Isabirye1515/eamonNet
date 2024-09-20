@@ -8,7 +8,7 @@ export default function Faqs() {
   ]);
 
   return (
-    <div>
+    <div className='faqs' >
       <h1 style={{ marginLeft:"3%"}}>Frequently Asked Questions?</h1>
       <h1 style={{color:"#aaa", marginLeft:"3%"}}>Questions and answers:</h1>
       {faqs.map((faq) => (

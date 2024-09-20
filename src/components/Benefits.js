@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 export default function Benefits() {
@@ -16,13 +17,19 @@ export default function Benefits() {
 
   return (
     <div className="datas" >
-      <h1>You Extremely Benefit, See Our Offers.</h1>
+      <h1>You Extremely Benefit, See Our Offers.</h1><br />
       {benefits.map(benefit => (
-        <div  className="data" key={benefit.id}>
-          <h1>{benefit.name}</h1>
-          <hr/>
-          <p>{benefit.value}</p>
+        <center>
+           <div  className="data" key={benefit.id}>
+           <b>{benefit.name}</b>
+            <hr/>
+          <div><p>{benefit.value}</p></div>
+          
+          
+
         </div>
+        </center>
+       
       ))}
     </div>
   );

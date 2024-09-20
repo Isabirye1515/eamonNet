@@ -1,19 +1,23 @@
-import { Tile } from '@carbon/react';
 import React from 'react';
+import heroIm from '../assets/pics/c.jpg';
+
+
+
 
 export default function HeroSection() {
+  
   return (
-    <div className="container-fluid mt-4"> {/* Use container-fluid for full-width container */}
-      <div className="row">
-        <div className="col-12"> {/* Use col-12 to span full width */}
-          <Tile className="custom-tile">
-            <h2>Expert Dreadlocks Services, Professional Dreadlocks Salon, Your Premier DreadLocks Destination</h2>
-            <h1>Experience the Art of Dreadlocks with Our Skilled Locticians</h1>
-            <b>Transform Your Hair</b> <b>Transform Your Life </b> <b>Where Every Lock Tells a Story</b> 
-            <h1>Book Your Appointment Now, Get Consultation, Learn More About Our Services</h1>
-          </Tile>
-        </div>
-      </div>
+    <div className='hero'> {/* Use container-fluid for full-width container */}
+    <div>
+    <h1  >Eamon Dreadlocks Solutions
+               </h1>
+            <p  >Experience the Art of Dreadlocks with Our Skilled Locticians</p>
+            
     </div>
+            <div  className='add-image' >
+              <img src={heroIm} className="hero-image" width="100%" height={300}  alt="Dreadlocks services" />
+            </div>
+          </div>
+        
   );
 }

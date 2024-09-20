@@ -1,0 +1,338 @@
+
+body{
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #f0e7e7;
+  background-image: url("../src/assets/pics/ab.jpg");
+  background-repeat: None;
+  background-size: cover;
+    background-position: center;
+    
+}
+.hero{
+  display:flex;
+  flex-direction: row;
+ 
+
+  margin-bottom: 10%;
+  
+  
+  h1{
+    color:blue;
+    font-family: 'Times New Roman', Times, serif;
+    
+  }
+  p{
+    color:rgb(137, 28, 233);
+    font-family: 'Times New Roman', Times, serif;
+    position: bottom left;
+  }
+  .add-image{
+    margin-right:0%;
+    width: 70%;
+    border-radius: 4px;
+    .hero-image{
+      border-radius: 10px;
+    }
+  }
+}
+.service{
+  
+  font-family:'Times New Roman', Times, serif ;
+  margin-bottom: 10%;
+  h1{
+    color:#0056b3 ;
+  }h1{
+    color:#fff;
+    margin-left:20%;
+    
+  }
+  p,b{
+    color:#bcb3d1;
+  }
+  .datas {
+    
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line if necessary */
+    justify-content: space-around; /* Distributes space between items */
+    padding: 5px;
+  
+  }
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white;
+    text-align: center;
+}
+}
+.datas{
+  margin-bottom: 10%;
+  border-radius: 10px;
+  h1{
+    color:#fff;
+    margin-left:10%;
+  }
+  p{
+    color:#0c042e;
+    font-size: 20px;
+  }
+  
+  background-image: url("../src/assets/pics/ah.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  .data{
+    display: flex;
+    flex-direction: row;  
+    margin-left: 10%;
+    margin:2px;
+    border-bottom: 2px solid ;
+    border-top:2px solid ;
+    border-radius:5px;
+    b{
+      color:#fff;
+      margin-right:10%;
+    }
+  }
+}
+.reg-nav{
+  h1{
+    color:#fff;
+    margin-left:20%;
+  }
+border-bottom:2px solid #f4f7f4;
+border-radius: 10px;
+margin-bottom: 10%;
+background-image: url("../src/assets/pics/h.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+.button-group{
+  display: flex;
+  flex-direction: row;
+
+}
+}
+  .address {
+    h1{
+      color:#fff;
+      margin-left:20%;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0em 0.01em 0.5em #fcfdfc;
+    margin-bottom: 10%;
+    background-image: url("../src/assets/pics/ak.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+      }
+  
+  .address-div {
+    padding: 10px;
+    border: 1px solid #577daf;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 100%;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  .address-div:hover {
+    background-color: #171585;
+  }
+  
+  .address-div h3 {
+    font-size: 18px;
+    color: #e0d4d4;
+  }
+  
+  .address-div b {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .address-div a {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .address-div a:hover {
+    color: #0056b3;
+  }
+  
+  .images{
+    height:60%;
+    h1{
+      color:#fff;
+      margin-left:20%;
+      
+    }
+  .swiper-container {
+    
+    position: relative;
+    height: 100%;
+    border: 2px solid #10ac51;
+    box-shadow: 0em 0.01em 0.5em #fcfdfa;
+  }
+  
+  /* Swiper Slides */
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    margin-bottom:0%;
+    box-shadow: 0em 0.01em 0.5em #f9faf8;
+    
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      
+    }
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+      color: white;
+      text-align: center;
+      Button{
+        margin-left:1%;
+      }
+  }
+  
+  }
+  
+ 
+  /* Pagination dots */
+  .swiper-pagination-bullet {
+    background: #007aff; /* Color of the active dot */
+    opacity: 0.7; /* Default opacity */
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #007aff; /* Color of the active dot */
+  }
+  
+  /* Optional: Style for Swiper's scrollbar (if used) */
+  .swiper-scrollbar {
+    background: #f5f5f5;
+    height: 8px;
+    border-radius: 10px;
+  }
+  
+  .swiper-scrollbar-drag {
+    background: #007aff;
+    border-radius: 10px;
+  }
+}
+  .faqs{
+    background-image: url("../src/assets/pics/a.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0em 0.01em 0.5em #f9faf7;
+    h1{
+      color:#fff;
+      margin-left:20%;
+      
+    }
+
+  }
+  .side{
+    border: 1px solid#f7fdf8;
+    border-radius: 5px;
+    box-shadow: 0em 0.01em 0.5em #fcfdfa;
+    
+  
+  }
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+
+  }
+  Button:hover{
+    color:#10ac51;
+    border-radius: 10%;
+    width:100x;
+    
+  }
+  /* Footer Links */
+  .footer a {  .footer{
+    background-color: #000;
+    align-items: center;
+    display: flex;
+    flex-direction:row ;
+  }
+    color: #00aaff;
+    text-decoration: none;
+    margin: 10px;
+    display: inline-block;
+  }
+  
+  .footer a:hover {
+    color: #fff;
+  }
+  
+  /* Button Styling */
+  .footer button {
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .footer button:hover {
+    background-color: #0077cc;
+  }
+  
+  /* Ordered List (Working Days) */
+  .footer ol {
+    list-style-type: decimal;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+  
+  .footer li {
+    margin: 5px 0;
+    font-size: 1.1rem;
+  }
+  .icon{
+    display: flex;
+    flex-direction: row;
+    height: 5px;
+  }
+  
+
+  
+  
+

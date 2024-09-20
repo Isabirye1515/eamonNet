@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/navigation';
+
 import 'swiper/css/pagination';
-import { Button } from '@carbon/react';
-import 'swiper/css/navigation';
+import {  Tag } from '@carbon/react';
+
 import 'swiper/css/pagination';
 
 // Import images
@@ -56,105 +56,126 @@ import au from '../assets/pics/au.jpg';
 import av from '../assets/pics/av.jpg';
 import aw from '../assets/pics/aw.jpg';
 import ax from '../assets/pics/ax.jpg';
+import heart from '../assets/pics/heart.svg';
+import unheart from '../assets/pics/unheart.svg';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Data() {
   // State with image data
-  const images = [
-    { id: 1, name: 'a', src: a },
-    { id: 2, name: 'b', src: b },
-    { id: 3, name: 'c', src: c },
-    { id: 4, name: 'd', src: d },
-    { id: 5, name: 'e', src: e },
-    { id: 6, name: 'f', src: f },
-    { id: 7, name: 'g', src: g },
-    { id: 8, name: 'h', src: h },
-    { id: 10, name: 'j', src: j },
-    { id: 11, name: 'k', src: k },
-    { id: 12, name: 'l', src: l },
-    { id: 13, name: 'm', src: m },
-    { id: 14, name: 'n', src: n },
-    { id: 15, name: 'o', src: o },
-    { id: 16, name: 'p', src: p },
-    { id: 17, name: 'q', src: q },
-    { id: 18, name: 'r', src: r },
-    { id: 19, name: 's', src: s },
-    { id: 20, name: 't', src: t },
-    { id: 22, name: 'v', src: v },
-    { id: 23, name: 'w', src: w },
-    { id: 24, name: 'x', src: x },
-    { id: 25, name: 'y', src: y },
-    { id: 26, name: 'z', src: z },
-    { id: 27, name: 'aa', src: aa },
-    { id: 28, name: 'ab', src: ab },
-    { id: 29, name: 'ac', src: ac },
-    { id: 30, name: 'ad', src: ad },
-    { id: 31, name: 'ae', src: ae },
-    { id: 32, name: 'af', src: af },
-    { id: 33, name: 'ag', src: ag },
-    { id: 34, name: 'ah', src: ah },
-    { id: 35, name: 'ai', src: ai },
-    { id: 36, name: 'aj', src: aj },
-    { id: 37, name: 'ak', src: ak },
-    { id: 38, name: 'al', src: al },
-    { id: 39, name: 'am', src: am },
-    { id: 40, name: 'an', src: an },
-    { id: 41, name: 'ao', src: ao },
-    { id: 42, name: 'ap', src: ap },
-    { id: 43, name: 'aq', src: aq },
-    { id: 44, name: 'ar', src: ar },
-    { id: 45, name: 'as', src: as },
-    { id: 46, name: 'at', src: at },
-    { id: 47, name: 'au', src: au },
-    { id: 48, name: 'av', src: av },
-    { id: 49, name: 'aw', src: aw },
-    { id: 50, name: 'ax', src: ax }
-  ];
+  const [images,setImages]=useState( [
+    { id: 1, name: 'a', src: a , like: unheart, isLiked: false},
+    { id: 2, name: 'b', src: b , like: unheart, isLiked: false},
+    { id: 3, name: 'c', src: c , like: unheart, isLiked: false},
+    { id: 4, name: 'd', src: d , like: unheart, isLiked: false},
+    { id: 5, name: 'e', src: e , like: unheart, isLiked: false },
+    { id: 6, name: 'f', src: f , like: unheart, isLiked: false},
+    { id: 7, name: 'g', src: g , like: unheart, isLiked: false},
+    { id: 8, name: 'h', src: h , like: unheart, isLiked: false},
+    { id: 10, name: 'j', src: j , like: unheart, isLiked: false},
+    { id: 11, name: 'k', src: k , like: unheart, isLiked: false},
+    { id: 12, name: 'l', src: l , like: unheart, isLiked: false},
+    { id: 13, name: 'm', src: m , like: unheart, isLiked: false},
+    { id: 14, name: 'n', src: n , like: unheart, isLiked: false},
+    { id: 15, name: 'o', src: o , like: unheart, isLiked: false},
+    { id: 16, name: 'p', src: p , like: unheart, isLiked: false},
+    { id: 17, name: 'q', src: q , like: unheart, isLiked: false},
+    { id: 18, name: 'r', src: r , like: unheart, isLiked: false},
+    { id: 19, name: 's', src: s , like: unheart, isLiked: false},
+    { id: 20, name: 't', src: t , like: unheart, isLiked: false},
+    { id: 22, name: 'v', src: v , like: unheart, isLiked: false},
+    { id: 23, name: 'w', src: w , like: unheart, isLiked: false},
+    { id: 24, name: 'x', src: x , like: unheart, isLiked: false},
+    { id: 25, name: 'y', src: y , like: unheart, isLiked: false},
+    { id: 26, name: 'z', src: z , like: unheart, isLiked: false},
+    { id: 27, name: 'aa', src: aa , like: unheart, isLiked: false},
+    { id: 28, name: 'ab', src: ab , like: unheart, isLiked: false},
+    { id: 29, name: 'ac', src: ac , like: unheart, isLiked: false},
+    { id: 30, name: 'ad', src: ad , like: unheart, isLiked: false},
+    { id: 31, name: 'ae', src: ae , like: unheart, isLiked: false},
+    { id: 32, name: 'af', src: af , like: unheart, isLiked: false},
+    { id: 33, name: 'ag', src: ag , like: unheart, isLiked: false},
+    { id: 34, name: 'ah', src: ah , like: unheart, isLiked: false},
+    { id: 35, name: 'ai', src: ai , like: unheart, isLiked: false},
+    { id: 36, name: 'aj', src: aj , like: unheart, isLiked: false},
+    { id: 37, name: 'ak', src: ak , like: unheart, isLiked: false},
+    { id: 38, name: 'al', src: al , like: unheart, isLiked: false},
+    { id: 39, name: 'am', src: am , like: unheart, isLiked: false},
+    { id: 40, name: 'an', src: an , like: unheart, isLiked: false},
+    { id: 41, name: 'ao', src: ao , like: unheart, isLiked: false},
+    { id: 42, name: 'ap', src: ap , like: unheart, isLiked: false},
+    { id: 43, name: 'aq', src: aq , like: unheart, isLiked: false},
+    { id: 44, name: 'ar', src: ar , like: unheart, isLiked: false},
+    { id: 45, name: 'as', src: as , like: unheart, isLiked: false},
+    { id: 46, name: 'at', src: at , like: unheart, isLiked: false},
+    { id: 47, name: 'au', src: au , like: unheart, isLiked: false},
+    { id: 48, name: 'av', src: av , like: unheart, isLiked: false},
+    { id: 49, name: 'aw', src: aw , like: unheart, isLiked: false},
+    { id: 50, name: 'ax', src: ax , like: unheart, isLiked: false}
+  ]);
 
+  
   const swiperRef = useRef(null);
-
-  const handleNextSlide = () => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideNext();
+  const handleLikeToggle = (id) => {
+    setImages((prevImages) =>
+      prevImages.map((image) =>
+        image.id === id
+          ? {
+              ...image,
+              like: image.isLiked ? unheart : heart, // Show unheart when unliked, heart when liked
+              isLiked: !image.isLiked, // Toggle isLiked
+            }
+          : image
+      )
+    );
+  
+    const likedImage = images.find((image) => image.id === id);
+  
+    // Trigger the correct toast
+    if (likedImage.isLiked) {
+      console.log("Toast Unliked Triggered");
+      toast.error(`You unliked our activity`);
+    } else {
+      console.log("Toast Liked Triggered");
+      toast.success(`You liked our activity `);
     }
   };
-
-  const handlePrevSlide = () => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slidePrev();
-    }
-  };
-
+  
+  
   return (
     <div className='images'>
-      <h2 style={{ color: "#ddd", marginLeft: "3%" }}>SOME OF OUR PRETTIED CUSTOMERS</h2>
+      <h1>We Have Evidence For The Activities Here.</h1>
       <Swiper
         ref={swiperRef}
-        spaceBetween={30}
+        spaceBetween={20}
         slidesPerView={3}
         centeredSlides={true}
         loop={true}
-        navigation
+        
         pagination={{ clickable: true }}
       >
         {images.map((image) => (
-          <SwiperSlide key={image.id} className='image'>
-            <img
-              src={image.src}
-              height={300}
-              width={380}
-              alt={image.name}
-            />
+          <SwiperSlide key={image.id} className=''>
+            <div className="image-container">
+              <img
+                src={image.src}
+                height="100%"
+                width="100%"
+                alt={image.name}
+              />
+              <div className="overlay">
+                {/* Like button with current like state */}
+                <Tag size='sm' onClick={() => handleLikeToggle(image.id)}  >
+                  {image.isLiked ? "Unlike" : "Like"} <img src={image.like} height={15} width={15} alt="img" />
+                </Tag>
+              </div>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
-      <center>
-      <div className='button-group'>
-      <Button  style={{marginRight:"20%"}}  onClick={handlePrevSlide} >Previous</Button>
-      <Button onClick={handleNextSlide} >Next</Button>
-      </div>
-      </center>
       
-      
+      {/* Toast notification container */}
+      <ToastContainer position="top-right" />
     </div>
   );
 }
