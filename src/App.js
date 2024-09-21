@@ -14,12 +14,6 @@ import {
   Content,
   Header,
   HeaderName,
-  HeaderGlobalAction,
-  HeaderGlobalBar,
-  SideNav,
-  SideNavItems,
-  SideNavMenu,
-  SideNavMenuItem,
   Button
 } from '@carbon/react';
 import { Switcher } from '@carbon/icons-react';
@@ -59,9 +53,9 @@ function App() {
             alt="himage" 
             width={40} 
             height={40} 
-            style={{ borderRadius: '50%', margin: "20px" }} 
+            style={{ borderRadius: '50%', margin: "20px" ,objectFit:"cover"}} 
           />
-          Eamon Dreads Saloon
+          Eamon Dreads Salon
         </HeaderName>
        
       </Header>

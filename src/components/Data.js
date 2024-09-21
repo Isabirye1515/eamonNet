@@ -162,6 +162,7 @@ function Data() {
                 height="100%"
                 width="100%"
                 alt={image.name}
+                style={{objectFit:"cover"}}
               />
               <div className="overlay">
                 {/* Like button with current like state */}

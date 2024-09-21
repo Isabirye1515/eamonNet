@@ -63,7 +63,7 @@ function Contact() {
         A contact form for clients to reach out with questions or appointment requests
       </h2>
 
-      <h1 style={{ color: "#cc", marginLeft: "3%" }}>
+      <h1 style={{ color: "#ccc", marginLeft: "3%" }}>
         SUBMIT some of your information for subscription and to know more about us.
       </h1>
 
