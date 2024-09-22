@@ -15,6 +15,7 @@ export default function Blog() {
 
   return (
     <div className='address'>
+      <h2>Visit Our Social Media</h2>
       {social.map((element) => (
         <div key={element.id} className='address-div'>
           <h3>{element.user}</h3>

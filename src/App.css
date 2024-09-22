@@ -29,7 +29,7 @@ body{
   }
   .add-image{
     margin-right:0%;
-    width: 70%;
+    width:150%;
     border-radius: 4px;
     .hero-image{
       border-radius: 10px;
@@ -43,7 +43,7 @@ body{
   margin-bottom: 10%;
   h1{
     color:#0056b3 ;
-  }h1{
+  }h2{
     color:#e24f4f;
     margin-left:5%;
     
@@ -80,7 +80,7 @@ body{
 .datas{
   margin-bottom: 10%;
   border-radius: 10px;
-  h1{
+  h2{
     color:#fff;
     margin-left:10%;
   }
@@ -104,7 +104,7 @@ body{
   }
 }
 .reg-nav{
-  h1{
+  h2{
     color:#fff;
     margin-left:20%;
   }
@@ -117,7 +117,7 @@ margin-bottom: 10%;
 }
 }
   .address {
-    h1{
+    h2{
       color:#fff;
       margin-left:20%;
     }
@@ -170,7 +170,7 @@ margin-bottom: 10%;
   
   .images{
     height:60%;
-    h1{
+    h2{
       color:#fff;
       margin-left:20%;
       
@@ -241,7 +241,7 @@ margin-bottom: 10%;
 }
   .faqs{
     
-    h1{
+    h2{
       color:#fff;
       margin-left:20%;
       
@@ -318,7 +318,7 @@ margin-bottom: 10%;
   
       font-family:'Times New Roman', Times, serif ;
       margin-bottom: 10%;
-      h1{
+      h2{
         color:#0056b3 ;
       }h1{
         color:#e24f4f;
@@ -360,7 +360,7 @@ margin-bottom: 10%;
   
       font-family:'Times New Roman', Times, serif ;
       margin-bottom: 10%;
-      h1{
+      h2{
         color:#0056b3 ;
       }h1{
         color:#e24f4f;

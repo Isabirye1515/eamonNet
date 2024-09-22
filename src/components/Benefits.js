@@ -17,7 +17,7 @@ export default function Benefits() {
 
   return (
     <div className="datas" >
-      <h1>You Extremely Benefit, See Our Offers.</h1><br />
+      <h2>You Extremely Benefit, See Our Offers.</h2><br />
       {benefits.map(benefit => (
         <center>
            <div  className="data" key={benefit.id}>

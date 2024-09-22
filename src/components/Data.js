@@ -144,7 +144,7 @@ function Data() {
   
   return (
     <div className='images'>
-      <h1>We Have Evidence For The Activities Here.</h1>
+      <h2>We Have Evidence For The Activities Here.</h2>
       <Swiper
         ref={swiperRef}
         spaceBetween={20}

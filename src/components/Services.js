@@ -18,7 +18,7 @@ export default function Services() {
   
   return (
     <div className='service'>
-      <center><h1>Dreadlocks Services</h1></center>
+      <center><h2>Dreadlocks Services</h2></center>
     
       <p>From installation to maintenance, we've got you covered.</p>
       <b><i>List of services:</i></b>

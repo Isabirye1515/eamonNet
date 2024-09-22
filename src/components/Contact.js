@@ -49,7 +49,7 @@ function Contact() {
 
   return (
     <div className='reg-nav'>
-      <h1>Get in Touch</h1>
+      <h2>Get in Touch</h2>
 
       <Accordion>
         <AccordionItem title="Click For Contact Information">
@@ -63,9 +63,9 @@ function Contact() {
         A contact form for clients to reach out with questions or appointment requests
       </h2>
 
-      <h1 style={{ color: "#ccc", marginLeft: "3%" }}>
+      <h2 style={{ color: "#ccc", marginLeft: "3%" }}>
         SUBMIT some of your information for subscription and to know more about us.
-      </h1>
+      </h2>
 
       <div className='form-div'>
         <form onSubmit={handleSubmit}>

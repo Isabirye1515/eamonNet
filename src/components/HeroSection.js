@@ -1,5 +1,5 @@
 import React from 'react';
-import heroIm from '../assets/pics/c.jpg';
+import heroIm from '../assets/pics/x.jpg';
 
 
 
@@ -15,7 +15,7 @@ export default function HeroSection() {
             
     </div>
             <div  className='add-image' >
-              <img src={heroIm} className="hero-image" width="100%" height={300}  alt="Dreadlocks services" />
+              <img src={heroIm} className="hero-image" width="100%" height={350}  alt="Dreadlocks services" />
             </div>
           </div>
         
