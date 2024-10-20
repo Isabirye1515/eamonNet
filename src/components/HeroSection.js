@@ -1,5 +1,5 @@
 import React from 'react';
-import heroIm from '../assets/pics/ax.jpg';
+import heroIm from '../assets/pics/ay.jpg';
 import { Column, Grid } from '@carbon/react';
 
 
