@@ -1,4 +1,5 @@
 
+import { Column, Grid } from '@carbon/react';
 import React, { useState } from 'react';
 
 export default function Benefits() {
@@ -16,21 +17,20 @@ export default function Benefits() {
   ]);
 
   return (
-    <div className="datas" >
-      <h2>You Extremely Benefit, See Our Offers.</h2><br />
+    <div class="container bg-secondary rounded" >
+    <h2 class="h-3 p-2 bg-danger rounded " >You Extremely Benefit, See Our Offers.</h2><br />
+    <Grid>
+      
       {benefits.map(benefit => (
-        <center>
-           <div  className="data" key={benefit.id}>
-           <b>{benefit.name}</b>
-            <hr/>
-          <div><p>{benefit.value}</p></div>
-          
-          
-
-        </div>
-        </center>
+        
+           <Column  lg={3} sm={2}  md={3}  className="data" key={benefit.id}>
+           <b class="bg- p-2 text-white  rounded" >{benefit.name}</b><br/>
+         <strong class=" p-2   rounded" >{benefit.value}</strong> 
+        </Column>
+        
        
       ))}
+    </Grid>
     </div>
   );
 }

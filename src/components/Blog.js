@@ -1,4 +1,4 @@
-import { Link } from '@carbon/react';
+import { Column, Grid, Link } from '@carbon/react';
 
 import facebook from "../assets/pics/facebook.svg";
 import tiktok from "../assets/pics/tiktok.svg";
@@ -14,18 +14,21 @@ export default function Blog() {
   ];
 
   return (
-    <div className='address'>
+    <>
+    
       <h2>Visit Our Social Media</h2>
+      <Grid>
       {social.map((element) => (
-        <div key={element.id} className='address-div'>
+        <Column   lg={4} sm={4}  md={4}   key={element.id} className='address-div p-2'>
           <h3>{element.user}</h3>
           <b><em>{element.name}</em></b><br />
           <Link href={element.url} target="_blank" external>
             Get to our {element.name} site
             <img src={element.photo} height={20} width={20} alt='logo' />
           </Link>
-        </div>
+        </Column>
       ))}
-    </div>
+    </Grid>
+    </>
   );
 }

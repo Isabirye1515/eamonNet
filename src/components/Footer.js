@@ -1,6 +1,6 @@
-import {  Link } from '@carbon/react';
+import { Grid, Column, Link } from '@carbon/react';
 import React from 'react';
-import { Location, Phone } from '@carbon/icons-react'; // Import location and phone icons
+import {  Location, Phone } from '@carbon/icons-react'; // Import location and phone icons
 import facebook from "../assets/pics/facebook.svg";
 import tiktok from "../assets/pics/tiktok.svg";
 import instagram from "../assets/pics/instagram.svg";
@@ -16,8 +16,8 @@ export default function Footer() {
  
 
   return (
-    <div className="footer">
-      <div>
+    <Grid>
+      <Column lg={16} sm={4} md={8}  className='footer' >
         <h1 style={{ fontSize: "20px" }}>We are Located at the Park View Shopping Center</h1>
         
         {/* Link to Google Maps with Location Icon */}
@@ -36,7 +36,8 @@ export default function Footer() {
       <Link href={icon.url}  ><img src={icon.photo}  height={20} width={20} alt="icon" /></Link>
     </p>
     )}
-    </div>
-    </div>
+    </Column>
+    
+    </Grid>
   );
 }

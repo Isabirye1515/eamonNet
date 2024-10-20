@@ -1,21 +1,16 @@
 
 body{
-  font-family: 'Times New Roman', Times, serif;
-  background-color: #f0e7e7;
-  background-image: url("../src/assets/pics/y.jpg");
-  background-repeat: None;
-  background-size: cover;
-    background-position: center;
-    object-fit: cover;
+  background-color: #333;
+  padding: 10px;
     
 }
 .hero{
   display:flex;
   flex-direction: row;
- 
-
-  margin-bottom: 10%;
-  
+  margin-bottom: 0%;
+  .link{
+    margin:5px;
+  }
   
   h1{
     color:blue;
@@ -38,7 +33,6 @@ body{
   }
 }
 .service{
-  
   font-family:'Times New Roman', Times, serif ;
   margin-bottom: 10%;
   h1{
@@ -132,7 +126,7 @@ margin-bottom: 10%;
       }
   
   .address-div {
-    padding: 10px;
+    padding: 20px;
     border: 1px solid #577daf;
     border-radius: 5px;
     width: 100%;
@@ -396,5 +390,12 @@ margin-bottom: 10%;
     }
     }
   }
+  .head{
+    margin-bottom: 10%;
+  }
+  .navigate{
+    padding:10px;
+  }
+  
 
 

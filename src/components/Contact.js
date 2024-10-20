@@ -22,7 +22,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3002/send-email', {
+      const response = await fetch('http://localhost:3003/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ function Contact() {
 
   return (
     <div className='reg-nav'>
-      <h2>Get in Touch</h2>
+      <h2 class="h-3 p-2 bg-danger rounded" >Get in Touch</h2>
 
       <Accordion>
         <AccordionItem title="Click For Contact Information">
@@ -134,7 +134,7 @@ function Contact() {
 
           <div className="button-group">
             <Button style={{marginRight:"20%"}}  color="blue" type="submit">Submit</Button><br />
-            <Button color="red" type="button" onClick={() => setFormData({ name: '', email: '', contact: '', comment: '' })}>
+            <Button color="red" type="button" onClick={() => setFormData({ name: '', email: '', contact: '', comment: '' })}  >
               Reset
             </Button>
           </div>

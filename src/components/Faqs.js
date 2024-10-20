@@ -1,3 +1,4 @@
+import { Column, Grid } from '@carbon/react';
 import React, { useState } from 'react';
 
 export default function Faqs() {
@@ -9,14 +10,16 @@ export default function Faqs() {
 
   return (
     <div className='faqs' >
-      <h2 style={{ marginLeft:"3%"}}>Frequently Asked Questions?</h2>
+      <h2 class="h-3 p-2 bg-danger rounded">Frequently Asked Questions?</h2>
       <h2 style={{color:"#aaa", marginLeft:"3%"}}>Questions and answers:</h2>
+      <Grid>
       {faqs.map((faq) => (
-        <div key={faq.id}>
-          <p style={{color:"#000", marginLeft:"3%"}}><strong>Q:</strong> {faq.question}</p>
-          <h2 style={{color:"#007aff", marginLeft:"3%"}}><strong>A:</strong> {faq.answer}</h2>
-        </div>
+        <Column lg={5} sm={4}  md={4}    key={faq.id}>
+          <p class="p-3 mb-2 bg-dark text-white rounded"  ><strong class="text-primary" >Q:</strong> {faq.question}</p>
+          <h2 class="p-3 mb-2 bg-primary text-white rounded"  ><strong class="text-danger" >A:</strong> {faq.answer}</h2>
+        </Column>
       ))}
+      </Grid>
     </div>
   );
 }

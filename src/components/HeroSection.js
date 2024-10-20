@@ -1,5 +1,6 @@
 import React from 'react';
-import heroIm from '../assets/pics/x.jpg';
+import heroIm from '../assets/pics/ax.jpg';
+import { Column, Grid } from '@carbon/react';
 
 
 
@@ -7,17 +8,18 @@ import heroIm from '../assets/pics/x.jpg';
 export default function HeroSection() {
   
   return (
-    <div className='hero'> {/* Use container-fluid for full-width container */}
-    <div>
+    <div className='head' >
+    <Grid className='hero'> {/* Use container-fluid for full-width container */}
+    <Column  lg={8} sm={4}  md={4} >
     <h1  >Eamon Dreadlocks Solutions
                </h1>
             <p  >Experience the Art of Dreadlocks with Our Skilled Locticians</p>
             
-    </div>
-            <div  className='add-image' >
+    </Column>
+            <Column  lg={8} sm={2}  md={4}  className='add-image' >
               <img src={heroIm} className="hero-image" width="100%" height={350}  alt="Dreadlocks services" />
-            </div>
-          </div>
-        
+            </Column>
+             </Grid>
+             </div>
   );
 }
