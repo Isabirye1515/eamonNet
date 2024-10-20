@@ -19,7 +19,7 @@ export default function Blog() {
       <h2>Visit Our Social Media</h2>
       <Grid>
       {social.map((element) => (
-        <Column   lg={4} sm={4}  md={4}   key={element.id} className='address-div p-2'>
+        <Column   lg={4} sm={3}  md={4}   key={element.id} className='address-div p-2'>
           <h3>{element.user}</h3>
           <b><em>{element.name}</em></b><br />
           <Link href={element.url} target="_blank" external>

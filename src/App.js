@@ -26,6 +26,7 @@ function App() {
 
   const pages = [
     { id: 1, name: "Home", to: "/" },
+    { id: 1, name: "Talk", to: "/contact" },
     { id: 3, name: "Us On Media", to: "/blog" },
     { id: 4, name: "Our Offers", to: "/benefits" },
     { id: 5, name: "Gallery", to: "/pics" }
@@ -93,7 +94,7 @@ function App() {
 
         {/* Dynamically Render Navigation Links */}
         {pages.map((page) => (
-          <Column lg={4} md={2} sm={1} key={page.id}  className='navigate' >
+          <Column lg={3} md={2} sm={1} key={page.id}  className='navigate' >
             <Link className="btn btn-primary" to={page.to} role="button">
               {page.name}
             </Link>

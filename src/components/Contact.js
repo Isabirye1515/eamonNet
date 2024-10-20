@@ -59,20 +59,20 @@ function Contact() {
         </AccordionItem>
       </Accordion>
 
-      <h2 style={{ color: "#ddd", marginLeft: "3%" }}>
+      <h2 class="p-2  rounded">
         A contact form for clients to reach out with questions or appointment requests
       </h2>
 
-      <h2 style={{ color: "#ccc", marginLeft: "3%" }}>
+      <h2 class="h-2 p-2 bg-dark rounded">
         SUBMIT some of your information for subscription and to know more about us.
       </h2>
 
       <div className='form-div'>
         <form onSubmit={handleSubmit}>
-          <p className='comment'><b><i>Press Order Via Comment:</i></b></p>
+          <p class="text-white" className='comment'><b><i>Press Order Via Comment:</i></b></p>
 
           <div className="form-group">
-            <label htmlFor="name">Names:</label>
+            <label  class="text-white" htmlFor="name">Names:</label>
             <TextInput
               id="name"
               className='input'
@@ -87,7 +87,7 @@ function Contact() {
           <br />
 
           <div className="form-group">
-            <label htmlFor="email">Email:</label>
+            <label  class="text-white" htmlFor="email">Email:</label>
             <TextInput
               id="email"
               className='input'
@@ -102,7 +102,7 @@ function Contact() {
           <br />
 
           <div className="form-group">
-            <label htmlFor="contact">Contact:</label>
+            <label  class="text-white" htmlFor="contact">Contact:</label>
             <TextInput
               id="contact"
               className='input'
@@ -117,7 +117,7 @@ function Contact() {
           <br />
 
           <div className="form-group">
-            <label htmlFor="comment">Comment:</label><br />
+            <label  class="text-white" htmlFor="comment">Comment:</label><br />
             <TextArea
               id="comment"
               className='input'
