@@ -69,8 +69,8 @@ function App() {
           <ButtonGroup aria-label="Navigation" className="my-4 p-3">
             {pages.map((page) => (
               <Button key={page.id} variant="outline-light">
-                <Link  style={{fontSize:"14px"}} to={page.to} className="text-primary text-decoration-none">
-                  {page.name}
+                <Link  style={{fontSize:"10px"}} to={page.to} className="text-primary text-decoration-none">
+                 <b>{page.name}</b> 
                 </Link>
               </Button>
             ))}
