@@ -10,17 +10,9 @@ function Contact() {
   });
   const [message, setMessage] = useState(''); // To show feedback messages
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await fetch('https://email-server-rl3u.vercel.app/send-email', {
         method: 'POST',
@@ -29,7 +21,7 @@ function Contact() {
         },
         body: JSON.stringify(formData),
       });
-
+  
       if (response.ok) {
         setMessage('Email sent successfully!');
         setFormData({
@@ -39,13 +31,15 @@ function Contact() {
           comment: ''
         });
       } else {
-        setMessage('Error sending email');
+        const errorData = await response.json(); // Try to read the response body
+        setMessage(`Error sending email: ${errorData.message || 'Unknown error'}`);
       }
     } catch (error) {
       console.error('Error:', error);
       setMessage('Network error');
     }
   };
+  
 
   return (
     <div className='reg-nav'>
