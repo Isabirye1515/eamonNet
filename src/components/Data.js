@@ -143,11 +143,11 @@ function Data() {
   
   
   return (
-    <div className='images'>
-      <h2 class="h-3 p-2 bg-danger rounded">We Have Evidence For The Activities Here.</h2>
+    <div className='images mb-5  bg-dark p-2 shadow rounded  container '>
+    <center>  <h2 class="h-3 p-2 text-white ">We Have Evidence For The Activities Here.</h2></center>
       <Swiper
         ref={swiperRef}
-        spaceBetween={20}
+        spaceBetween={10}
         slidesPerView={3}
         centeredSlides={true}
         loop={true}
@@ -158,6 +158,7 @@ function Data() {
           <SwiperSlide key={image.id} className=''>
             <div className="image-container">
               <img
+
                 src={image.src}
                 height="100%"
                 width="100%"
@@ -165,7 +166,6 @@ function Data() {
                 style={{objectFit:"cover"}}
               />
               <div className="overlay">
-                {/* Like button with current like state */}
                 <Tag size='sm' onClick={() => handleLikeToggle(image.id)}  >
                   {image.isLiked ? "Unlike" : "Like"} <img src={image.like} height={15} width={15} alt="img"  class="img-fluid" />
                 </Tag>

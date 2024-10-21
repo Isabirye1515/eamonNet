@@ -17,15 +17,15 @@ export default function Benefits() {
   ]);
 
   return (
-    <div class="container bg-secondary rounded" >
-    <h2 class="h-3 p-2 bg-danger rounded " >You Extremely Benefit, See Our Offers.</h2><br />
+    <div class="bg-dark rounded" >
+    <h2 class="h-3 p-3 text-white " >You Extremely Benefit, See Our Offers.</h2><br />
     <Grid>
       
       {benefits.map(benefit => (
         
-           <Column  lg={3} sm={2}  md={3}  className="data" key={benefit.id}>
-           <b class="bg- p-2 text-white  rounded" >{benefit.name}</b><br/>
-         <strong class=" p-2   rounded" >{benefit.value}</strong> 
+           <Column  lg={3} sm={2}  md={3}  className="data" key={benefit.id}    >
+           <b class="bg- p-2 text-primary  rounded" >{benefit.name}</b><br/>
+         <strong class="animate-pulse d-flex align-items-start shadow p-5  text-white" >{benefit.value}</strong> 
         </Column>
         
        

@@ -9,46 +9,40 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import "./App.css";
 
-import {
-  Button,
-  Grid,
-  Column
-} from '@carbon/react';
-import { Switcher } from '@carbon/icons-react';
+import { Grid, Column } from '@carbon/react';
 import Faqs from './components/Faqs';
 import About from './components/About';
 import { Link, Route, Routes } from 'react-router-dom';
+import { ButtonGroup, Button } from 'react-bootstrap';  // Import Bootstrap Button and ButtonGroup
 
 function App() {
-  
   const pages = [
     { id: 1, name: "Home", to: "/" },
-    { id: 1, name: "Talk", to: "/contact" },
+    { id: 2, name: "Talk", to: "/contact" },
     { id: 3, name: "Us On Media", to: "/blog" },
     { id: 4, name: "Our Offers", to: "/benefits" },
     { id: 5, name: "Gallery", to: "/pics" },
-    { id: 5, name: "FAGs", to: "/faqs" },
-    { id: 5, name: "About Us", to: "/about" }
+    { id: 6, name: "FAQs", to: "/faqs" },
+    { id: 7, name: "About Us", to: "/about" },
   ];
 
-
   return (
-    <div class="bg-black bg-gradient" >
+    <div className="bg-black bg-gradient">
       <Grid>
-        <Column  lg={4} sm={4} md={3}  className="head" >
-        <center>
-          <Column className="container">
-            <img 
-              src={himage} 
-              alt="himage" 
-              width={200} 
-              height={200} 
-              style={{ borderRadius: '50%', margin: "20px", objectFit: "cover" }} 
-              class="img-fluid"
-            />
-            <h1 className="text-secondary">Eamon Dreads Salon</h1>
-           <p class="text-white" >Experience the Art of Dreadlocks with Our Skilled Locticians</p> 
-          </Column>
+        <Column lg={4} sm={4} md={3} className="head">
+          <center>
+            <Column className="container">
+              <img
+                src={himage}
+                alt="himage"
+                width={250}
+                height={100}
+                style={{ borderRadius: '100%', margin: "20px", objectFit: "cover" }}
+                className="img-fluid"
+              />
+              <h1 className="text-secondary">Eamon Dreads Salon</h1>
+              <p className="text-white">Experience the Art of Dreadlocks with Our Skilled Locticians</p>
+            </Column>
           </center>
         </Column>
 
@@ -70,14 +64,18 @@ function App() {
           </Routes>
         </Column>
 
-        {/* Dynamically Render Navigation Links */}
-        {pages.map((page) => (
-          <Column lg={2} md={1} sm={2} key={page.id}  className='navigate' >
-            <Link className="btn btn-primary" to={page.to} role="button">
-              {page.name}
-            </Link>
-          </Column>
-        ))}
+        {/* Bootstrap ButtonGroup Navigation */}
+        <center>
+          <ButtonGroup aria-label="Navigation" className="my-4 p-3">
+            {pages.map((page) => (
+              <Button key={page.id} variant="outline-light">
+                <Link  style={{fontSize:"14px"}} to={page.to} className="text-primary text-decoration-none">
+                  {page.name}
+                </Link>
+              </Button>
+            ))}
+          </ButtonGroup>
+        </center>
 
         <Column lg={16} md={8} sm={4}>
           <Footer />

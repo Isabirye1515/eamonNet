@@ -42,22 +42,13 @@ function Contact() {
   
 
   return (
-    <div className='reg-nav'>
-      <h2 class="h-3 p-2 bg-danger rounded " >Get in Touch</h2>
-
-      <Accordion>
-        <AccordionItem  class="text-white " title="Click For Contact Information">
-          <p  class="text-white " >Address: Pack View Shopping Center</p>
-          <p class="text-white " >Phone number: 703819029</p>
-          <p class="text-white " >Email: eamondreads@gmail.com</p>
-        </AccordionItem>
-      </Accordion>
-
-      <h2 class="p-2  rounded">
+    <div className='reg-nav bg-dark rounded p-2 '    >
+      <center><h2 class="h-3 p-2 text-white  " >Get in Touch</h2></center>
+      <h2 class=" text-primary">
         A contact form for clients to reach out with questions or appointment requests
       </h2>
 
-      <h2 class="h-2 p-2 bg-dark rounded">
+      <h2 class="text-primary">
         SUBMIT some of your information for subscription and to know more about us.
       </h2>
 
@@ -73,7 +64,7 @@ function Contact() {
               type='text'
               name='name'
               value={formData.name}
-              onChange={handleChange}
+              
               
               placeholder="Enter your name"
             />
@@ -88,7 +79,6 @@ function Contact() {
               type='email'
               name='email'
               value={formData.email}
-              onChange={handleChange}
               
               placeholder="Enter your email"
             />
@@ -103,7 +93,7 @@ function Contact() {
               type='tel'
               name='contact'
               value={formData.contact}
-              onChange={handleChange}
+             
               
               placeholder="Enter your contact number"
             />
@@ -117,7 +107,6 @@ function Contact() {
               className='input'
               name='comment'
               value={formData.comment}
-              onChange={handleChange}
               rows="4"
               cols="50"
               
