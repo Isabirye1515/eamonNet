@@ -22,7 +22,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3003/send-email', {
+      const response = await fetch('https://email-server-rl3u.vercel.app/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
