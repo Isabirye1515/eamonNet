@@ -22,7 +22,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://email-server-wheat.vercel.app/send-email', {
+      const response = await fetch('http://localhost:3003/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,13 +49,13 @@ function Contact() {
 
   return (
     <div className='reg-nav'>
-      <h2 class="h-3 p-2 bg-danger rounded" >Get in Touch</h2>
+      <h2 class="h-3 p-2 bg-danger rounded " >Get in Touch</h2>
 
       <Accordion>
-        <AccordionItem title="Click For Contact Information">
-          <p>Address: Pack View Shopping Center</p>
-          <p>Phone number: 703819029</p>
-          <p>Email: eamondreads@gmail.com</p>
+        <AccordionItem  class="text-white " title="Click For Contact Information">
+          <p  class="text-white " >Address: Pack View Shopping Center</p>
+          <p class="text-white " >Phone number: 703819029</p>
+          <p class="text-white " >Email: eamondreads@gmail.com</p>
         </AccordionItem>
       </Accordion>
 

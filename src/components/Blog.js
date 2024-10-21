@@ -16,7 +16,7 @@ export default function Blog() {
   return (
     <>
     
-      <h2>Visit Our Social Media</h2>
+      <h2 class="text-white h2 " >Visit Our Social Media</h2>
       <Grid>
       {social.map((element) => (
         <Column   lg={4} sm={3}  md={4}   key={element.id} className='address-div p-2'>

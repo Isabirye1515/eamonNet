@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import himage from "../src/assets/pics/ak.jpg";
 import HeroSection from './components/HeroSection';
 import Services from './components/Services';
@@ -20,35 +20,17 @@ import About from './components/About';
 import { Link, Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [side, setSide] = useState(false);
-  const [team, setTeam] = useState(false);
-  const [faqs, setFaqs] = useState(false);
-
+  
   const pages = [
     { id: 1, name: "Home", to: "/" },
     { id: 1, name: "Talk", to: "/contact" },
     { id: 3, name: "Us On Media", to: "/blog" },
     { id: 4, name: "Our Offers", to: "/benefits" },
-    { id: 5, name: "Gallery", to: "/pics" }
+    { id: 5, name: "Gallery", to: "/pics" },
+    { id: 5, name: "FAGs", to: "/faqs" },
+    { id: 5, name: "About Us", to: "/about" }
   ];
 
-  const handleFaqs = () => {
-    setFaqs(!faqs);
-    if (team) {
-      setTeam(false); // Close the team section if FAQ is opened
-    }
-  };
-
-  const handleTeam = () => {
-    setTeam(!team);
-    if (faqs) {
-      setFaqs(false); // Close the FAQ section if About is opened
-    }
-  };
-
-  const handleSideBar = () => {
-    setSide(!side);
-  };
 
   return (
     <div class="bg-black bg-gradient" >
@@ -65,11 +47,7 @@ function App() {
               class="img-fluid"
             />
             <h1 className="text-secondary">Eamon Dreads Salon</h1>
-          </Column>
-          
-          <Column className='text-primary'>
-            <Link class="btn btn-secondary" to="/faqs" role="button">FAQs</Link><br/><br/>
-            <Link class="btn btn-secondary" to="/about" role="button">About Us</Link>
+           <p class="text-white" >Experience the Art of Dreadlocks with Our Skilled Locticians</p> 
           </Column>
           </center>
         </Column>
@@ -94,7 +72,7 @@ function App() {
 
         {/* Dynamically Render Navigation Links */}
         {pages.map((page) => (
-          <Column lg={3} md={2} sm={1} key={page.id}  className='navigate' >
+          <Column lg={2} md={1} sm={2} key={page.id}  className='navigate' >
             <Link className="btn btn-primary" to={page.to} role="button">
               {page.name}
             </Link>
