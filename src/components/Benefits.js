@@ -25,7 +25,7 @@ export default function Benefits() {
         
            <Column  lg={3} sm={2}  md={3}  className="data" key={benefit.id}    >
            <b class="bg- p-2 text-primary  rounded" >{benefit.name}</b><br/>
-         <strong class="animate-pulse d-flex align-items-start shadow p-5  text-white" >{benefit.value}</strong> 
+         <strong class="animate-pulse d-flex align-items-start shadow p-2 text-white" >{benefit.value}</strong> 
         </Column>
         
        
