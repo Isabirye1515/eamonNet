@@ -66,7 +66,7 @@ function App() {
 
         {/* Bootstrap ButtonGroup Navigation */}
         <center>
-          <ButtonGroup aria-label="Navigation" className="my-4 p-3">
+          <ButtonGroup aria-label="Navigation" className="my-4 p-4">
             {pages.map((page) => (
               <Button key={page.id} variant="outline-light">
                 <Link  style={{fontSize:"10px"}} to={page.to} className="text-primary text-decoration-none">
