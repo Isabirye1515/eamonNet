@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 import 'swiper/css/pagination';
-import {  Tag } from '@carbon/react';
+
 
 import 'swiper/css/pagination';
 
@@ -56,14 +56,13 @@ import au from '../assets/pics/au.jpg';
 import av from '../assets/pics/av.jpg';
 import aw from '../assets/pics/aw.jpg';
 import ax from '../assets/pics/ax.jpg';
-import heart from '../assets/pics/heart.svg';
+
 import unheart from '../assets/pics/unheart.svg';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 function Data() {
   // State with image data
-  const [images,setImages]=useState( [
+  const [images]=useState( [
     { id: 1, name: 'a', src: a , like: unheart, isLiked: false},
     { id: 2, name: 'b', src: b , like: unheart, isLiked: false},
     { id: 3, name: 'c', src: c , like: unheart, isLiked: false},
@@ -116,30 +115,7 @@ function Data() {
 
   
   const swiperRef = useRef(null);
-  const handleLikeToggle = (id) => {
-    setImages((prevImages) =>
-      prevImages.map((image) =>
-        image.id === id
-          ? {
-              ...image,
-              like: image.isLiked ? unheart : heart, // Show unheart when unliked, heart when liked
-              isLiked: !image.isLiked, // Toggle isLiked
-            }
-          : image
-      )
-    );
-  
-    const likedImage = images.find((image) => image.id === id);
-  
-    // Trigger the correct toast
-    if (likedImage.isLiked) {
-      console.log("Toast Unliked Triggered");
-      toast.error(`You unliked our activity`);
-    } else {
-      console.log("Toast Liked Triggered");
-      toast.success(`You liked our activity `);
-    }
-  };
+ 
   
   
   return (
@@ -164,19 +140,16 @@ function Data() {
                 width="100%"
                 alt={image.name}
                 style={{objectFit:"cover"}}
+                class="rounded"
               />
-              <div className="overlay">
-                <Tag size='sm' onClick={() => handleLikeToggle(image.id)}  >
-                  {image.isLiked ? "Unlike" : "Like"} <img src={image.like} height={15} width={15} alt="img"  class="img-fluid" />
-                </Tag>
-              </div>
+             
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
       
       {/* Toast notification container */}
-      <ToastContainer position="top-right" />
+      
     </div>
   );
 }

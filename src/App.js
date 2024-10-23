@@ -19,11 +19,11 @@ function App() {
   const pages = [
     { id: 1, name: "Home", to: "/" },
     { id: 2, name: "Talk", to: "/contact" },
-    { id: 3, name: "Us On Media", to: "/blog" },
-    { id: 4, name: "Our Offers", to: "/benefits" },
+    { id: 3, name: "Media", to: "/blog" },
+    { id: 4, name: "Services", to: "/benefits" },
     { id: 5, name: "Gallery", to: "/pics" },
     { id: 6, name: "FAQs", to: "/faqs" },
-    { id: 7, name: "About Us", to: "/about" },
+    { id: 7, name: "About", to: "/about" },
   ];
 
   return (

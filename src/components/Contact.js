@@ -48,11 +48,11 @@ function Contact() {
   return (
     <div className='reg-nav bg-dark rounded p-2'>
       <center><h2 className="h-3 p-2 text-white">Get in Touch</h2></center>
-      <h2 className="text-primary">
+      <h2 className="text-info">
         A contact form for clients to reach out with questions or appointment requests
       </h2>
 
-      <h2 className="text-primary">
+      <h2 className="text-info">
         SUBMIT some of your information for subscription and to know more about us.
       </h2>
 
