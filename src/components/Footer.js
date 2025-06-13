@@ -17,7 +17,19 @@ export default function Footer() {
 
   return (
     <Grid>
-      <Column lg={16} sm={4} md={8}  className='footer' >
+
+                          <Column lg={5} md={3} sm={4} className="m-2" >
+                               <div className="w-100 p-2"  ><button  onClick={() => window.location.href='#herosection'} className="btn btn-light  w-50 m-2">Hero Section</button>
+                      <button  onClick={() => window.location.href='#testimonials'} className="btn btn-light w-50 m-2">Testimonials</button></div>
+                      <div className="w-100 p-2" ><button onClick={() => window.location.href='#contact'} className="btn btn-light  w-50 m-2">Contact Us</button>
+                  <button onClick={() => window.location.href='#blog'} className="btn btn-light w-50   m-2">Get a Quote</button></div>
+                      <div className="w-100 p-2" ><button onClick={() => window.location.href='#service'} className="btn btn-light w-50 m-2">Service</button>
+                      <button onClick={() => window.location.href='#benefits'} className="btn btn-light w-50 m-2">Benefits</button></div>
+      
+                      <a   href={url} target="_blank" rel="noreferrer" ><button className="btn btn-primary  m-2 mt-5"><Location  size={30} />Pack View Shopping Center</button></a>
+                          </Column>
+                     
+      <Column lg={5} sm={4} md={4}  className='footer' >
         <h1 style={{ fontSize: "20px" }}>We are Located at the Park View Shopping Center</h1>
         
         {/* Link to Google Maps with Location Icon */}

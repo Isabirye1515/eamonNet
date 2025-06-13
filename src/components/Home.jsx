@@ -1,4 +1,4 @@
-import Heading from "./heading";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 import imageA from "../assets/pics/p.jpg"; 
@@ -24,7 +24,7 @@ const Home = () => {
     return (
         <>
         {/* home */}
-            <Heading />
+            
             <Grid id="head" className="mt-5 m-4 p-5" data-aos="fade-up" >
                 
                 <Column lg={4} md={2} sm={4} className="m-2" >
@@ -187,7 +187,7 @@ const Home = () => {
             </Grid>
             {/* footer */}
 
-             <a href="#head" className="bg-black"  >home</a>
+             
         </>
     );
 }
