@@ -28,7 +28,7 @@ const Heading = ()=>{
                         </HeaderGlobalAction>
 
                                                 <HeaderGlobalAction>
-                            <ImageStoreLocal size={20} aria-label="Home" class="m-5" />
+                            <ImageStoreLocal size={20}  onClick={()=>navigate("/gallery")} aria-label="gallery" class="m-5" />
                         </HeaderGlobalAction>
 
                                                 <HeaderGlobalAction>

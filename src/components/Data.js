@@ -1,11 +1,4 @@
-import React, { useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 
-import 'swiper/css/pagination';
-
-
-import 'swiper/css/pagination';
 
 // Import images
 import a from '../assets/pics/a.jpg';
@@ -58,6 +51,11 @@ import aw from '../assets/pics/aw.jpg';
 import ax from '../assets/pics/ax.jpg';
 
 import unheart from '../assets/pics/unheart.svg';
+import { Column, Grid } from '@carbon/react';
+import { useEffect, useState } from 'react';
+import Aos from 'aos';
+import "aos/dist/aos.css";
+
 
 
 function Data() {
@@ -113,45 +111,30 @@ function Data() {
     { id: 50, name: 'ax', src: ax , like: unheart, isLiked: false}
   ]);
 
+      useEffect(() => {
+          Aos.init({
+              duration: 1000, // Animation duration in milliseconds
+              once: false, // Whether animation should happen only once
+              mirror: true, // Whether elements should animate out while scrolling past them
+          });
+      }, []);
   
-  const swiperRef = useRef(null);
  
   
   
   return (
-    <div className='images mb-5  bg-dark p-2 shadow rounded  container '>
-    <center>  <h2 class="h-3 p-2 text-white ">We Have Evidence For The Activities Here.</h2></center>
-      <Swiper
-        ref={swiperRef}
-        spaceBetween={10}
-        slidesPerView={3}
-        centeredSlides={true}
-        loop={true}
-        
-        pagination={{ clickable: true }}
-      >
-        {images.map((image) => (
-          <SwiperSlide key={image.id} className=''>
-            <div className="image-container">
-              <img
+    <>
+    <Grid>
+      {images.map((image)=>(
+        <Column lg={5} sm={4} md={4}  key={image.id} className='m-4 mt-5' data-aos="fade-right" >
+          <img src={image.src} alt={image.name} height={350} width={350} className='m-2' style={{objectFit:"cover", borderRadius:"5px"}} />
 
-                src={image.src}
-                height="100%"
-                width="100%"
-                alt={image.name}
-                style={{objectFit:"cover"}}
-                class="rounded"
-              />
-             
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      
-      {/* Toast notification container */}
-      
-    </div>
-  );
+        </Column>
+      ))}
+    </Grid>
+    </>
+  )
+  
 }
 
 export default Data;

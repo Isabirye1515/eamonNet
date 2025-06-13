@@ -38,7 +38,7 @@ export default function Blog() {
 
       {social.map((item)=>(
         <Column lg={3} sm={4} md={4}  key={item.id} >
-          <a className='btn btn-primary m-3' href={item.url} target="_blank" rel="noopener" ><img src={item.photo} alt={item.name} width={20} height={20} />{item.user}</a>
+          <a className='btn btn-primary m-3' href={item.url} target="_blank" rel="noreferrer" ><img src={item.photo} alt={item.name} width={20} height={20} />{item.user}</a>
 
         </Column>
       ))}
