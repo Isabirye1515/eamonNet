@@ -7,6 +7,7 @@ import Services from "./components/Services";
 import Blog from "./components/Blog";
 import Heading from "./components/heading";
 import Data from "./components/Data";
+import Benefits from "./components/Benefits";
 
 const App =()=>{
   return(
@@ -19,6 +20,8 @@ const App =()=>{
       <Route path="/services" element={<Services />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/gallery" element={<Data />} />
+       <Route path="/benefit" element={<Benefits />} />
+      
     </Routes>
      <Footer />
     </>

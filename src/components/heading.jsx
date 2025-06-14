@@ -24,7 +24,7 @@ const Heading = ()=>{
                             <ServiceDesk size={20} onClick={() => navigate("/service")} aria-label="Home" class="m-5" />
                         </HeaderGlobalAction>
                                                 <HeaderGlobalAction>
-                            <UserSpeaker size={20} onClick={() => navigate("/about")} aria-label="Home" class="m-5" />
+                            <UserSpeaker size={20} onClick={() => navigate("/benefit")} aria-label="Speach" class="m-5" />
                         </HeaderGlobalAction>
 
                                                 <HeaderGlobalAction>
