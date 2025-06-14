@@ -1,8 +1,21 @@
 import { Button, Column, Grid, TextArea, TextInput } from '@carbon/react';
 import React, { useState } from 'react';
 import imageA from "../assets/pics/y.jpg"
+import facebook from "../assets/pics/facebook.svg";
+import tiktok from "../assets/pics/tiktok.svg";
+import instagram from "../assets/pics/instagram.svg";
+import { ConnectionSend, Information } from '@carbon/icons-react';
 
 function Contact() {
+
+  const social = [
+      { id: 1, name: "facebook", url: "https://www.facebook.com/eamon256", user: "EAMON Dreadlock Solutions Uganda | Kampala", photo: facebook },
+      { id: 2, name: "instagram", url: "https://www.instagram.com/eamon_dreads_kampala/", user: "eamomn (@eamon_dreads_kampala)", photo: instagram },
+      { id: 3, name: "TikTok", url: "https://www.tiktok.com/discover/eamon-dreadlocks-solution?lang=en", user: "Eamon Dreadlocks Solution", photo: tiktok },
+      { id: 4, name: "Instagram", url: "https://www.instagram.com/eamon_dreads_kampala/p/C6cnlBqowg3/?locale=es_US", user: "eamon | Unlock your beauty of dreadlocks ...", photo: instagram },
+      { id: 5, name: "tiktok", url: "https://www.tiktok.com/@eamondreadssalon/video/7262751627570908421", user: "Eamon dreads salon Kampala (@eamondreadssalon)", photo: tiktok },
+    ];
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -50,6 +63,9 @@ function Contact() {
 <>
 
 <Grid className='mt-5 p-5' >
+                                                            <Column lg={16} md={8} sm={4}  className="d-flex m-4 " >
+                                  <ConnectionSend size={30} /> <h5  >Contact Us</h5>
+                                  </Column> 
 <Column lg={8} md={8} sm={4}>
 <img src={imageA} width="100%" height={550} alt='imagesa' style={{objectFit:"cover"}}/>
 </Column>
@@ -109,6 +125,17 @@ function Contact() {
         </form>
                 {message && <p className={`message ${message.includes('success') ? 'text-success' : 'text-warning'}`}>{message}</p>}
                 </Column>
+
+
+                                                          <Column lg={16} md={8} sm={4}  className="d-flex m-4 " >
+                                  <Information size={30} /> <h5  >Media Platforms</h5>
+                                  </Column> 
+                {social.map((item)=>(
+                        <Column lg={3} sm={4} md={4}  key={item.id} >
+                          <a className='btn btn-primary m-3' href={item.url} target="_blank" rel="noreferrer" ><img src={item.photo} alt={item.name} width={20} height={20} />{item.user}</a>
+                
+                        </Column>
+                      ))}
                 </Grid>
 </>
       

@@ -11,6 +11,7 @@ import imageg from "../assets/pics/repair.jpg"
 import imageh from "../assets/pics/education.jpg"
 import imagei from "../assets/pics/relax.jpg"
 import imagej from "../assets/pics/satifaction.jpg"
+import { UserSpeaker } from '@carbon/icons-react';
 
 export default function Benefits() {
   const [benefits] = useState([
@@ -30,6 +31,10 @@ export default function Benefits() {
    
     <>
     <Grid className="p-5" >
+
+                                                                <Column lg={16} md={8} sm={4}  className="d-flex m-4 " >
+                                        <UserSpeaker size={30} /> <h5  >Our Offers</h5>
+                                        </Column> 
       {benefits.map((benefit)=>(
         <Column lg={5} sm={4} md={4} key={benefit.id} className='m-2 mt-5 shadow rounded  text-center' >
           <img src={benefit.image} alt={benefit.name} width={260} height={350} style={{objectFit:"cover"}} />

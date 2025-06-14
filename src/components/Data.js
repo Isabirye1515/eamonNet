@@ -55,6 +55,7 @@ import { Column, Grid } from '@carbon/react';
 import { useEffect, useState } from 'react';
 import Aos from 'aos';
 import "aos/dist/aos.css";
+import { DropPhoto } from '@carbon/icons-react';
 
 
 
@@ -124,7 +125,10 @@ function Data() {
   
   return (
     <>
-    <Grid>
+    <Grid className='p-5' >
+                                                                <Column lg={16} md={8} sm={4}  className="d-flex m-4 " >
+                                        <DropPhoto size={30} /> <h5  >Simple Gallery</h5>
+                                        </Column> 
       {images.map((image)=>(
         <Column lg={5} sm={4} md={4}  key={image.id} className='m-4 mt-5' data-aos="fade-right" >
           <img src={image.src} alt={image.name} height={350} width={350} className='m-2' style={{objectFit:"cover", borderRadius:"5px"}} />

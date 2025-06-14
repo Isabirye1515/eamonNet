@@ -7,7 +7,7 @@ import imaged from "../assets/pics/ay.jpg";
 import imageC from "../assets/pics/ad.jpg";
 import imageb from "../assets/pics/ah.jpg"; // Uncomment if you want to use a different image
 import { Column, Grid } from "@carbon/react";
-import {  Activity, Blog, BringForward, CallsIncoming, Camera, ConnectionSend, DownToBottom, DropPhoto, Email, ImageStoreLocal, Location, MessageQueue, Phone, PhoneIncoming, SendToBack, ServiceDesk, TouchInteraction, UpToTop, UserFeedback } from "@carbon/icons-react";
+import {  Activity, Blog, BringForward, CallsIncoming, ConnectionSend, DownToBottom, DropPhoto, Email, ImageStoreLocal, Location, MessageQueue, Phone, PhoneIncoming, SendToBack, ServiceDesk, TouchInteraction, UpToTop, UserFeedback } from "@carbon/icons-react";
 import facebook from "../assets/pics/facebook.svg";
 import tiktok from "../assets/pics/tiktok.svg";
 import instagram from "../assets/pics/instagram.svg";
@@ -45,6 +45,7 @@ const Home = () => {
                     <h2 className="text-danger p-2 ">KAMPALA</h2>
                          
                           <a   href={url} target="_blank" rel="noreferrer" ><button className="btn btn-primary  m-2 "><Location  size={30} />Pack View Shopping Center</button></a>
+                        <a  className="btn btn-warning mt-2" href="tel:+256741099245"><PhoneIncoming size={30}  className="text-white" />+256741099245</a>
                 
                     </Column>
                      <Column lg={8} md={4} sm={4} >
@@ -68,7 +69,7 @@ const Home = () => {
 
                         <Grid   className="mt-5  p-5" data-aos="fade-up" >
                                                         <Column lg={16} md={8} sm={4}  className="d-flex" >
-                            <Activity size={30} /> <h2  >Activity</h2>
+                            <Activity size={30} /> <h5  >Activity</h5>
                             </Column> 
                              <Column lg={6} md={4} sm={4} >
                
@@ -77,7 +78,7 @@ const Home = () => {
                     </Column>
                 <Column lg={10} md={4} sm={4} className="m-2  mt-10" data-aos="fade-left" >
 
-                <h2> We have been in service for over 10 years</h2>
+                <p className="fw-bold"> We have been in service for over 10 years</p>
                 <p>Eamon Dreads Solutions Continues to serve you</p>
                 <p>We are committed to providing the best hair care services in Kampala</p>
                 <p>Our team of experts is dedicated to ensuring your satisfaction</p>
@@ -103,11 +104,11 @@ const Home = () => {
                </div>
                         <Grid className="mt-5 m-4 p-5"  data-aos="fade-up" >
                                                         <Column lg={16} md={8} sm={4}  className="d-flex" >
-                            <UserFeedback size={30} /> <h2  >Testimonials</h2>
+                            <UserFeedback size={30} /> <h5  >Testimonials</h5>
                             </Column> 
                 
                 <Column lg={10} md={4} sm={4}  className="  mt-10" >
-        <h2>We are a team of talented lockticians</h2>
+        <p className="fw-bold">We are a team of talented lockticians</p>
         <p>Our Customer just Rest in the Confort while we take care of their hair</p>
         <p>We pilot the plane, that lands in the beauty world, and Presitige</p>
                     <p>We are the best in Kampala, and we are here to serve you</p>
@@ -132,7 +133,7 @@ const Home = () => {
                         <Grid className="mt-5 m-4 p-5"  data-aos="fade-up" >
 
                                                         <Column lg={16} md={8} sm={4}  className="d-flex" >
-                            <Blog size={30} /> <h2  >Blogs</h2>
+                            <Blog size={30} /> <h5  >Blogs</h5>
                             </Column> 
                                             <Column lg={5} md={4} sm={4} className="p-4  shadow"  onClick={()=>navigate("/blog")}  >
                     
@@ -143,7 +144,7 @@ const Home = () => {
                     </Column>
 
                 <Column lg={11} md={4} sm={4}  className="  mt-10" >
-                    <h2>EAMON dreads Has bean in service for quit some time.</h2>
+                    <p className="fw-bold" >EAMON dreads Has bean in service for quit some time.</p>
                     <p>We have a collection of infinity images, reals, and videos showcasing our work.</p>
                     <p>View a glance , can give a plenty of service, we can offer you</p>
                     <p>We have stocked our collection on facebook, instagram, tiktok</p>
@@ -163,10 +164,10 @@ const Home = () => {
             {/* contactus */}
             <Grid className="mt-5 m-4 p-5 "  data-aos="fade-up" >
                             <Column lg={16} md={8} sm={4}  className="d-flex" >
-                            <ConnectionSend size={30} /> <h2  >Contact</h2>
+                            <ConnectionSend size={30} /> <h5  >Contact</h5>
                             </Column> 
                 <Column lg={8} md={4} sm={4} className=" mt-10"  >
-                <h2>Contact Us On Line</h2>
+                <p className="fw-bold" >Contact Us On Line</p>
                     <p><a className="btn btn-primary" href="#blog"><Blog size={25} /></a>We are available on all social media platforms</p>
                     <p><a className="btn btn-primary" href="#head"><Phone size={25} /></a>We are available Via  WhatsApp</p>
                     <p><a className="btn btn-primary" href="#head"><Email size={25} /></a>We are available Via Email</p>
@@ -175,7 +176,7 @@ const Home = () => {
 
 
                 <Column lg={8} md={4} sm={4} className=" mt-10">
-                    <h2>Contact Us Via Phone</h2>
+                    <p className="fw-bold" >Contact Us Via Phone</p>
                     <p><a className="btn btn-primary"  href="#head"><CallsIncoming size={25} /></a>We are available Via Phone</p>
                     <p><a  className="btn btn-primary" href="#head"><MessageQueue size={25}  /></a>We are available Via SMS</p>
                     <p><a className="btn btn-primary"  href="#head"><Location size={25} /></a>Find Us At Pack View Shopping Center</p>
@@ -198,11 +199,11 @@ const Home = () => {
                </div>
                         <Grid className="mt-5 m-4 p-5"   data-aos="fade-up" >
                                                         <Column lg={16} md={8} sm={4}  className="d-flex" >
-                            <ServiceDesk size={30} /> <h2  >Services</h2>
+                            <ServiceDesk size={30} /> <h5  >Services</h5>
                             </Column> 
                 
                 <Column lg={8} md={4} sm={4}  className=" mt-10" >
-                <h2>Customer Services</h2>
+                <p className="fw-bold">Customer Services</p>
                     <p>We offer a wide range of services to meet your needs</p>
                     <p>From dreadlocks installation to maintenance and repair</p>
                     <p>We are here to provide you with the best service possible</p>  
@@ -210,8 +211,8 @@ const Home = () => {
 
                     </Column>
                 <Column lg={5} md={4} sm={4} className=" mt-10" >
-                <h2>Students Services</h2>
-                    <p>We offer special services for students</p>
+                <p className="fw-bold" >Students Services</p>
+                    <p  >We offer special services for students</p>
                     <p>From discounts to special packages</p>
                     <p>We are here to make your experience more affordable</p>
                     <p>We welcome All students of all levels</p>
@@ -228,16 +229,19 @@ const Home = () => {
 <p className="m-1 btn btn-light "  onClick={()=>window.location.href='#head'}>Home<UpToTop size={20} /> </p>
 <p className="m-1 btn btn-light "  onClick={()=>window.location.href='#contact'} >Previous<SendToBack size={20} /></p>
 
-
                 </p>
                </div>
                         <Grid className="mt-5 m-4 p-5" data-aos="fade-up" >
                             <Column lg={16} md={8} sm={4}  className="d-flex" >
-                            <ImageStoreLocal size={30} /> <h2  >Gallery</h2>
+                            <ImageStoreLocal size={30} /> <h5  >Gallery</h5>
                             </Column> 
+                                            <Column lg={5} md={4} sm={4} >
+
+                        <img src={imageA} alt="Eamon Dreads" className="mt-5"  style={{ width: "350px", height: "350px", objectFit:"cover", borderRadius:"10px" }} />
+                    </Column>
                             
                 <Column lg={10} md={4} sm={4} >
-                <h4>Our Gallery</h4>
+                <p className="fw-bold" >Our Gallery</p>
                 <p>Explore our collection of stunning images showcasing our work.</p>
                 
                 <img src={imaged} alt="Eamon Dreads" className="mt-0"  style={{ width: "200px", height: "200px", objectFit:"cover", borderRadius:"50%" }} data-aos="flip-right" />
@@ -247,10 +251,7 @@ const Home = () => {
                     <u>Gallery</u>
                 </div>
                     </Column>
-                <Column lg={5} md={4} sm={4} >
 
-                        <img src={imageA} alt="Eamon Dreads" className="mt-5"  style={{ width: "350px", height: "350px", objectFit:"cover", borderRadius:"10px" }} />
-                    </Column>
 
             </Grid>
             {/* footer */}
