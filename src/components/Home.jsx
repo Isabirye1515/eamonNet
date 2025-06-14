@@ -5,9 +5,9 @@ import imagee from "../assets/pics/ak.jpg";
 import imageA from "../assets/pics/p.jpg"; 
 import imaged from "../assets/pics/ay.jpg"; 
 import imageC from "../assets/pics/ad.jpg";
-import imageb from "../assets/pics/y.jpg"; // Uncomment if you want to use a different image
+import imageb from "../assets/pics/ah.jpg"; // Uncomment if you want to use a different image
 import { Column, Grid } from "@carbon/react";
-import {  Activity, Blog, BringForward, Camera, ConnectionSend, DownToBottom, DropPhoto, ImageStoreLocal, Location, PhoneIncoming, SendToBack, ServiceDesk, TouchInteraction, UpToTop, UserFeedback } from "@carbon/icons-react";
+import {  Activity, Blog, BringForward, CallsIncoming, Camera, ConnectionSend, DownToBottom, DropPhoto, Email, ImageStoreLocal, Location, MessageQueue, Phone, PhoneIncoming, SendToBack, ServiceDesk, TouchInteraction, UpToTop, UserFeedback } from "@carbon/icons-react";
 import facebook from "../assets/pics/facebook.svg";
 import tiktok from "../assets/pics/tiktok.svg";
 import instagram from "../assets/pics/instagram.svg";
@@ -38,16 +38,16 @@ const Home = () => {
         <button onClick={() => window.location.href='#service'} className="btn">Services</button>
                     </Column>
                 
-                <Column lg={4} md={2} sm={4} className="m-2" >
+                <Column lg={8} md={4} sm={4} className="m-2" >
                 
                     <h2 className="text-primary p-2">EAMON</h2>
                     <h2 className="text-secondary p-2 ">DREADS</h2>
                     <h2 className="text-danger p-2 ">KAMPALA</h2>
-                         <a  className="btn btn-warning mt-4" href="tel:+256741099245"><PhoneIncoming size={30}  className="text-white" />+256741099245</a>
+                         
                           <a   href={url} target="_blank" rel="noreferrer" ><button className="btn btn-primary  m-2 "><Location  size={30} />Pack View Shopping Center</button></a>
                 
                     </Column>
-                     <Column lg={5} md={3} sm={4} >
+                     <Column lg={8} md={4} sm={4} >
                     
                         <img src={imagee} alt="Eamon Dreads" className="mt-4"  style={{ width: "350px", height: "350px", objectFit:"cover", borderRadius:"5px"}} />
                     </Column>
@@ -70,7 +70,7 @@ const Home = () => {
                                                         <Column lg={16} md={8} sm={4}  className="d-flex" >
                             <Activity size={30} /> <h2  >Activity</h2>
                             </Column> 
-                             <Column lg={5} md={4} sm={4} >
+                             <Column lg={6} md={4} sm={4} >
                
                     
                         <img src={imageb} alt="Eamon Dreads" className="mt-5"  style={{ width: "380px", height: "550px", objectFit:"cover", borderRadius:"10px" }} data-aos="fade-right" />
@@ -112,7 +112,7 @@ const Home = () => {
         <p>We pilot the plane, that lands in the beauty world, and Presitige</p>
                     <p>We are the best in Kampala, and we are here to serve you</p>
                     </Column>
-                <Column lg={5} md={4} sm={4}  className=" mt-10" >
+                <Column lg={6} md={4} sm={4}  className=" mt-10" >
         
 <img src={imageC} alt="Eamon Dreads" className="mt-5"  style={{ width: "350px", height: "350px", objectFit:"cover", borderRadius:"5px" }} />
                     </Column>
@@ -134,7 +134,7 @@ const Home = () => {
                                                         <Column lg={16} md={8} sm={4}  className="d-flex" >
                             <Blog size={30} /> <h2  >Blogs</h2>
                             </Column> 
-                                            <Column lg={3} md={4} sm={4} className=" p-10"  >
+                                            <Column lg={5} md={4} sm={4} className="p-4  shadow"  onClick={()=>navigate("/blog")}  >
                     
                         
                                                 <img src={facebook} alt="Eamon Dreads" className="mt-5"  style={{ width: "50px", height: "50px", objectFit:"cover" }} />
@@ -142,7 +142,7 @@ const Home = () => {
                             <img src={tiktok} alt="Eamon Dreads" className="mt-5"  style={{ width: "50px", height: "50px", objectFit:"cover" }} />
                     </Column>
 
-                <Column lg={13} md={4} sm={4}  className="  mt-10" >
+                <Column lg={11} md={4} sm={4}  className="  mt-10" >
                     <h2>EAMON dreads Has bean in service for quit some time.</h2>
                     <p>We have a collection of infinity images, reals, and videos showcasing our work.</p>
                     <p>View a glance , can give a plenty of service, we can offer you</p>
@@ -167,18 +167,18 @@ const Home = () => {
                             </Column> 
                 <Column lg={8} md={4} sm={4} className=" mt-10"  >
                 <h2>Contact Us On Line</h2>
-                    <p>We are available on all social media platforms<a className="btn btn-primary" href="#blog">Blogs</a></p>
-                    <p>We are available Via  WhatsApp<a className="btn btn-primary" href="#head">WhatsApp</a></p>
-                    <p>We are available Via Email<a className="btn btn-primary" href="#head">Email</a></p>
+                    <p><a className="btn btn-primary" href="#blog"><Blog size={25} /></a>We are available on all social media platforms</p>
+                    <p><a className="btn btn-primary" href="#head"><Phone size={25} /></a>We are available Via  WhatsApp</p>
+                    <p><a className="btn btn-primary" href="#head"><Email size={25} /></a>We are available Via Email</p>
 
                     </Column>
 
 
                 <Column lg={8} md={4} sm={4} className=" mt-10">
                     <h2>Contact Us Via Phone</h2>
-                    <p>We are available Via Phone<a className="btn btn-primary"  href="#head">Phone</a></p>
-                    <p>We are available Via SMS<a  className="btn btn-primary" href="#head">SMS</a></p>
-                    <p>Find Us At Pack View Shopping Center<a className="btn btn-primary"  href="#head">Pack View Shopping Center</a></p>
+                    <p><a className="btn btn-primary"  href="#head"><CallsIncoming size={25} /></a>We are available Via Phone</p>
+                    <p><a  className="btn btn-primary" href="#head"><MessageQueue size={25}  /></a>We are available Via SMS</p>
+                    <p><a className="btn btn-primary"  href="#head"><Location size={25} /></a>Find Us At Pack View Shopping Center</p>
 
                     </Column>
 

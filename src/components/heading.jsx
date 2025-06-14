@@ -32,7 +32,7 @@ const Heading = ()=>{
                         </HeaderGlobalAction>
 
                                                 <HeaderGlobalAction>
-                            <ConnectionSignal size={20} aria-label="Home"  class="m-5" />
+                            <ConnectionSignal  onClick={()=>navigate("/contact")} size={20} aria-label="contact"  class="m-5" />
                         </HeaderGlobalAction>
 
 

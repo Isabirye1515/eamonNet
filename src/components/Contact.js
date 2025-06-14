@@ -1,5 +1,6 @@
-import { Button, TextArea, TextInput } from '@carbon/react';
+import { Button, Column, Grid, TextArea, TextInput } from '@carbon/react';
 import React, { useState } from 'react';
+import imageA from "../assets/pics/y.jpg"
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -46,67 +47,51 @@ function Contact() {
   };
 
   return (
-    <div className='reg-nav bg-dark rounded p-2'>
-      <center><h2 className="h-3 p-2 text-white">Get in Touch</h2></center>
-      <h2 className="text-info">
-        A contact form for clients to reach out with questions or appointment requests
-      </h2>
+<>
 
-      <h2 className="text-info">
-        SUBMIT some of your information for subscription and to know more about us.
-      </h2>
-
-      <div className='form-div'>
+<Grid className='mt-5 p-5' >
+<Column lg={8} md={8} sm={4}>
+<img src={imageA} width="100%" height={550} alt='imagesa' style={{objectFit:"cover"}}/>
+</Column>
+  <Column lg={8} md={8} sm={4}>
+  
         <form onSubmit={handleSubmit}>
-          <p className="text-white comment"><b><i>Press Order Via Comment:</i></b></p>
 
-          <div className="form-group">
-            <label className="text-white" htmlFor="name">Names:</label>
             <TextInput
               id="name"
-              className='input'
+              className='input m-2'
               type='text'
               name='name'
               value={formData.name}
               onChange={handleChange}
               placeholder="Enter your name"
+              
             />
-          </div>
-          <br />
+      
 
-          <div className="form-group">
-            <label className="text-white" htmlFor="email">Email:</label>
             <TextInput
               id="email"
-              className='input'
+              className='input m-2'
               type='email'
               name='email'
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter your email"
             />
-          </div>
-          <br />
 
-          <div className="form-group">
-            <label className="text-white" htmlFor="contact">Contact:</label>
             <TextInput
               id="contact"
-              className='input'
+              className='input m-2'
               type='tel'
               name='contact'
               value={formData.contact}
               onChange={handleChange}
               placeholder="Enter your contact number"
             />
-          </div>
-          <br />
 
-          <div className="form-group">
-            <label className="text-white" htmlFor="comment">Comment:</label><br />
             <TextArea
               id="comment"
-              className='input'
+              className='input m-2'
               name='comment'
               value={formData.comment}
               onChange={handleChange}
@@ -114,22 +99,19 @@ function Contact() {
               cols="50"
               placeholder="Enter your comment"
             />
-          </div>
-          <br />
-
-          <div className="button-group">
+<div className='d-flex' >
             <Button style={{marginRight:"20%"}} color="blue" type="submit">Submit</Button><br />
-            <Button color="red" type="button" onClick={() => setFormData({ name: '', email: '', contact: '', comment: '' })}>
+            <Button className='bg-danger' type="clear" onClick={() => setFormData({ name: '', email: '', contact: '', comment: '' })}>
               Reset
             </Button>
-          </div>
-          <br />
-        </form>
+            </div>
 
-        {/* Displaying success or error message */}
-        {message && <p className={`message ${message.includes('success') ? 'text-success' : 'text-warning'}`}>{message}</p>}
-      </div>
-    </div>
+        </form>
+                {message && <p className={`message ${message.includes('success') ? 'text-success' : 'text-warning'}`}>{message}</p>}
+                </Column>
+                </Grid>
+</>
+      
   );
 }
 

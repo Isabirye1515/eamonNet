@@ -34,7 +34,7 @@ export default function Benefits() {
         <Column lg={5} sm={4} md={4} key={benefit.id} className='m-2 mt-5 shadow rounded  text-center' >
           <img src={benefit.image} alt={benefit.name} width={260} height={350} style={{objectFit:"cover"}} />
           <div className='m-2 text-center' >
-            <h3>{benefit.name}</h3>
+            <h5>{benefit.name}</h5>
             <p>{benefit.value}</p>
           </div>
 

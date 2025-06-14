@@ -17,14 +17,16 @@ export default function Services() {
 
   return (
     <>
-    <Grid   >
+    <Grid className='p-5'  >
            {services.map((service)=>(
-              <Column lg={5} sm={4} md={4} key={service.id} className='m-2 mt-5 shadow rounded  text-center' >
-                <img src={service.photo} alt={service.name} width={260} height={350} style={{objectFit:"cover"}} />
-                <div className='m-2 text-center' >
-                  <h3>{service.name}</h3>
+
+              <Column lg={8} sm={4} md={4} key={service.id} className='m-0 mt-5 p-2 shadow rounded  text-center' >
+                                <div className='m-2 text-center' >
+                  <h5>{service.name}</h5>
                   
                 </div>
+                <img src={service.photo} alt={service.name} width="90%" height="90%" style={{objectFit:"cover",borderRadius:"100%"}} />
+
       
               </Column>
             ))}
