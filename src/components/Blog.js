@@ -1,4 +1,4 @@
-import { Column, Grid, Link } from '@carbon/react';
+import { Column, Grid } from '@carbon/react';
 
 import facebook from "../assets/pics/facebook.svg";
 import tiktok from "../assets/pics/tiktok.svg";
@@ -28,10 +28,9 @@ export default function Blog() {
   ];
 
   return (
-    <>
-    <Grid>
+    <Grid className='p-5 text-center'>
       {insta1.map((insta) => (
-        <Column key={insta.id} lg={5} md={4} sm={4} className="m-5">
+        <Column key={insta.id} lg={4} md={4} sm={4}   className='m-3'>
         <InstaEmbed key={insta.id} url={insta.url} />
         </Column>
       ))}
@@ -49,6 +48,6 @@ export default function Blog() {
 
       </Grid>
     
-    </>
+    
   );
 }

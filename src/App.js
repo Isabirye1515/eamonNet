@@ -11,7 +11,7 @@ import Benefits from "./components/Benefits";
 
 const App =()=>{
   return(
-    <>
+  <div className="App" >
     <Heading />
     <Routes>
       <Route path="/" element={<Home />} />
@@ -24,7 +24,7 @@ const App =()=>{
       
     </Routes>
      <Footer />
-    </>
+   </div> 
    
 
   )

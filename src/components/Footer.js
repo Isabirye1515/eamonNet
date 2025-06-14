@@ -16,7 +16,7 @@ export default function Footer() {
  
 
   return (
-    <Grid className='text-center bg-dark mt-5 text-light' >
+    <Grid className='text-center  m-4 p-4 bg-dark mt-5 text-light'  style={{margin:"0px",width:"100%", padding:"20px"}} >
 
                           <Column lg={4} md={2} sm={4} className="m-2" >
                           <p className='fw-bold'>Home Pages</p>
@@ -30,7 +30,7 @@ export default function Footer() {
                       
                           </Column>
                      
-      <Column lg={5} sm={4} md={2}  className='footer' >
+      <Column lg={5} sm={4} md={2}  className='m-2' >
       <p className='fw-bold'>Connect With Us</p>
 
         <div>

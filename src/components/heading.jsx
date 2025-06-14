@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 const Heading = ()=>{
     const navigate = useNavigate();
     return(
-        <>
         <Grid>
             <Column sm={4} md={8} lg={16}>
         
@@ -46,7 +45,6 @@ const Heading = ()=>{
             
             </Column>
         </Grid>
-        </>
     )
 
 }
