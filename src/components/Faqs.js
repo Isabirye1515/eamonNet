@@ -1,5 +1,5 @@
-import { QuestionAnswering } from '@carbon/icons-react';
-import { Column, Grid, Row } from '@carbon/react';
+
+import { Column, Grid } from '@carbon/react';
 import React, { useEffect, useState } from 'react';
 import Aos from 'aos';
 import "aos/dist/aos.css"
@@ -32,7 +32,7 @@ export default function Faqs() {
   return (
     <div className="bg-light p-5 mt-5" data-aos="fade-up">
       <center><h5>Frequently Asked Questions?</h5></center>
-      <h2 style={{ color: "#aaa", marginLeft: "3%" }}>Questions and answers:</h2>
+      <h6 style={{ color: "#aaa", marginLeft: "3%" }}>Questions and answers:</h6>
 
       {faqs.map((faq) => (
         <Grid key={faq.id} className="my-4">
