@@ -30,7 +30,7 @@ export default function Blog() {
   return (
     <Grid className='p-5 text-center'>
       {insta1.map((insta) => (
-        <Column key={insta.id} lg={4} md={4} sm={4}   className='m-3'>
+        <Column key={insta.id} lg={5} md={4} sm={4}   className='m-2'>
         <InstaEmbed key={insta.id} url={insta.url} />
         </Column>
       ))}
