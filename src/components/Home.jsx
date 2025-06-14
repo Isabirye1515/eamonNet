@@ -1,18 +1,22 @@
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import imagee from "../assets/pics/ak.jpg"; 
 import imageA from "../assets/pics/p.jpg"; 
 import imaged from "../assets/pics/ay.jpg"; 
 import imageC from "../assets/pics/ad.jpg";
 import imageb from "../assets/pics/y.jpg"; // Uncomment if you want to use a different image
 import { Column, Grid } from "@carbon/react";
-import {  Location, PhoneIncoming } from "@carbon/icons-react";
+import {  Activity, Blog, BringForward, Camera, ConnectionSend, DownToBottom, DropPhoto, ImageStoreLocal, Location, PhoneIncoming, SendToBack, ServiceDesk, TouchInteraction, UpToTop, UserFeedback } from "@carbon/icons-react";
 import facebook from "../assets/pics/facebook.svg";
 import tiktok from "../assets/pics/tiktok.svg";
 import instagram from "../assets/pics/instagram.svg";
+
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+    const navigate = useNavigate()
     const url = "https://www.google.com/maps/uv?pb=!1s0x177dbd0030f1c41b%3A0x38c2996249a4c145!3m1!7e115!4s%2Fmaps%2Fplace%2Feamon%2Bdreads%2F%400.3132406%2C32.5764346%2C3a%2C75y%2C10.07h%2C90t%2Fdata%3D*213m4*211e1*213m2*211sMyoruxfGuTc3alhrqKz_gQ*212e0*214m2*213m1*211s0x177dbd0030f1c41b%3A0x38c2996249a4c145%3Fsa%3DX%26ved%3D2ahUKEwj735yB9JyIAxW-h_0HHc-iEXMQpx96BAgTEAA!5seamon%20dreads%20-%20Google%20Search!15sCgIgAQ&imagekey=!1e2!2sMyoruxfGuTc3alhrqKz_gQ&cr=le_a7&hl=en&ved=1t%3A206134&ictx=111";
     useEffect(() => {
         AOS.init({
@@ -25,7 +29,14 @@ const Home = () => {
         <>
         {/* home */}
             
-            <Grid id="head" className="mt-5 m-4 p-5" data-aos="fade-up" >
+            <Grid id="head" className="mt-5 p-5 " data-aos="fade-up" >
+                                    <Column lg={16} md={8} sm={4} className=" d-flex" >
+                         <button  onClick={() => window.location.href='#herosection'} className="btn  ">Activity</button>
+                <button  onClick={() => window.location.href='#testimonials'} className="btn">Testified</button>
+                <button onClick={() => window.location.href='#contact'} className="btn">Contact</button>
+            <button onClick={() => window.location.href='#blog'} className="btn ">Blogs</button>
+        <button onClick={() => window.location.href='#service'} className="btn">Services</button>
+                    </Column>
                 
                 <Column lg={4} md={2} sm={4} className="m-2" >
                 
@@ -33,30 +44,32 @@ const Home = () => {
                     <h2 className="text-secondary p-2 ">DREADS</h2>
                     <h2 className="text-danger p-2 ">KAMPALA</h2>
                          <a  className="btn btn-warning mt-4" href="tel:+256741099245"><PhoneIncoming size={30}  className="text-white" />+256741099245</a>
+                          <a   href={url} target="_blank" rel="noreferrer" ><button className="btn btn-primary  m-2 "><Location  size={30} />Pack View Shopping Center</button></a>
                 
                     </Column>
-                     <Column lg={5} md={3} sm={4} className="m-2" >
+                     <Column lg={5} md={3} sm={4} >
                     
-                        <img src={imageA} alt="Eamon Dreads" className="mt-4"  style={{ width: "250px", height: "250px", objectFit:"cover", borderRadius:"5px"}} />
+                        <img src={imagee} alt="Eamon Dreads" className="mt-4"  style={{ width: "350px", height: "350px", objectFit:"cover", borderRadius:"5px"}} />
                     </Column>
-                    <Column lg={7} md={3} sm={4} className="m-2" >
-                         <div className="w-100 p-2"  ><button  onClick={() => window.location.href='#herosection'} className="btn btn-light  w-50 m-2">Hero Section</button>
-                <button  onClick={() => window.location.href='#testimonials'} className="btn btn-light w-50 m-2">Testimonials</button></div>
-                <div className="w-100 p-2" ><button onClick={() => window.location.href='#contact'} className="btn btn-light  w-35 m-2">Contact Us</button>
-            <button onClick={() => window.location.href='#blog'} className="btn btn-light w-35   m-2">Get a Quote</button></div>
-                <div className="w-100 p-2" ><button onClick={() => window.location.href='#service'} className="btn btn-light w-35 m-2">Service</button>
-                <button onClick={() => window.location.href='#benefits'} className="btn btn-light w-35 m-2">Benefits</button></div>
 
-                <a   href={url} target="_blank" rel="noreferrer" ><button className="btn btn-primary  m-2 mt-5"><Location  size={30} />Pack View Shopping Center</button></a>
-                    </Column>
                
                 
             </Grid>
        <hr/>     {/* herosection */}
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} id="herosection">
-              <p className="m-2 bg-primary p-3 w-25" >Hero Section</p><img src={imaged} alt="Eamon Dreads" className="mt-2"  style={{ width: "30px", height: "30px", objectFit:"cover", borderRadius:"50%" }} data-aos="flip-right" /></div>
+              <p className=" p-3 w-50 d-flex"  >
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#head'}>Home<UpToTop size={20} /> </p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#gallery'} >Footer<DownToBottom size={20} /></p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#head'} >Previous<SendToBack size={20} /></p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#testimonials'} > Next<BringForward size={20} /></p>
 
-                        <Grid  id="herosection" className="mt-5 m-2 p-5" data-aos="fade-up" >
+                </p>
+               </div>
+
+                        <Grid   className="mt-5  p-5" data-aos="fade-up" >
+                                                        <Column lg={16} md={8} sm={4}  className="d-flex" >
+                            <Activity size={30} /> <h2  >Activity</h2>
+                            </Column> 
                              <Column lg={5} md={4} sm={4} >
                
                     
@@ -79,9 +92,19 @@ const Home = () => {
             {/* about */}
             <hr/>
 
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} id="testimonials">
-              <p className="m-2 bg-primary p-3 w-25" >About Us</p><img src={imaged} alt="Eamon Dreads" className="mt-2"  style={{ width: "30px", height: "30px", objectFit:"cover", borderRadius:"50%" }} data-aos="flip-right" /></div>
-                        <Grid className="mt-5 m-4 p-5" id="testimonials"data-aos="fade-up" >
+<div id="testimonials"  style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
+              <p className=" p-3 w-50 d-flex"  >
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#head'}>Home<UpToTop size={20} /> </p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#gallery'} >Footer<DownToBottom size={20} /></p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#herosection'} >Previous<SendToBack size={20} /></p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#blog'} > Next<BringForward size={20} /></p>
+
+                </p>
+               </div>
+                        <Grid className="mt-5 m-4 p-5"  data-aos="fade-up" >
+                                                        <Column lg={16} md={8} sm={4}  className="d-flex" >
+                            <UserFeedback size={30} /> <h2  >Testimonials</h2>
+                            </Column> 
                 
                 <Column lg={10} md={4} sm={4}  className="  mt-10" >
         <h2>We are a team of talented lockticians</h2>
@@ -95,12 +118,22 @@ const Home = () => {
                     </Column>
                 
             </Grid>
-            <hr/>
-              <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} id="blog">
-              <p className="m-2 bg-primary p-3 w-25" >Blogs</p><img src={imaged} alt="Eamon Dreads" className="mt-2"  style={{ width: "30px", height: "30px", objectFit:"cover", borderRadius:"50%" }} data-aos="flip-right" /></div>
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} id="blog">
+              <p className=" p-3 w-50 d-flex"  >
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#head'}>Home<UpToTop size={20} /> </p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#gallery'} >Footer<DownToBottom size={20} /></p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#testimonials'} >Previous<SendToBack size={20} /></p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#contact'} > Next<BringForward size={20} /></p>
+
+                </p>
+               </div>
 
             {/* blog */}
-                        <Grid className="mt-5 m-4 p-5" id="blog" data-aos="fade-up" >
+                        <Grid className="mt-5 m-4 p-5"  data-aos="fade-up" >
+
+                                                        <Column lg={16} md={8} sm={4}  className="d-flex" >
+                            <Blog size={30} /> <h2  >Blogs</h2>
+                            </Column> 
                                             <Column lg={3} md={4} sm={4} className=" p-10"  >
                     
                         
@@ -118,11 +151,20 @@ const Home = () => {
 
             </Grid>
             <hr/>
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} id="contact">
-              <p className="m-2 bg-primary p-3 w-25" >Contact Us</p><img src={imaged} alt="Eamon Dreads" className="mt-2"  style={{ width: "30px", height: "30px", objectFit:"cover", borderRadius:"50%" }} data-aos="flip-right" /></div>
-            {/* contactus */}
-            <Grid className="mt-5 m-4 p-5 " data-aos="fade-up" >
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} id="contact" >
+              <p className=" p-3 w-50 d-flex"  >
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#head'}>Home<UpToTop size={20} /> </p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#gallery'} >Footer<DownToBottom size={20} /></p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#blog'} >Previous<SendToBack size={20} /></p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#services'} > Next<BringForward size={20} /></p>
 
+                </p>
+               </div>
+            {/* contactus */}
+            <Grid className="mt-5 m-4 p-5 "  data-aos="fade-up" >
+                            <Column lg={16} md={8} sm={4}  className="d-flex" >
+                            <ConnectionSend size={30} /> <h2  >Contact</h2>
+                            </Column> 
                 <Column lg={8} md={4} sm={4} className=" mt-10"  >
                 <h2>Contact Us On Line</h2>
                     <p>We are available on all social media platforms<a className="btn btn-primary" href="#blog">Blogs</a></p>
@@ -145,9 +187,19 @@ const Home = () => {
             </Grid>
             {/* <service */}
             <hr/>
-              <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} id="services">
-              <p className="m-2 bg-primary p-3 w-25" >Services</p><img src={imaged} alt="Eamon Dreads" className="mt-2"  style={{ width: "30px", height: "30px", objectFit:"cover", borderRadius:"50%" }} data-aos="flip-right" /></div>
-                        <Grid className="mt-5 m-4 p-5" data-aos="fade-up" >
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} id="services">
+              <p className=" p-3 w-50 d-flex"  >
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#head'}>Home<UpToTop size={20} /> </p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#gallery'} >Footer<DownToBottom size={20} /></p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#contact'} >Previous<SendToBack size={20} /></p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#gallery'} > Next<BringForward size={20} /></p>
+
+                </p>
+               </div>
+                        <Grid className="mt-5 m-4 p-5"   data-aos="fade-up" >
+                                                        <Column lg={16} md={8} sm={4}  className="d-flex" >
+                            <ServiceDesk size={30} /> <h2  >Services</h2>
+                            </Column> 
                 
                 <Column lg={8} md={4} sm={4}  className=" mt-10" >
                 <h2>Customer Services</h2>
@@ -171,13 +223,29 @@ const Home = () => {
 
             {/* gallery */}
             <hr/>
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} id="gallery">
-              <p className="m-2 bg-primary p-3 w-25" >Gallery</p><img src={imaged} alt="Eamon Dreads" className="mt-2"  style={{ width: "30px", height: "30px", objectFit:"cover", borderRadius:"50%" }} data-aos="flip-right" /></div>
-                        <Grid className="mt-5 m-4 p-5" data-aos="fade-up" > 
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} id="gallery">
+              <p className=" p-3 w-50 d-flex"  >
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#head'}>Home<UpToTop size={20} /> </p>
+<p className="m-1 btn btn-light "  onClick={()=>window.location.href='#contact'} >Previous<SendToBack size={20} /></p>
+
+
+                </p>
+               </div>
+                        <Grid className="mt-5 m-4 p-5" data-aos="fade-up" >
+                            <Column lg={16} md={8} sm={4}  className="d-flex" >
+                            <ImageStoreLocal size={30} /> <h2  >Gallery</h2>
+                            </Column> 
+                            
                 <Column lg={10} md={4} sm={4} >
-                <h2>Our Gallery</h2>
+                <h4>Our Gallery</h4>
                 <p>Explore our collection of stunning images showcasing our work.</p>
-                <img src={imaged} alt="Eamon Dreads" className="mt-2"  style={{ width: "300px", height: "300px", objectFit:"cover", borderRadius:"50%" }} data-aos="flip-right" />
+                
+                <img src={imaged} alt="Eamon Dreads" className="mt-0"  style={{ width: "200px", height: "200px", objectFit:"cover", borderRadius:"50%" }} data-aos="flip-right" />
+                <DropPhoto className="mt-5" size={170} />
+                <div>
+                <TouchInteraction size={50} className="btn btn-danger" onClick={()=>navigate("/gallery")} data-aos="flip-right"  />
+                    <u>Gallery</u>
+                </div>
                     </Column>
                 <Column lg={5} md={4} sm={4} >
 

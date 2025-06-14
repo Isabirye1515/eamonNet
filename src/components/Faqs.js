@@ -1,3 +1,4 @@
+import { QuestionAnswering } from '@carbon/icons-react';
 import { Column, Grid } from '@carbon/react';
 import React, { useState } from 'react';
 
@@ -10,13 +11,13 @@ export default function Faqs() {
 
   return (
     <div class="bg-dark" >
-      <center><h2 class="h-3 p-3 text-white rounded">Frequently Asked Questions?</h2></center>
+      <center><h2 class="">Frequently Asked Questions?</h2></center>
       <h2 style={{color:"#aaa", marginLeft:"3%"}}>Questions and answers:</h2>
       <Grid  class="p-2" >
       {faqs.map((faq) => (
         <Column lg={5} sm={4}  md={4}    key={faq.id}   >
-          <p class="p-2  bg-black text-white rounded"  ><i class="text-primary" >Q:</i> {faq.question}</p>
-          <h2  class="animate-pulse d-flex align-items-start shadow p-3 text-white"> <i class="text-primary" >Ans:</i> {faq.answer}</h2>
+          <p   ><i class="text-primary" > </i> {faq.question}</p>
+          <h2  > <i class="text-primary" ></i> {faq.answer}</h2>
         </Column>
       ))}
       </Grid>
