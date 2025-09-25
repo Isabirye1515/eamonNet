@@ -45,7 +45,7 @@ const Home = () => {
                     <h2 className="text-danger p-2 ">KAMPALA</h2>
                          
                           <a   href={url} target="_blank" rel="noreferrer" ><button className="btn btn-primary  m-2 "><Location  size={30} />Pack View Shopping Center</button></a>
-                        <a  className="btn btn-warning mt-2" href="tel:+256741099245"><PhoneIncoming size={30}  className="text-white" />+256741099245</a>
+                        <a  className="btn btn-warning mt-2" href="tel:+256703819029"><PhoneIncoming size={30}  className="text-white" />+256741099245</a>
                 
                     </Column>
                      <Column lg={8} md={4} sm={4} >
