@@ -36,7 +36,7 @@ export default function Footer() {
         <div>
 <a   href={url} target="_blank" rel="noreferrer" ><button className="btn btn-primary   mt-4"><Location  size={30} />Pack View Shopping Center</button></a>
         
-     <a  className="btn btn-warning mt-4" href="tel:+256741099245"><PhoneIncoming size={30}  className="text-white" />+256741099245</a>
+     <a  className="btn btn-warning mt-4" href="tel:+256741099245"><PhoneIncoming size={30}  className="text-white" />+256703819029</a>
      </div>
        {icons.map((icon)=>
     <p className='icon  m-2 p-2 d-flex ' key={icon.id} >
