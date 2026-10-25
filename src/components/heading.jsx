@@ -11,7 +11,7 @@ const Heading = ()=>{
             <Column sm={4} md={8} lg={16}>
         
                 <Header >
-                    <HeaderName prefix="EAMON DREADS" ><h4></h4></HeaderName>
+                    <HeaderName prefix="EAMON DREADS" />
                     <HeaderGlobalBar>
                         <HeaderGlobalAction>
                             <Home size={20} onClick={() => navigate("/")} aria-label="Home" class="m-5" />
