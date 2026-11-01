@@ -6,56 +6,99 @@ import imageA from "../assets/pics/p.jpg";
 import imaged from "../assets/pics/ay.jpg"; 
 import imageC from "../assets/pics/ad.jpg";
 import imageb from "../assets/pics/ah.jpg"; // Uncomment if you want to use a different image
-import { Column, Grid } from "@carbon/react";
+import {  Box, Grid, Typography } from "@mui/material"
 import {  Activity, Blog, BringForward, CallsIncoming, ConnectionSend, DownToBottom, DropPhoto, Email, ImageStoreLocal, Location, MessageQueue, Phone, PhoneIncoming, SendToBack, ServiceDesk, TouchInteraction, UpToTop, UserFeedback } from "@carbon/icons-react";
 import facebook from "../assets/pics/facebook.svg";
 import tiktok from "../assets/pics/tiktok.svg";
 import instagram from "../assets/pics/instagram.svg";
+import {Button} from "@mui/material"
+import {Column} from "@carbon/react"
 
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+
 
 const Home = () => {
     const navigate = useNavigate()
     const url = "https://www.google.com/maps/uv?pb=!1s0x177dbd0030f1c41b%3A0x38c2996249a4c145!3m1!7e115!4s%2Fmaps%2Fplace%2Feamon%2Bdreads%2F%400.3132406%2C32.5764346%2C3a%2C75y%2C10.07h%2C90t%2Fdata%3D*213m4*211e1*213m2*211sMyoruxfGuTc3alhrqKz_gQ*212e0*214m2*213m1*211s0x177dbd0030f1c41b%3A0x38c2996249a4c145%3Fsa%3DX%26ved%3D2ahUKEwj735yB9JyIAxW-h_0HHc-iEXMQpx96BAgTEAA!5seamon%20dreads%20-%20Google%20Search!15sCgIgAQ&imagekey=!1e2!2sMyoruxfGuTc3alhrqKz_gQ&cr=le_a7&hl=en&ved=1t%3A206134&ictx=111";
     useEffect(() => {
         AOS.init({
-            duration: 1000, // Animation duration in milliseconds
-            once: false, // Whether animation should happen only once
-            mirror: true, // Whether elements should animate out while scrolling past them
+            duration: 1000,
+            once: false,
+            mirror: true, 
         });
     }, []);
     return (
         <>
-        {/* home */}
             
-            <Grid id="head" className="mt-5 p-5 " data-aos="fade-up" >
-                                    <Column lg={16} md={8} sm={4} className=" d-flex" >
-                         <button  onClick={() => window.location.href='#herosection'} className="btn  ">Activity</button>
-                <button  onClick={() => window.location.href='#testimonials'} className="btn">Testified</button>
-                <button onClick={() => window.location.href='#contact'} className="btn">Contact</button>
-            <button onClick={() => window.location.href='#blog'} className="btn ">Blogs</button>
-        <button onClick={() => window.location.href='#service'} className="btn">Services</button>
-                    </Column>
-                
-                <Column lg={8} md={4} sm={4} className="m-2" >
-                
-                    <h2 className="text-primary p-2">EAMON</h2>
-                    <h2 className="text-secondary p-2 ">DREADS</h2>
-                    <h2 className="text-danger p-2 ">KAMPALA</h2>
-                         
-                          <a   href={url} target="_blank" rel="noreferrer" ><button className="btn btn-primary  m-2 "><Location  size={30} />Pack View Shopping Center</button></a>
-                        <a  className="btn btn-warning mt-2" href="tel:+256703819029"><PhoneIncoming size={30}  className="text-white" />+256703819029</a>
-                
-                    </Column>
-                     <Column lg={8} md={4} sm={4} >
-                    
-                        <img src={imagee} alt="Eamon Dreads" className="mt-4"  style={{ width: "350px", height: "350px", objectFit:"cover", borderRadius:"5px"}} />
-                    </Column>
+            <Grid
+  id="head"
+  container
+  spacing={3}
+  sx={{ mt: 5, p: 5 }}
+  data-aos="fade-up"
+>
 
-               
-                
-            </Grid>
+
+  {/* Business information */}
+  <Grid size={{ xs: 12, md: 6, lg: 6 }}>
+    <Typography variant="h1" color="primary" sx={{ p: 1 }}>
+      EAMON
+    </Typography>
+
+    <Typography variant="h1" color="text.secondary" sx={{ p: 1 }}>
+      DREADS
+    </Typography>
+
+    <Typography variant="h1" color="error" sx={{ p: 1 }}>
+      KAMPALA
+    </Typography>
+
+    <Button
+      component="a"
+      href={url}
+      target="_blank"
+      rel="noreferrer"
+      variant="contained"
+      startIcon={<Location size={24} />}
+      sx={{ m: 1 }}
+    >
+      Pack View Shopping Center
+    </Button>
+
+    <Button
+      component="a"
+      href="tel:+256703819029"
+      variant="contained"
+      color="warning"
+      startIcon={<PhoneIncoming size={24} />}
+      sx={{ m: 1, color: "white" }}
+    >
+      +256703819029
+    </Button>
+  </Grid>
+
+  {/* Business image */}
+  <Grid
+    size={{ xs: 12, md: 6, lg: 6 }}
+    sx={{ display: "flex", justifyContent: "center" }}
+  >
+    <Box
+      component="img"
+      src={imagee}
+      alt="Eamon Dreads"
+      sx={{
+        mt: 4,
+        width: { xs: "100%", sm: 350 },
+        maxWidth: 350,
+        height: 350,
+        objectFit: "cover",
+        borderRadius: 1,
+      }}
+    />
+  </Grid>
+</Grid>
        <hr/>     {/* herosection */}
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} id="herosection">
               <p className=" p-3 w-50 d-flex"  >

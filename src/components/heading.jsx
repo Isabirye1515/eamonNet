@@ -1,51 +1,116 @@
-import { Blog, ConnectionSignal, Home, ImageStoreLocal, ServiceDesk, UserSpeaker } from "@carbon/icons-react";
-import { Column, Grid, Header, HeaderGlobalAction, HeaderName } from "@carbon/react"
-import { HeaderGlobalBar } from "carbon-components-react";
+import { useState } from "react";
+import { 
+  Blog, 
+  ConnectionSignal, 
+  Home, 
+  ImageStoreLocal, 
+  Menu as MenuIcon, 
+  ServiceDesk, 
+  UserSpeaker 
+} from "@carbon/icons-react";
+import { 
+  Column, 
+  Grid, 
+  Header, 
+  HeaderGlobalAction, 
+  HeaderGlobalBar, 
+  HeaderName 
+} from "@carbon/react";
+import { Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
+const PageUrls = [
+  { id: 1, name: "Home", url: "/" },
+  { id: 2, name: "Activity", url: "#herosection" },
+  { id: 3, name: "Testimonials", url: "#testimonials" },
+  { id: 4, name: "Contact", url: "/contact" },
+  { id: 5, name: "Blogs", url: "/blog" },
+  { id: 6, name: "Services", url: "/services" },
+  { id: 7, name: "Gallery", url: "/gallery" },
+];
 
-const Heading = ()=>{
-    const navigate = useNavigate();
-    return(
-        <Grid>
-            <Column sm={4} md={8} lg={16}>
-        
-                <Header >
-                    <HeaderName prefix="EAMON DREADS" />
-                    <HeaderGlobalBar>
-                        <HeaderGlobalAction>
-                            <Home size={20} onClick={() => navigate("/")} aria-label="Home" class="m-5" />
-                        </HeaderGlobalAction>
-                        <HeaderGlobalAction>
-                            <Blog size={20} onClick={() => navigate("/blog")} aria-label="Blog" class="m-5" />
-                        </HeaderGlobalAction>
-                                                <HeaderGlobalAction>
-                            <ServiceDesk size={20} onClick={() => navigate("/services")} aria-label="Home" class="m-5" />
-                        </HeaderGlobalAction>
-                                                <HeaderGlobalAction>
-                            <UserSpeaker size={20} onClick={() => navigate("/benefit")} aria-label="Speach" class="m-5" />
-                        </HeaderGlobalAction>
+const Heading = () => {
+  const navigate = useNavigate();
 
-                                                <HeaderGlobalAction>
-                            <ImageStoreLocal size={20}  onClick={()=>navigate("/gallery")} aria-label="gallery" class="m-5" />
-                        </HeaderGlobalAction>
+  // State to manage the MUI Menu dropdown anchor
+  const [anchorEl, setAnchorEl] = useState(null);
+  const isMenuOpen = Boolean(anchorEl);
 
-                                                <HeaderGlobalAction>
-                            <ConnectionSignal  onClick={()=>navigate("/contact")} size={20} aria-label="contact"  class="m-5" />
-                        </HeaderGlobalAction>
+  const handleMenuClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
 
-                    </HeaderGlobalBar>
+  const handleNavigate = (url) => {
+    handleMenuClose();
+    if (url.startsWith("#")) {
+      // Scroll to section if it's an anchor link
+      const element = document.querySelector(url);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Navigate via React Router
+      navigate(url);
+    }
+  };
 
+  return (
+    <Grid>
+      <Column sm={4} md={8} lg={16}>
+        <Header aria-label="EAMON DREADS Header">
+          <HeaderName prefix="EAMON DREADS" />
+          
+          <HeaderGlobalBar>
+            <HeaderGlobalAction onClick={() => navigate("/")} aria-label="Home">
+              <Home size={20} className="m-5" />
+            </HeaderGlobalAction>
 
+            <HeaderGlobalAction onClick={() => navigate("/blog")} aria-label="Blog">
+              <Blog size={20} className="m-5" />
+            </HeaderGlobalAction>
 
+            <HeaderGlobalAction onClick={() => navigate("/services")} aria-label="Services">
+              <ServiceDesk size={20} className="m-5" />
+            </HeaderGlobalAction>
 
+            <HeaderGlobalAction onClick={() => navigate("/benefit")} aria-label="Benefits">
+              <UserSpeaker size={20} className="m-5" />
+            </HeaderGlobalAction>
 
-                </Header>
-            
-            </Column>
-        </Grid>
-    )
+            <HeaderGlobalAction onClick={() => navigate("/gallery")} aria-label="Gallery">
+              <ImageStoreLocal size={20} className="m-5" />
+            </HeaderGlobalAction>
 
-}
+            <HeaderGlobalAction onClick={() => navigate("/contact")} aria-label="Contact">
+              <ConnectionSignal size={20} className="m-5" />
+            </HeaderGlobalAction>
+
+            {/* Mobile / Dropdown Menu Trigger */}
+            <HeaderGlobalAction onClick={handleMenuClick} aria-label="Menu">
+              <MenuIcon size={20} className="m-5" />
+            </HeaderGlobalAction>
+          </HeaderGlobalBar>
+
+          {/* MUI Dropdown Menu for PageUrls */}
+          <Menu
+            anchorEl={anchorEl}
+            open={isMenuOpen}
+            onClose={handleMenuClose}
+          >
+            {PageUrls.map((item) => (
+              <MenuItem key={item.id} onClick={() => handleNavigate(item.url)}>
+                {item.name}
+              </MenuItem>
+            ))}
+          </Menu>
+        </Header>
+      </Column>
+    </Grid>
+  );
+};
+
 export default Heading;
