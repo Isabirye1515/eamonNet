@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { 
-  Blog, 
-  ConnectionSignal, 
-  Home, 
-  ImageStoreLocal, 
   Menu as MenuIcon, 
-  ServiceDesk, 
-  UserSpeaker 
 } from "@carbon/icons-react";
 import { 
   Column, 
@@ -61,33 +55,9 @@ const Heading = () => {
   return (
     <Grid>
       <Column sm={4} md={8} lg={16}>
-        <Header aria-label="EAMON DREADS Header">
-          <HeaderName prefix="EAMON DREADS" />
-          
+        <Header  aria-label="EAMON DREADS Header ">
+          <HeaderName  prefix="EAMON DREADS" />
           <HeaderGlobalBar>
-            <HeaderGlobalAction onClick={() => navigate("/")} aria-label="Home">
-              <Home size={20} className="m-5" />
-            </HeaderGlobalAction>
-
-            <HeaderGlobalAction onClick={() => navigate("/blog")} aria-label="Blog">
-              <Blog size={20} className="m-5" />
-            </HeaderGlobalAction>
-
-            <HeaderGlobalAction onClick={() => navigate("/services")} aria-label="Services">
-              <ServiceDesk size={20} className="m-5" />
-            </HeaderGlobalAction>
-
-            <HeaderGlobalAction onClick={() => navigate("/benefit")} aria-label="Benefits">
-              <UserSpeaker size={20} className="m-5" />
-            </HeaderGlobalAction>
-
-            <HeaderGlobalAction onClick={() => navigate("/gallery")} aria-label="Gallery">
-              <ImageStoreLocal size={20} className="m-5" />
-            </HeaderGlobalAction>
-
-            <HeaderGlobalAction onClick={() => navigate("/contact")} aria-label="Contact">
-              <ConnectionSignal size={20} className="m-5" />
-            </HeaderGlobalAction>
 
             {/* Mobile / Dropdown Menu Trigger */}
             <HeaderGlobalAction onClick={handleMenuClick} aria-label="Menu">
