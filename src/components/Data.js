@@ -138,7 +138,7 @@ function Data() {
               loading="lazy"
               sx={{
                 width: "100%",
-                height: { xs: 220, sm: 260, md: 300 },
+                height: { xs: 400, sm: 500, md: 600 },
                 objectFit: "cover",
                 borderRadius: 2,
                 display: "block",
@@ -157,3 +157,4 @@ function Data() {
 }
 
 export default Data;
+
