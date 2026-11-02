@@ -4,6 +4,7 @@ import { Location, PhoneIncoming } from "@carbon/icons-react";
 import facebook from "../assets/pics/facebook.svg";
 import instagram from "../assets/pics/instagram.svg";
 import tiktok from "../assets/pics/tiktok.svg";
+import whatsappIcon from "../assets/pics/whatsapp.jpg";
 
 const MAP_URL =
   "https://www.google.com/maps/uv?pb=!1s0x177dbd0030f1c41b%3A0x38c2996249a4c145!3m1!7e115!4s%2Fmaps%2Fplace%2Feamon%2Bdreads%2F%400.3132406%2C32.5764346%2C3a%2C75y%2C10.07h%2C90t%2Fdata%3D*213m4*211e1*213m2*211sMyoruxfGuTc3alhrqKz_gQ*212e0*214m2*213m1*211s0x177dbd0030f1c41b%3A0x38c2996249a4c145%3Fsa%3DX%26ved%3D2ahUKEwj735yB9JyIAxW-h_0HHc-iEXMQpx96BAgTEAA!5seamon%20dreads%20-%20Google%20Search!15sCgIgAQ&imagekey=!1e2!2sMyoruxfGuTc3alhrqKz_gQ&cr=le_a7&hl=en&ved=1t%3A206134&ictx=111";
@@ -192,6 +193,46 @@ export default function Footer() {
           </Link>
         </Box>
       </Container>
+
+<Box
+  component="a"
+  id="whatsapp"
+  href="https://wa.me/256703819029"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat with Eamon Dreads on WhatsApp"
+  sx={{
+    position: "fixed",
+    right: { xs: 16, sm: 24 },
+    bottom: { xs: 20, sm: 24 },
+    zIndex: 1500,
+    width: 58,
+    height: 58,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    bgcolor: "#25D366",
+    borderRadius: "50%",
+    boxShadow: "0 4px 16px rgba(0,0,0,0.25)",
+    transition: "transform 0.2s ease, box-shadow 0.2s ease",
+    "&:hover": {
+      transform: "scale(1.08)",
+      boxShadow: "0 6px 20px rgba(0,0,0,0.3)",
+    },
+  }}
+>
+  <Box
+    component="img"
+    src={whatsappIcon}
+    alt=""
+    sx={{
+      width: 34,
+      height: 34,
+      objectFit: "contain",
+    }}
+  />
+</Box>
+
     </Box>
   );
 }

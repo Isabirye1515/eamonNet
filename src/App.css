@@ -66,4 +66,10 @@ font-size: x-large;
 #blog{
   background-color: #220365;
 }
+#whatsapp{
+  position: fixed;
+  margin-right: 5px;
+  margin-bottom: 100px;
+  border-radius: 2px solid red;
+}
 

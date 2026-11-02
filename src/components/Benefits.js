@@ -22,171 +22,206 @@ import imagej from "../assets/pics/satifaction.jpg";
 const BENEFITS = [
   {
     id: 1,
-    name: "Expertise",
+    name: "Professional Expertise",
     value:
-      "Our locticians have extensive experience and training in dreadlocks care and maintenance.",
+      "Our experienced locticians combine skill, training, and attention to detail to keep your dreadlocks healthy, neat, and beautiful.",
     image: imagea,
   },
   {
     id: 2,
-    name: "Personalized service",
+    name: "Personalized Care",
     value:
-      "We take the time to understand your unique needs and preferences.",
+      "Every head of hair is unique. We tailor our services to your preferences, hair type, and individual dreadlocks journey.",
     image: imageb,
   },
   {
     id: 3,
-    name: "Quality products",
+    name: "Quality Products",
     value:
-      "We use only the best products to support healthy, thriving dreadlocks.",
+      "We carefully select quality products that support healthy hair, well-maintained locs, and lasting results.",
     image: imagec,
   },
   {
     id: 4,
-    name: "Sanitation and hygiene",
+    name: "Cleanliness & Hygiene",
     value:
-      "Our salon maintains high standards of cleanliness and sanitation.",
+      "Your comfort and safety matter. We maintain high standards of cleanliness throughout our salon and services.",
     image: imaged,
   },
   {
     id: 5,
-    name: "Community",
+    name: "A Welcoming Community",
     value:
-      "Join our community of dreadlocks enthusiasts and connect with like-minded individuals.",
+      "Be part of a community that celebrates individuality, shares knowledge, and appreciates the beauty of dreadlocks.",
     image: imagee,
   },
   {
     id: 6,
-    name: "Customization",
+    name: "Styles Made for You",
     value:
-      "We offer customized services to suit your lifestyle, hair type, and personal style.",
+      "From everyday looks to distinctive styles, we create dreadlocks services that complement your personality and lifestyle.",
     image: imagef,
   },
   {
     id: 7,
-    name: "Maintenance and repair",
+    name: "Maintenance & Repair",
     value:
-      "We provide guidance on proper maintenance and repair techniques.",
+      "Keep your locs looking their best with retwisting, repairs, maintenance advice, and practical care guidance.",
     image: imageg,
   },
   {
     id: 8,
-    name: "Education",
+    name: "Knowledge & Education",
     value:
-      "Our locticians are happy to share knowledge and tips on dreadlocks care.",
+      "Learn how to care for your dreadlocks between visits with helpful advice and techniques from our experienced team.",
     image: imageh,
   },
   {
     id: 9,
-    name: "Relaxing atmosphere",
+    name: "A Relaxing Experience",
     value:
-      "Our salon offers a welcoming, relaxing environment.",
+      "Take a break from your busy day in a warm, welcoming environment designed to make every visit enjoyable.",
     image: imagei,
   },
   {
     id: 10,
-    name: "Satisfaction guarantee",
+    name: "Your Satisfaction Matters",
     value:
-      "We strive to make every customer experience a satisfying one.",
+      "We listen to your needs, value your feedback, and work hard to ensure you leave feeling confident and satisfied.",
     image: imagej,
   },
 ];
 
 const palette = {
-  page: "#f7f3ec",
-  paper: "#fffdf9",
-  ink: "#29251f",
-  muted: "#6e655a",
-  accent: "#9a704b",
-  border: "#e8ded1",
+  page: "#f8f5f0",
+  paper: "#fffefa",
+  ink: "#30271f",
+  muted: "#71675d",
+  accent: "#98704d",
+  border: "#e9dfd3",
 };
 
 export default function Benefits() {
   return (
     <Box
-    id="activity"
+      id="activity"
       component="section"
       sx={{
         backgroundColor: palette.page,
         py: { xs: 6, sm: 8, md: 10 },
       }}
     >
-      <Container maxWidth="xl">
-        <Stack spacing={1} alignItems="center" textAlign="center" sx={{ mb: 5 }}>
-          <Stack direction="row" spacing={1.25} alignItems="center">
-            <Typography
-            id="description"
-              variant="overline"
-              sx={{
-                color: palette.accent,
-                letterSpacing: "0.2em",
-                fontWeight: 700,
-              }}
-            >
-              Why choose us
-            </Typography>
-          </Stack>
+      <Container maxWidth="lg">
+        {/* Section heading */}
+        <Stack
+          spacing={2}
+          alignItems="center"
+          textAlign="center"
+          sx={{ mb: { xs: 4, md: 6 } }}
+        >
+          <Typography
+            variant="overline"
+            sx={{
+              color: palette.accent,
+              fontWeight: 700,
+              letterSpacing: "0.22em",
+              fontSize: "0.75rem",
+            }}
+          >
+            THE DIFFERENCE IS IN THE CARE
+          </Typography>
 
           <Typography
-          id="description"
             component="h2"
             sx={{
               color: palette.ink,
               fontFamily: 'Georgia, "Times New Roman", serif',
-              fontSize: { xs: "2rem", sm: "2.6rem", md: "3.2rem" },
-              lineHeight: 1.15,
+              fontSize: {
+                xs: "2.1rem",
+                sm: "2.7rem",
+                md: "3.2rem",
+              },
               fontWeight: 500,
+              lineHeight: 1.15,
+              maxWidth: 700,
             }}
           >
-            Our Offers
+            More Than Just Dreadlocks
           </Typography>
 
           <Box
             sx={{
-              width: 58,
-              height: 2,
+              width: 52,
+              height: 3,
+              borderRadius: 5,
               bgcolor: palette.accent,
-              mt: 1,
             }}
           />
 
           <Typography
-          id="description"
             sx={{
-              
-              maxWidth: 650,
-              lineHeight: 1.8,
-              mt: 1 ,
+              color: palette.muted,
+              maxWidth: 580,
+              fontSize: { xs: "0.95rem", sm: "1.05rem" },
+              lineHeight: 1.9,
             }}
           >
-            Thoughtful care, skilled hands, and a welcoming space for every
-            stage of your dreadlocks journey.
+            Discover thoughtful care, professional expertise, and a
+            welcoming experience designed around you and your dreadlocks.
           </Typography>
         </Stack>
 
-        <Grid container spacing={{ xs: 2.5, sm: 3, md: 3.5 }}>
-          {BENEFITS.map((benefit) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={benefit.id}>
+        {/* Benefits grid: two cards per row on desktop */}
+        <Grid container spacing={{ xs: 2, sm: 3 }}>
+          {BENEFITS.map((benefit, index) => (
+            <Grid item xs={12} md={6} key={benefit.id}>
               <Paper
                 elevation={0}
                 sx={{
+                  display: "flex",
+                  flexDirection: {
+                    xs: "column",
+                    sm: "row",
+                  },
                   height: "100%",
+                  minWidth: 0,
                   overflow: "hidden",
-                  border: `1px solid ${palette.border}`,
-                  borderRadius: 2,
                   bgcolor: palette.paper,
-                  transition: "transform 220ms ease, box-shadow 220ms ease",
+                  border: `1px solid ${palette.border}`,
+                  borderRadius: 2.5,
+                  transition:
+                    "transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease",
                   "&:hover": {
-                    transform: "translateY(-5px)",
-                    boxShadow: "0 14px 32px rgba(48, 37, 25, 0.10)",
+                    transform: "translateY(-4px)",
+                    borderColor: "#d5c0aa",
+                    boxShadow: "0 12px 30px rgba(48, 37, 25, 0.08)",
                   },
                 }}
               >
+                {/* Smaller, consistent image */}
                 <Box
                   sx={{
-                    position: "relative",
+                    width: {
+                      xs: "100%",
+                      sm: 155,
+                      md: 145,
+                      lg: 180,
+                    },
+                    minWidth: {
+                      xs: "100%",
+                      sm: 155,
+                      md: 145,
+                      lg: 180,
+                    },
+                    height: {
+                      xs: 210,
+                      sm: "auto",
+                    },
+                    minHeight: {
+                      sm: 220,
+                      md: 240,
+                    },
                     overflow: "hidden",
-                    aspectRatio: "4 / 4.5",
                     bgcolor: "#e9dfd2",
                   }}
                 >
@@ -194,36 +229,76 @@ export default function Benefits() {
                     component="img"
                     src={benefit.image}
                     alt={benefit.name}
-                    loading="lazy"
+                    loading={index < 2 ? "eager" : "lazy"}
                     sx={{
                       display: "block",
                       width: "100%",
                       height: "100%",
+                      minHeight: {
+                        sm: 220,
+                        md: 240,
+                      },
                       objectFit: "cover",
-                      transition: "transform 350ms ease",
-                      "&:hover": { transform: "scale(1.04)" },
+                      transition: "transform 400ms ease",
+                      "&:hover": {
+                        transform: "scale(1.05)",
+                      },
                     }}
                   />
                 </Box>
 
-                <Box sx={{ p: { xs: 2.25, md: 2.5 } }}>
+                {/* Improved typography and spacing */}
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    flex: 1,
+                    minWidth: 0,
+                    p: { xs: 2.5, sm: 2, md: 2.5 },
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      color: palette.accent,
+                      fontSize: "0.7rem",
+                      fontWeight: 700,
+                      letterSpacing: "0.12em",
+                      mb: 1,
+                    }}
+                  >
+                    {String(benefit.id).padStart(2, "0")}
+                  </Typography>
+
                   <Typography
                     component="h3"
                     sx={{
                       color: palette.ink,
                       fontFamily: 'Georgia, "Times New Roman", serif',
-                      fontSize: { xs: "1.2rem", md: "1.3rem" },
-                      fontWeight: 600,
-                      mb: 1,
+                      fontSize: {
+                        xs: "1.35rem",
+                        sm: "1.15rem",
+                        md: "1.2rem",
+                        lg: "1.4rem",
+                      },
+                      fontWeight: 500,
+                      lineHeight: 1.35,
+                      mb: 1.25,
                     }}
                   >
                     {benefit.name}
                   </Typography>
+
                   <Typography
                     sx={{
                       color: palette.muted,
-                      fontSize: "0.95rem",
-                      lineHeight: 1.8,
+                      fontSize: {
+                        xs: "0.93rem",
+                        sm: "0.84rem",
+                        md: "0.86rem",
+                        lg: "0.92rem",
+                      },
+                      lineHeight: 1.85,
                     }}
                   >
                     {benefit.value}
