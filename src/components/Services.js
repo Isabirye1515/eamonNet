@@ -82,13 +82,14 @@ export default function Services() {
                   src={service.photo}
                   alt={service.name}
                   loading="lazy"
-                  sx={{
-                    width: '100%',
-                    height: { xs: 200, md: 220 },
-                    objectFit: 'cover',
-                    borderRadius: 2,
-                    display: 'block',
-                  }}
+                                      sx={{
+                      cursor: "pointer",
+                      overflow: "hidden",
+                      borderRadius: 3,
+                      height: { xs: 200, sm: 300, md: 400 },
+                      "& img": { transition: "transform .35s" },
+                      "&:hover img": { transform: "scale(1.06)" },
+                    }}
                 />
               </Paper>
             </Grid>

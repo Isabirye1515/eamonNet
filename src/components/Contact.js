@@ -4,7 +4,7 @@ import {
 } from "@mui/material";
 import { Information } from "@carbon/icons-react";
 
-import imageA from "../assets/pics/y.jpg";
+import imageA from "../assets/pics/aj.png";
 import facebook from "../assets/pics/facebook.svg";
 import tiktok from "../assets/pics/tiktok.svg";
 import instagram from "../assets/pics/instagram.svg";
@@ -92,7 +92,7 @@ export default function Contact() {
         <Grid container spacing={{ xs: 3, md: 4 }} alignItems="stretch">
           <Grid size={{ xs: 12, md: 5 }}>
             <Box sx={{ position: "relative", height: { xs: 300, sm: 420, md: "100%" }, minHeight: { md: 560 }, overflow: "hidden", borderRadius: 2, bgcolor: "#ded1bf" }}>
-              <Box component="img" src={imageA} alt="Eamon Dreads hairstyle and salon" sx={{ display: "block", width: "100%", height: "100%", minHeight: { md: 560 }, objectFit: "cover", objectPosition: "center" }} />
+              <Box component="img" src={imageA} alt="Eamon Dreads hairstyle and salon" sx={{ display: "block", width: "100%", height: "100vh", minHeight: { md: 700 }, objectFit: "cover" }} />
               <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 35%, rgba(24,19,14,.82) 100%)" }} />
               <Box sx={{ position: "absolute", bottom: 0, left: 0, right: 0, p: { xs: 3, md: 4 } }}>
                 <Typography sx={{ color: "#e8c8a2", textTransform: "uppercase", letterSpacing: "0.16em", fontSize: "0.75rem", fontWeight: 700, mb: 1 }}>
