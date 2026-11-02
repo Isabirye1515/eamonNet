@@ -35,7 +35,7 @@ import {
 import imageA from "../assets/pics/p.jpg";
 import imageB from "../assets/pics/ah.jpg";
 import imageC from "../assets/pics/ad.jpg";
-import imageD from "../assets/pics/ay.jpg";
+import imageD from "../assets/pics/au.jpg";
 import facebook from "../assets/pics/facebook.svg";
 import instagram from "../assets/pics/instagram.svg";
 import tiktok from "../assets/pics/tiktok.svg";
@@ -539,7 +539,7 @@ const Home = () => {
       <Section id="gallery" minHeight="auto">
         <Box sx={{ ...sectionSx, bgcolor: "#182235" }}>
           <Container maxWidth="lg">
-            <SectionTitle icon={ImageStoreLocal}>Our Gallery</SectionTitle>
+            <SectionTitle>Our Gallery</SectionTitle>
             <Typography sx={{ ...bodySx, maxWidth: 720, mb: 4 }}>
               Explore a selection of our work and discover styles that inspire
               your next look.
@@ -558,12 +558,12 @@ const Home = () => {
                       cursor: "pointer",
                       overflow: "hidden",
                       borderRadius: 3,
-                      height: { xs: 190, sm: 260, md: 310 },
+                      height: { xs: 200, sm: 300, md: 400 },
                       "& img": { transition: "transform .35s" },
                       "&:hover img": { transform: "scale(1.06)" },
                     }}
                   >
-                    <Photo src={src} alt={`Eamon Dreads gallery image ${index + 1}`} sx={{ borderRadius: 0 }} />
+                    <Photo src={src} alt={`Eamon Dreads gallery image ${index + 1}`} sx={{ borderRadius: 0,objectFit: "cover" }} />
                   </Box>
                 </Grid>
               ))}
@@ -594,7 +594,7 @@ const Home = () => {
           <Container maxWidth="lg">
             <Grid container spacing={4} alignItems="center">
               <Grid size={{ xs: 12, md: 5 }}>
-                <SectionTitle icon={Blog}>Follow our work</SectionTitle>
+                <SectionTitle >Follow our work</SectionTitle>
                 <Typography sx={bodySx}>
                   Follow our social pages for hairstyle inspiration, recent
                   work, photos, reels, and updates from Eamon Dreads.
@@ -610,7 +610,14 @@ const Home = () => {
                       component="img"
                       src={social.src}
                       alt={social.alt}
-                      sx={{ width: 42, height: 42, objectFit: "contain" }}
+                      sx={{
+                      cursor: "pointer",
+                      overflow: "hidden",
+                      borderRadius: 3,
+                      height: { xs: 200, sm: 300, md: 400 },
+                      "& img": { transition: "transform .35s" },
+                      "&:hover img": { transform: "scale(1.06)" },
+                    }}
                     />
                   ))}
                 </Stack>
@@ -619,7 +626,14 @@ const Home = () => {
                 <Photo
                   src={imageD}
                   alt="Eamon Dreads hairstyle"
-                  sx={{ height: { xs: 260, md: 360 }, boxShadow: 5 }}
+                  sx={{
+                      cursor: "pointer",
+                      overflow: "hidden",
+                      borderRadius: 3,
+                      height: { xs: 600, sm: 600, md: 600 },
+                      "& img": { transition: "transform .35s" },
+                      "&:hover img": { transform: "scale(1.06)" },
+                    }}
                 />
               </Grid>
             </Grid>
