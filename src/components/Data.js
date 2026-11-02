@@ -1,5 +1,3 @@
-
-
 // Import images
 import a from '../assets/pics/a.jpg';
 import b from '../assets/pics/b.jpg';
@@ -50,95 +48,112 @@ import av from '../assets/pics/av.jpg';
 import aw from '../assets/pics/aw.jpg';
 import ax from '../assets/pics/ax.jpg';
 
-import unheart from '../assets/pics/unheart.svg';
-import { Column, Grid } from '@carbon/react';
-import { useEffect, useState } from 'react';
-import Aos from 'aos';
-import "aos/dist/aos.css";
+import { Box, Grid, Stack, Typography } from '@mui/material';
 import { DropPhoto } from '@carbon/icons-react';
+import { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
-
+// Hoisted out of the component so it isn't rebuilt on every render
+const IMAGES = [
+  { id: 1, name: 'a', src: a },
+  { id: 2, name: 'b', src: b },
+  { id: 3, name: 'c', src: c },
+  { id: 4, name: 'd', src: d },
+  { id: 5, name: 'e', src: e },
+  { id: 6, name: 'f', src: f },
+  { id: 7, name: 'g', src: g },
+  { id: 8, name: 'h', src: h },
+  { id: 10, name: 'j', src: j },
+  { id: 11, name: 'k', src: k },
+  { id: 12, name: 'l', src: l },
+  { id: 13, name: 'm', src: m },
+  { id: 14, name: 'n', src: n },
+  { id: 15, name: 'o', src: o },
+  { id: 16, name: 'p', src: p },
+  { id: 17, name: 'q', src: q },
+  { id: 18, name: 'r', src: r },
+  { id: 19, name: 's', src: s },
+  { id: 20, name: 't', src: t },
+  { id: 22, name: 'v', src: v },
+  { id: 23, name: 'w', src: w },
+  { id: 24, name: 'x', src: x },
+  { id: 25, name: 'y', src: y },
+  { id: 26, name: 'z', src: z },
+  { id: 27, name: 'aa', src: aa },
+  { id: 28, name: 'ab', src: ab },
+  { id: 29, name: 'ac', src: ac },
+  { id: 30, name: 'ad', src: ad },
+  { id: 31, name: 'ae', src: ae },
+  { id: 32, name: 'af', src: af },
+  { id: 33, name: 'ag', src: ag },
+  { id: 34, name: 'ah', src: ah },
+  { id: 35, name: 'ai', src: ai },
+  { id: 36, name: 'aj', src: aj },
+  { id: 37, name: 'ak', src: ak },
+  { id: 38, name: 'al', src: al },
+  { id: 39, name: 'am', src: am },
+  { id: 40, name: 'an', src: an },
+  { id: 41, name: 'ao', src: ao },
+  { id: 42, name: 'ap', src: ap },
+  { id: 43, name: 'aq', src: aq },
+  { id: 44, name: 'ar', src: ar },
+  { id: 45, name: 'as', src: as },
+  { id: 46, name: 'at', src: at },
+  { id: 47, name: 'au', src: au },
+  { id: 48, name: 'av', src: av },
+  { id: 49, name: 'aw', src: aw },
+  { id: 50, name: 'ax', src: ax },
+];
 
 function Data() {
-  // State with image data
-  const [images]=useState( [
-    { id: 1, name: 'a', src: a , like: unheart, isLiked: false},
-    { id: 2, name: 'b', src: b , like: unheart, isLiked: false},
-    { id: 3, name: 'c', src: c , like: unheart, isLiked: false},
-    { id: 4, name: 'd', src: d , like: unheart, isLiked: false},
-    { id: 5, name: 'e', src: e , like: unheart, isLiked: false },
-    { id: 6, name: 'f', src: f , like: unheart, isLiked: false},
-    { id: 7, name: 'g', src: g , like: unheart, isLiked: false},
-    { id: 8, name: 'h', src: h , like: unheart, isLiked: false},
-    { id: 10, name: 'j', src: j , like: unheart, isLiked: false},
-    { id: 11, name: 'k', src: k , like: unheart, isLiked: false},
-    { id: 12, name: 'l', src: l , like: unheart, isLiked: false},
-    { id: 13, name: 'm', src: m , like: unheart, isLiked: false},
-    { id: 14, name: 'n', src: n , like: unheart, isLiked: false},
-    { id: 15, name: 'o', src: o , like: unheart, isLiked: false},
-    { id: 16, name: 'p', src: p , like: unheart, isLiked: false},
-    { id: 17, name: 'q', src: q , like: unheart, isLiked: false},
-    { id: 18, name: 'r', src: r , like: unheart, isLiked: false},
-    { id: 19, name: 's', src: s , like: unheart, isLiked: false},
-    { id: 20, name: 't', src: t , like: unheart, isLiked: false},
-    { id: 22, name: 'v', src: v , like: unheart, isLiked: false},
-    { id: 23, name: 'w', src: w , like: unheart, isLiked: false},
-    { id: 24, name: 'x', src: x , like: unheart, isLiked: false},
-    { id: 25, name: 'y', src: y , like: unheart, isLiked: false},
-    { id: 26, name: 'z', src: z , like: unheart, isLiked: false},
-    { id: 27, name: 'aa', src: aa , like: unheart, isLiked: false},
-    { id: 28, name: 'ab', src: ab , like: unheart, isLiked: false},
-    { id: 29, name: 'ac', src: ac , like: unheart, isLiked: false},
-    { id: 30, name: 'ad', src: ad , like: unheart, isLiked: false},
-    { id: 31, name: 'ae', src: ae , like: unheart, isLiked: false},
-    { id: 32, name: 'af', src: af , like: unheart, isLiked: false},
-    { id: 33, name: 'ag', src: ag , like: unheart, isLiked: false},
-    { id: 34, name: 'ah', src: ah , like: unheart, isLiked: false},
-    { id: 35, name: 'ai', src: ai , like: unheart, isLiked: false},
-    { id: 36, name: 'aj', src: aj , like: unheart, isLiked: false},
-    { id: 37, name: 'ak', src: ak , like: unheart, isLiked: false},
-    { id: 38, name: 'al', src: al , like: unheart, isLiked: false},
-    { id: 39, name: 'am', src: am , like: unheart, isLiked: false},
-    { id: 40, name: 'an', src: an , like: unheart, isLiked: false},
-    { id: 41, name: 'ao', src: ao , like: unheart, isLiked: false},
-    { id: 42, name: 'ap', src: ap , like: unheart, isLiked: false},
-    { id: 43, name: 'aq', src: aq , like: unheart, isLiked: false},
-    { id: 44, name: 'ar', src: ar , like: unheart, isLiked: false},
-    { id: 45, name: 'as', src: as , like: unheart, isLiked: false},
-    { id: 46, name: 'at', src: at , like: unheart, isLiked: false},
-    { id: 47, name: 'au', src: au , like: unheart, isLiked: false},
-    { id: 48, name: 'av', src: av , like: unheart, isLiked: false},
-    { id: 49, name: 'aw', src: aw , like: unheart, isLiked: false},
-    { id: 50, name: 'ax', src: ax , like: unheart, isLiked: false}
-  ]);
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+    });
+  }, []);
 
-      useEffect(() => {
-          Aos.init({
-              duration: 1000, // Animation duration in milliseconds
-              once: false, // Whether animation should happen only once
-              mirror: true, // Whether elements should animate out while scrolling past them
-          });
-      }, []);
-  
- 
-  
-  
   return (
-    <>
-    <Grid className='p-5' >
-                                                                <Column lg={16} md={8} sm={4}  className="d-flex m-4 " >
-                                        <DropPhoto size={30} /> <h5  >Simple Gallery</h5>
-                                        </Column> 
-      {images.map((image)=>(
-        <Column lg={5} sm={4} md={4}  key={image.id} className='m-4 mt-5' data-aos="fade-right" >
-          <img src={image.src} alt={image.name} height={350} width={350} className='m-2' style={{objectFit:"cover", borderRadius:"5px"}} />
+    <Box  id="gallery" sx={{ p: { xs: 2, md: 5 }, mt:5 }}>
+      {/* Header */}
+      <Stack id="description" direction="row" spacing={1} alignItems="center" sx={{ mb: 4 }}>
+        <Typography variant="h2">Simple Gallery</Typography>
+      </Stack>
 
-        </Column>
-      ))}
-    </Grid>
-    </>
-  )
-  
+      {/* Image grid */}
+      <Grid container spacing={{ xs: 2, md: 4 }}>
+        {IMAGES.map((image, index) => (
+          <Grid
+            key={image.id}
+            size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
+            data-aos="fade-up"
+            data-aos-delay={(index % 4) * 100}
+          >
+            <Box
+              component="img"
+              src={image.src}
+              alt={image.name}
+              loading="lazy"
+              sx={{
+                width: "100%",
+                height: { xs: 220, sm: 260, md: 300 },
+                objectFit: "cover",
+                borderRadius: 2,
+                display: "block",
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                "&:hover": {
+                  transform: "scale(1.03)",
+                  boxShadow: 4,
+                },
+              }}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  );
 }
 
 export default Data;

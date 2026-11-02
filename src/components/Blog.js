@@ -1,53 +1,291 @@
-import { Column, Grid } from '@carbon/react';
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Paper,
+  Stack,
+  Typography,
+} from "@mui/material";
 
 import facebook from "../assets/pics/facebook.svg";
 import tiktok from "../assets/pics/tiktok.svg";
 import instagram from "../assets/pics/instagram.svg";
-import InstaEmbed from './InstaEmbed';
+import InstaEmbed from "./InstaEmbed";
+
+const INSTAGRAM_POSTS = [
+  { id: "1", url: "https://www.instagram.com/p/DJT1KFMtRus/" },
+  { id: "2", url: "https://www.instagram.com/p/DA8J0XLIZFA/" },
+  { id: "3", url: "https://www.instagram.com/reel/DJT1KFMtRus/?utm_source=ig_embed&ig_rid=3fb7c40b-1c54-4541-b5d8-ea4bf1ca79b0" },
+  { id: "4", url: "https://www.instagram.com/p/C8JY6iooPaI/" },
+  { id: "5", url: "https://www.instagram.com/p/C8bRe2PIV7i/" },
+  { id: "6", url: "https://www.instagram.com/p/C9g6RiRooQe/" },
+  { id: "7", url: "https://www.instagram.com/p/C9tsl58IsJl/" },
+  { id: "8", url: "https://www.instagram.com/p/C9yrzLiIBU5/" },
+  { id: "9", url: "https://www.instagram.com/p/C91ppP9o51U/" },
+  { id: "10", url: "https://www.instagram.com/p/C_52Ck9oL5Y/" },
+  { id: "11", url: "https://www.instagram.com/p/DA0DNiiI-vu/" },
+  { id: "12", url: "https://www.instagram.com/p/DA0DaMKIgvB/" },
+];
+
+const SOCIAL_LINKS = [
+  {
+    id: 1,
+    name: "Facebook",
+    url: "https://www.facebook.com/eamon256",
+    user: "EAMON Dreadlock Solutions Uganda | Kampala",
+    photo: facebook,
+  },
+  {
+    id: 2,
+    name: "Instagram",
+    url: "https://www.instagram.com/eamon_dreads_kampala/",
+    user: "eamon (@eamon_dreads_kampala)",
+    photo: instagram,
+  },
+  {
+    id: 3,
+    name: "TikTok",
+    url: "https://www.tiktok.com/discover/eamon-dreadlock-solution?lang=en",
+    user: "Eamon Dreadlocks Solution",
+    photo: tiktok,
+  },
+  {
+    id: 4,
+    name: "Instagram",
+    url: "https://www.instagram.com/eamon_dreads_kampala/p/C6cnlBqowg3/?locale=es_US",
+    user: "Unlock your beauty of dreadlocks",
+    photo: instagram,
+  },
+  {
+    id: 5,
+    name: "TikTok",
+    url: "https://www.tiktok.com/@eamondreadssalon/video/7262751627570908421",
+    user: "Eamon Dreads Salon Kampala",
+    photo: tiktok,
+  },
+];
+
+const COLORS = {
+  page: "#f6f1e8",
+  paper: "#fffdf9",
+  ink: "#29251f",
+  muted: "#62594e",
+  brown: "#76563b",
+  border: "#e4d8c7",
+  accent: "#c6a47e",
+};
 
 export default function Blog() {
-  const insta1 = [{id:"1", url:"https://www.instagram.com/p/DJT1KFMtRus/"}
-  , {id:"2", url:"https://www.instagram.com/p/DA8J0XLIZFA/"},
-    { id: "3", url: "https://www.instagram.com/reel/DJT1KFMtRus/?utm_source=ig_embed&ig_rid=3fb7c40b-1c54-4541-b5d8-ea4bf1ca79b0" },
-    { id: "4", url: "https://www.instagram.com/p/C8JY6iooPaI/" },
-    { id: "5", url: "https://www.instagram.com/p/C8bRe2PIV7i/" },
-    { id: "6", url: "https://www.instagram.com/p/C9g6RiRooQe/" },
-    { id: "7", url: "https://www.instagram.com/p/C9tsl58IsJl/" },
-    { id: "8", url: "https://www.instagram.com/p/C9yrzLiIBU5/" },
-    { id: "9", url: "https://www.instagram.com/p/C91ppP9o51U/" },
-    { id: "10", url: "https://www.instagram.com/p/C_52Ck9oL5Y/" },
-    { id: "11", url: "https://www.instagram.com/p/DA0DNiiI-vu/" },
-    { id: "12", url: "https://www.instagram.com/p/DA0DaMKIgvB/" }
-  ]
-  const social = [
-    { id: 1, name: "facebook", url: "https://www.facebook.com/eamon256", user: "EAMON Dreadlock Solutions Uganda | Kampala", photo: facebook },
-    { id: 2, name: "instagram", url: "https://www.instagram.com/eamon_dreads_kampala/", user: "eamomn (@eamon_dreads_kampala)", photo: instagram },
-    { id: 3, name: "TikTok", url: "https://www.tiktok.com/discover/eamon-dreadlocks-solution?lang=en", user: "Eamon Dreadlocks Solution", photo: tiktok },
-    { id: 4, name: "Instagram", url: "https://www.instagram.com/eamon_dreads_kampala/p/C6cnlBqowg3/?locale=es_US", user: "eamon | Unlock your beauty of dreadlocks ...", photo: instagram },
-    { id: 5, name: "tiktok", url: "https://www.tiktok.com/@eamondreadssalon/video/7262751627570908421", user: "Eamon dreads salon Kampala (@eamondreadssalon)", photo: tiktok },
-  ];
-
   return (
-    <Grid className='p-5 text-center'>
-      {insta1.map((insta) => (
-        <Column key={insta.id} lg={5} md={4} sm={4}   className='m-2'>
-        <InstaEmbed key={insta.id} url={insta.url} />
-        </Column>
-      ))}
+    <Box
+      component="main"
+      id="blog"
+      sx={{
+        minHeight: "100vh",
+        bgcolor: COLORS.page,
+        color: COLORS.ink,
+        py: { xs: 5, md: 9 },
+        mt: 5
+      }}
+    >
+      <Container  maxWidth="xl">
+        {/* Page introduction */}
+        <Box  sx={{ maxWidth: 760, mx: "auto", textAlign: "center", mb: { xs: 5, md: 7 } }}>
+          <Typography
+          id="description"
+            component="p"
+            sx={{
+              color: COLORS.brown,
+              fontSize: "0.78rem",
+              fontWeight: 800,
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              mb: 1.5,
+            }}
+          >
+            Eamon Dreads · Kampala
+          </Typography>
+          <Typography
+          id="description"
+            component="h1"
+            sx={{
+              fontFamily: 'Georgia, "Times New Roman", serif',
+              fontWeight: 700,
+              fontSize: { xs: "2.5rem", sm: "3.4rem", md: "4rem" },
+              lineHeight: 1.1,
+              letterSpacing: "-0.035em",
+            }}
+          >
+            Stories, styles & inspiration
+          </Typography>
+          <Typography
+          id="description"
+            sx={{
+              mt: 2,
+              mx: "auto",
+              maxWidth: 620,
+              color: COLORS.muted,
+              fontSize: { xs: "1rem", md: "1.1rem" },
+              lineHeight: 1.8,
+            }}
+          >
+            Explore our latest looks, salon moments, and dreadlock inspiration.
+            Follow Eamon Dreads for more styles and updates.
+          </Typography>
+        </Box>
 
-      {social.map((item)=>(
-        <Column lg={3} sm={4} md={4}  key={item.id} >
-          <a className='btn btn-primary m-3' href={item.url} target="_blank" rel="noreferrer" ><img src={item.photo} alt={item.name} width={20} height={20} />{item.user}</a>
+        {/* Instagram gallery */}
+        <Box component="section" aria-labelledby="instagram-gallery-heading">
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            alignItems={{ xs: "flex-start", sm: "flex-end" }}
+            justifyContent="space-between"
+            spacing={2}
+            sx={{ mb: 3 }}
+          >
+            <Box>
+              <Typography
+                component="h2"
+                id="instagram-gallery-heading"
+                sx={{
+                  fontFamily: 'Georgia, "Times New Roman", serif',
+                  fontWeight: 700,
+                  fontSize: { xs: "1.8rem", md: "2.35rem" },
+                  color:"#f9f4f0",
+                }}
+              >
+                From our Instagram
+              </Typography>
+              <Typography sx={{ color: COLORS.muted, mt: 0.75, lineHeight: 1.7, color:"#f9f4f0" }}>
+                A closer look at our work and recent posts.
+              </Typography>
+            </Box>
+            <Button
+              component="a"
+              href="https://www.instagram.com/eamon_dreads_kampala/"
+              target="_blank"
+              rel="noreferrer"
+              variant="outlined"
+              sx={{
+                borderColor: COLORS.brown,
+                color: COLORS.brown,
+                textTransform: "none",
+                fontWeight: 700,
+                borderRadius: 1.5,
+                px: 2.5,
+                py: 1,
+                "&:hover": {
+                  borderColor: COLORS.brown,
+                  bgcolor: "rgba(118,86,59,0.07)",
+                },color:"#e6d9cd"
+              }}
+            >
+              Follow on Instagram ↗
+            </Button>
+          </Stack>
 
-        </Column>
-      ))}
-      
+          <Grid container spacing={2.5} alignItems="stretch">
+            {INSTAGRAM_POSTS.map((post) => (
+              <Grid key={post.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+                <Paper
+                  elevation={0}
+                  sx={{
+                    height: "100%",
+                    p: 1,
+                    overflow: "hidden",
+                    border: `1px solid ${COLORS.border}`,
+                    borderRadius: 2,
+                    bgcolor: COLORS.paper,
+                    transition: "transform .2s ease, box-shadow .2s ease",
+                    "&:hover": {
+                      transform: "translateY(-3px)",
+                      boxShadow: "0 12px 28px rgba(65,46,28,.09)",
+                    },
+                  }}
+                >
+                  <Box sx={{ width: "100%", minWidth: 0, "& iframe": { maxWidth: "100%" } }}>
+                    <InstaEmbed url={post.url} />
+                  </Box>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
 
+        {/* Social platforms */}
+        <Box component="section" aria-labelledby="social-links-heading" sx={{ mt: { xs: 7, md: 10 } }}>
+          <Box sx={{ textAlign: "center", mb: 4 }}>
+            <Typography
+          
+              component="h2"
+              id="social-links-heading"
+              sx={{
+                fontFamily: 'Georgia, "Times New Roman", serif',
+                fontWeight: 700,
+                fontSize: { xs: "2rem", md: "2.7rem" },color:"#f9f4f0"
+              }}
+            >
+              Join our community
+            </Typography>
+            <Typography sx={{ color: COLORS.muted, mt: 1, lineHeight: 1.8,color:"#d8c0ac" }}>
+              Follow us across our social platforms for new styles, inspiration, and salon updates.
+            </Typography>
+          </Box>
 
-      
-
-      </Grid>
-    
-    
+          <Grid container spacing={2}>
+            {SOCIAL_LINKS.map((item) => (
+              <Grid key={item.id} size={{ xs: 12, sm: 6, md: 4 }}>
+                <Box
+                  component="a"
+                  href={item.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Visit Eamon Dreads on ${item.name}: ${item.user}`}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 2,
+                    minHeight: 94,
+                    height: "100%",
+                    p: 2.25,
+                    bgcolor: COLORS.paper,
+                    border: `1px solid ${COLORS.border}`,
+                    borderRadius: 2,
+                    color: COLORS.ink,
+                    textDecoration: "none",
+                    transition: "transform .2s ease, border-color .2s ease, box-shadow .2s ease",
+                    "&:hover": {
+                      transform: "translateY(-3px)",
+                      borderColor: COLORS.accent,
+                      boxShadow: "0 10px 25px rgba(65,46,28,.08)",
+                    },
+                    "&:focus-visible": {
+                      outline: `3px solid ${COLORS.accent}`,
+                      outlineOffset: 2,
+                    },
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={item.photo}
+                    alt=""
+                    sx={{ width: 38, height: 38, objectFit: "contain", flexShrink: 0 }}
+                  />
+                  <Box sx={{ minWidth: 0 }}>
+                    <Typography sx={{ fontWeight: 800, color: COLORS.brown, mb: 0.5 }}>
+                      {item.name}
+                    </Typography>
+                    <Typography sx={{ color: COLORS.muted, fontSize: "0.9rem", lineHeight: 1.5, overflowWrap: "anywhere" }}>
+                      {item.user}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Container>
+    </Box>
   );
 }
