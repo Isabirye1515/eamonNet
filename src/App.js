@@ -8,10 +8,11 @@ import Blog from "./components/Blog";
 import Heading from "./components/heading";
 import Data from "./components/Data";
 import Benefits from "./components/Benefits";
+import { Grid } from "@mui/material";
 
 const App =()=>{
   return(
-  <div className="App" >
+  <Grid className="App" >
     <Heading />
     <Routes>
       <Route path="/" element={<Home />} />
@@ -24,7 +25,7 @@ const App =()=>{
       
     </Routes>
      <Footer />
-   </div> 
+   </Grid> 
    
 
   )

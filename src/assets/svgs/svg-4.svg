@@ -1,0 +1,14 @@
+
+<svg
+  viewBox="0 0 1200 500"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="none"
+  style="width: 100%; height: 100%; display: block;"
+>
+  <path
+    d="M0 0 H1200 V350
+       C900 420 650 280 350 380
+       C200 430 80 440 0 400 Z"
+    fill="#20B2AA"
+  />
+</svg>

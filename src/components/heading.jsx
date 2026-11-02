@@ -55,7 +55,7 @@ const Heading = () => {
   return (
     <Grid>
       <Column sm={4} md={8} lg={16}>
-        <Header  aria-label="EAMON DREADS Header ">
+        <Header  id="heading" aria-label="EAMON DREADS Header ">
           <HeaderName  prefix="EAMON DREADS" />
           <HeaderGlobalBar>
 

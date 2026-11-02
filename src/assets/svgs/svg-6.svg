@@ -1,0 +1,16 @@
+
+<svg
+  viewBox="0 0 1200 1200"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="none"
+  style="width: 100%; height: 400px; display: block;"
+>
+  <path
+    d="M600,0
+       C900,150 600,300 600,600
+       C600,600 600,300 600,1200 L0,1200 L0,0 Z"
+    fill="#021a33"
+    stroke="aliceblue"
+    stroke-width="4"
+  />
+</svg>
