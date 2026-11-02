@@ -2,7 +2,7 @@
 background-color: #d7d7da;
 font-family: 'Times New Roman', Times, serif;
 font-weight: bold;
-opacity: 30%;
+opacity: 50%;
 font-size: x-large;
 }
 .btn::hover{
@@ -72,4 +72,15 @@ font-size: x-large;
   margin-bottom: 100px;
   border-radius: 2px solid red;
 }
+
+
+.header-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
 

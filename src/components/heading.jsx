@@ -1,17 +1,16 @@
 import { useState } from "react";
-import { 
-  Menu as MenuIcon, 
-} from "@carbon/icons-react";
-import { 
-  Column, 
-  Grid, 
-  Header, 
-  HeaderGlobalAction, 
-  HeaderGlobalBar, 
-  HeaderName 
+import { Menu as MenuIcon } from "@carbon/icons-react";
+import {
+  Column,
+  Grid,
+  Header,
+  HeaderGlobalAction,
+  HeaderGlobalBar,
+  HeaderName,
 } from "@carbon/react";
 import { Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import logo from "./../assets/pics/favicon.jpeg";
 
 const PageUrls = [
   { id: 1, name: "Home", url: "/" },
@@ -25,7 +24,6 @@ const PageUrls = [
 const Heading = () => {
   const navigate = useNavigate();
 
-  // State to manage the MUI Menu dropdown anchor
   const [anchorEl, setAnchorEl] = useState(null);
   const isMenuOpen = Boolean(anchorEl);
 
@@ -39,14 +37,13 @@ const Heading = () => {
 
   const handleNavigate = (url) => {
     handleMenuClose();
+
     if (url.startsWith("#")) {
-      // Scroll to section if it's an anchor link
       const element = document.querySelector(url);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // Navigate via React Router
       navigate(url);
     }
   };
@@ -54,24 +51,35 @@ const Heading = () => {
   return (
     <Grid>
       <Column sm={4} md={8} lg={16}>
-        <Header  id="heading" aria-label="EAMON DREADS Header ">
-          <HeaderName  prefix="EAMON DREADS" />
-          <HeaderGlobalBar>
+        <Header id="heading" aria-label="Eamon Dreads Header">
+          <HeaderName prefix="">
+            <img
+              src={logo}
+              alt="Eamon Dreads logo"
+              className="header-logo"
+            />
+            <span className="header-title">EAMON DREADS</span>
+          </HeaderName>
 
-            {/* Mobile / Dropdown Menu Trigger */}
-            <HeaderGlobalAction onClick={handleMenuClick} aria-label="Menu">
-              <MenuIcon size={20} className="m-5" />
+          <HeaderGlobalBar>
+            <HeaderGlobalAction
+              onClick={handleMenuClick}
+              aria-label="Open navigation menu"
+            >
+              <MenuIcon size={20} />
             </HeaderGlobalAction>
           </HeaderGlobalBar>
 
-          {/* MUI Dropdown Menu for PageUrls */}
           <Menu
             anchorEl={anchorEl}
             open={isMenuOpen}
             onClose={handleMenuClose}
           >
             {PageUrls.map((item) => (
-              <MenuItem key={item.id} onClick={() => handleNavigate(item.url)}>
+              <MenuItem
+                key={item.id}
+                onClick={() => handleNavigate(item.url)}
+              >
                 {item.name}
               </MenuItem>
             ))}
