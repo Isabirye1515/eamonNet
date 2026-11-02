@@ -32,7 +32,7 @@ const QUICK_LINKS = [
   { label: "Contact", href: "/contact" },
   { label: "Gallery", href: "/gallery" },
   { label: "Social media", href: "/blog" },
-  { label: "Offers", href: "/benefit" },
+  { label: "Offers", href: "/offers" },
 ];
 
 export default function Footer() {

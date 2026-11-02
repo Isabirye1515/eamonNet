@@ -15,8 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 const PageUrls = [
   { id: 1, name: "Home", url: "/" },
-  { id: 2, name: "Activity", url: "#herosection" },
-  { id: 3, name: "Testimonials", url: "#testimonials" },
+  { id: 2, name: "Activity", url: "/offers" },
   { id: 4, name: "Contact", url: "/contact" },
   { id: 5, name: "Blogs", url: "/blog" },
   { id: 6, name: "Services", url: "/services" },
