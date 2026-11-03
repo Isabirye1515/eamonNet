@@ -119,20 +119,7 @@ export default function Blog() {
           >
             Stories, styles & inspiration
           </Typography>
-          <Typography
-          id="description"
-            sx={{
-              mt: 2,
-              mx: "auto",
-              maxWidth: 620,
-              color: COLORS.muted,
-              fontSize: { xs: "1rem", md: "1.1rem" },
-              lineHeight: 1.8,
-            }}
-          >
-            Explore our latest looks, salon moments, and dreadlock inspiration.
-            Follow Eamon Dreads for more styles and updates.
-          </Typography>
+
         </Box>
 
         {/* Instagram gallery */}
