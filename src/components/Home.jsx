@@ -586,7 +586,7 @@ const Home = () => {
           sx={{
             ...sectionSx,
             backgroundImage:
-              "linear-gradient(120deg, rgba(34,3,101,.92), rgba(22,20,57,.96)), url('./assets/svgs/svg-6.svg')",
+              "linear-gradient(120deg, rgba(172, 140, 244, 0.92), rgba(22,20,57,.96)), url('./assets/svgs/svg-6.svg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
