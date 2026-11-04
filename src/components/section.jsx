@@ -3,7 +3,6 @@ import { Box } from "@mui/material";
 export default function Section({ id, minHeight = "100vh", children, ...rest }) {
     return(
         <Box id={id} 
-        minHeight={minHeight} 
         {...rest}
         sx={{
         minHeight,

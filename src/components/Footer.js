@@ -100,7 +100,7 @@ export default function Footer() {
             <Typography component="h3" sx={{ color: "#fff", fontWeight: 800, mb: 2 }}>
               Connect With Us
             </Typography>
-            <Stack spacing={1.5} alignItems="flex-start">
+            <Stack spacing={1.5} sx={{ alignItems: "flex-start" }}>
               <Button
                 component="a"
                 href={MAP_URL}

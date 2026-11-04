@@ -48,10 +48,16 @@ export default function Services() {
     <>
       <Box id="services" sx={{ p: { xs: 2, md: 5 }, mt: 5 }}>
         {/* ---------------- Customer services ---------------- */}
-        <Stack  id="description"  direction="row" spacing={1} alignItems="center" sx={{ mb: 3 }}>
+        <Stack id="description" direction="row" spacing={1} sx={{ mb: 3, alignItems: "center" }}>
           
-          <Typography variant="h2">Customer Services</Typography>
+          <Typography component="h1" variant="h2">Dreadlock Services in Kampala</Typography>
         </Stack>
+        <Typography sx={{ maxWidth: 850, mb: 4, color: 'text.secondary', lineHeight: 1.8 }}>
+          Eamon Dreads Solutions offers dreadlock installation, maintenance,
+          repair, extensions, and styling in Kampala. We discuss your hair,
+          preferred look, and care routine so you can choose a service that
+          suits your needs. Contact us to ask about the right option for you.
+        </Typography>
 
         <Grid container spacing={3}>
           {SERVICES.map((service) => (
@@ -96,7 +102,7 @@ export default function Services() {
         </Grid>
 
         {/* ---------------- Student services ---------------- */}
-        <Stack  id="description"  direction="row" spacing={1} alignItems="center" sx={{ mt: 8, mb: 3 }}>
+        <Stack id="description" direction="row" spacing={1} sx={{ mt: 8, mb: 3, alignItems: "center" }}>
 
           <Typography variant="h3">Student Services</Typography>
         </Stack>

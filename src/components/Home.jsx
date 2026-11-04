@@ -209,7 +209,7 @@ function Photo({ src, alt, sx = {}, ...props }) {
 
 function SectionTitle({ children, icon: Icon }) {
   return (
-    <Stack direction="row" spacing={1.25} alignItems="center" sx={{ mb: 3 }}>
+    <Stack direction="row" spacing={1.25} sx={{ mb: 3, alignItems: "center" }}>
       {Icon && <Icon size={30} color="#ffffff" />}
       <Typography component="h2" sx={{ ...headingSx, mb: 0 }}>
         {children}
@@ -248,7 +248,7 @@ const Home = () => {
           }}
         >
           <Container maxWidth="lg">
-            <Grid container spacing={{ xs: 5, md: 7 }} alignItems="center">
+            <Grid container spacing={{ xs: 5, md: 7 }} sx={{ alignItems: "center" }}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography
                   component="p"
@@ -393,7 +393,7 @@ const Home = () => {
       <Section id="activity" minHeight="auto">
         <Box sx={{ ...sectionSx, bgcolor: "#182235" }}>
           <Container maxWidth="lg">
-            <Grid container spacing={5} alignItems="center">
+            <Grid container spacing={5} sx={{ alignItems: "center" }}>
               <Grid size={{ xs: 12, md: 5 }}>
                 <Photo
                   src={imageB}
@@ -439,7 +439,7 @@ const Home = () => {
           }}
         >
           <Container maxWidth="lg">
-            <Grid container spacing={5} alignItems="center">
+            <Grid container spacing={5} sx={{ alignItems: "center" }}>
               <Grid size={{ xs: 12, md: 6 }}>
                 <SectionTitle>Care that puts you first</SectionTitle>
                 <Typography sx={bodySx}>
@@ -591,7 +591,7 @@ const Home = () => {
           }}
         >
           <Container maxWidth="lg">
-            <Grid container spacing={4} alignItems="center">
+            <Grid container spacing={4} sx={{ alignItems: "center" }}>
               <Grid size={{ xs: 12, md: 5 }}>
                 <SectionTitle >Follow our work</SectionTitle>
                 <Typography sx={bodySx}>
