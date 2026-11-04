@@ -136,7 +136,7 @@ function Data() {
                     }}> 
   
         <Typography sx={{ ...bodySx, lineHeight: 1.8 }} component="h1" variant="h2">Dreadlock Styles Gallery in Kampala</Typography>
-      <Typography sx={{ maxWidth: 850, mb: 4, color: 'text.secondary', lineHeight: 1.8 }}>
+      <Typography sx={{ ...bodySx, lineHeight: 1.8 }}>
         Browse styles from the Eamon Dreads portfolio for ideas for your next
         look. Our gallery includes a range of dreadlock lengths and finishes;
         every style can be discussed and adapted to your hair and preferences.
