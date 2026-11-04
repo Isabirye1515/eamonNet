@@ -73,8 +73,10 @@ const headingSx = {
 
 const bodySx = {
   color: "rgba(255,255,255,0.9)",
-  fontSize: { xs: "1rem", md: "1.15rem" },
-  lineHeight: 1.8,
+  fontSize: { xs: "1.2rem", md: "1.25rem" },
+  lineHeight: 2.0, 
+  fontFamily:"monospace"
+  
 };
 
 function SectionNav() {
@@ -473,15 +475,22 @@ const Home = () => {
         <Box
           sx={{
             ...sectionSx,
-            backgroundImage:
-              "linear-gradient(120deg, rgba(13,24,42,.95), rgba(20,49,72,.88)), url('./assets/svgs/svg-4.svg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+           
           }}
+
         >
-          <Container maxWidth="lg">
+          <Container maxWidth="lg" sx={{ bgcolor: "linear-gradient(120deg, rgba(23,34,53,.96), black)" }} >
             <SectionTitle>Our Services</SectionTitle>
-            <Typography sx={{ ...bodySx, maxWidth: 720, mb: 4 }}>
+            <Typography                      sx={{
+              ...bodySx,
+                      height: "100%",
+                      p: { xs: 3, md: 4 },
+                      m: 1,
+                      borderRadius: 3,
+                      bgcolor: "black",
+                      border: "1px solid rgba(255,255,255,.13)",
+
+                    }}>
               Dreadlock care for different styles, stages, and budgets. Get in
               touch to discuss the service that best suits your hair.
             </Typography>
@@ -535,7 +544,7 @@ const Home = () => {
 
       {/* Gallery */}
       <Section id="gallery" minHeight="auto">
-        <Box sx={{ ...sectionSx, }}>
+        <Box sx={{ ...sectionSx }}>
           <Container maxWidth="lg">
             <SectionTitle>Our Gallery</SectionTitle>
             <Typography sx={{ ...bodySx, maxWidth: 720, mb: 4 }}>
@@ -583,10 +592,7 @@ const Home = () => {
         <Box
           sx={{
             ...sectionSx,
-            backgroundImage:
-              "linear-gradient(120deg, rgba(172, 140, 244, 0.92), rgba(22,20,57,.96)), url('./assets/svgs/svg-6.svg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+  
           }}
         >
           <Container maxWidth="lg">
