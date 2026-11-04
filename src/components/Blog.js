@@ -119,17 +119,53 @@ export default function Blog() {
           >
             Stories, styles & inspiration
           </Typography>
+          <Typography sx={{ color: COLORS.muted, mt: 2, lineHeight: 1.8 }}>
+            Explore dreadlock styles created by Eamon Dreads in Kampala, along
+            with updates and inspiration from our salon. These posts offer a
+            look at our work and the many ways to wear and care for locs.
+          </Typography>
+        </Box>
 
+        <Box sx={{ maxWidth: 900, mx: "auto", mb: { xs: 6, md: 8 } }}>
+          <Typography
+            component="h2"
+            sx={{
+              fontFamily: 'Georgia, "Times New Roman", serif',
+              fontWeight: 700,
+              fontSize: { xs: "1.7rem", md: "2.2rem" },
+              color: COLORS.ink,
+              mb: 1.5,
+            }}
+          >
+            Ideas for healthy, expressive locs
+          </Typography>
+          <Typography sx={{ color: COLORS.muted, lineHeight: 1.8 }}>
+            Every loc journey is different. When choosing a style, think about
+            the length and shape you enjoy, how you usually wear your hair, and
+            the level of upkeep that fits your routine. Save examples you like
+            and bring them to a consultation so your stylist can discuss the
+            details with you.
+          </Typography>
+          <Typography sx={{ color: COLORS.muted, lineHeight: 1.8, mt: 2 }}>
+            Regular care helps keep locs comfortable and looking their best.
+            Follow guidance suited to your hair, and ask a loctician if you
+            notice a change that concerns you. Eamon Dreads shares salon work,
+            style ideas, and updates from Kampala here and on social media.
+            Explore the posts below for inspiration, then contact us to ask
+            about installation, styling, maintenance, or repair.
+          </Typography>
         </Box>
 
         {/* Instagram gallery */}
         <Box component="section" aria-labelledby="instagram-gallery-heading">
           <Stack
             direction={{ xs: "column", sm: "row" }}
-            alignItems={{ xs: "flex-start", sm: "flex-end" }}
-            justifyContent="space-between"
             spacing={2}
-            sx={{ mb: 3 }}
+            sx={{
+              mb: 3,
+              alignItems: { xs: "flex-start", sm: "flex-end" },
+              justifyContent: "space-between",
+            }}
           >
             <Box>
               <Typography
@@ -172,7 +208,7 @@ export default function Blog() {
             </Button>
           </Stack>
 
-          <Grid container spacing={2.5} alignItems="stretch">
+          <Grid container spacing={2.5} sx={{ alignItems: "stretch" }}>
             {INSTAGRAM_POSTS.map((post) => (
               <Grid key={post.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
                 <Paper

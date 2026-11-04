@@ -29,6 +29,12 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### Static page rendering
+
+`npm run build` prerenders each public route into HTML so search crawlers can
+read its page heading and content without running JavaScript. The client
+hydrates that markup when the page loads.
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**

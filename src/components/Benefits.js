@@ -115,9 +115,11 @@ export default function Benefits() {
         {/* Section heading */}
         <Stack
           spacing={2}
-          alignItems="center"
-          textAlign="center"
-          sx={{ mb: { xs: 4, md: 6 } }}
+          sx={{
+            mb: { xs: 4, md: 6 },
+            alignItems: "center",
+            textAlign: "center",
+          }}
         >
           <Typography
             variant="overline"
@@ -132,7 +134,7 @@ export default function Benefits() {
           </Typography>
 
           <Typography
-            component="h2"
+            component="h1"
             sx={{
               color: palette.ink,
               fontFamily: 'Georgia, "Times New Roman", serif',
@@ -146,7 +148,7 @@ export default function Benefits() {
               maxWidth: 700,
             }}
           >
-            More Than Just Dreadlocks
+            Why Choose Eamon Dreads in Kampala
           </Typography>
 
           <Box
@@ -174,7 +176,7 @@ export default function Benefits() {
         {/* Benefits grid: two cards per row on desktop */}
         <Grid container spacing={{ xs: 2, sm: 3 }}>
           {BENEFITS.map((benefit, index) => (
-            <Grid item xs={12} md={6} key={benefit.id}>
+            <Grid size={{ xs: 12, md: 6 }} key={benefit.id}>
               <Paper
                 elevation={0}
                 sx={{

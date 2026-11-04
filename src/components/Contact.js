@@ -89,7 +89,26 @@ export default function Contact() {
           </Typography>
         </Box>
 
-        <Grid container spacing={{ xs: 3, md: 4 }} alignItems="stretch">
+        <Box sx={{ maxWidth: 900, mx: "auto", mb: { xs: 5, md: 7 } }}>
+          <Typography component="h2" sx={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: { xs: "1.5rem", md: "1.8rem" }, fontWeight: 700, mb: 1.5 }}>
+            Tell us what you have in mind
+          </Typography>
+          <Typography sx={{ color: "#62594e", lineHeight: 1.8 }}>
+            Use the form to ask about starting dreadlocks, refreshing an
+            existing style, repairs, or extensions. Include a short description
+            of your hair and the look you want so our team can understand your
+            request. You can also call us or send a message through our social
+            pages if that is more convenient.
+          </Typography>
+          <Typography sx={{ color: "#62594e", lineHeight: 1.8, mt: 2 }}>
+            Eamon Dreads Solutions is at Pack View Shopping Center in Kampala.
+            If you plan to visit, contact us first to discuss the service you
+            need and any questions about your appointment. We look forward to
+            hearing from you and helping you find a style that feels right.
+          </Typography>
+        </Box>
+
+        <Grid container spacing={{ xs: 3, md: 4 }} sx={{ alignItems: "stretch" }}>
           <Grid size={{ xs: 12, md: 5 }}>
             <Box sx={{ position: "relative", height: { xs: 300, sm: 420, md: "100%" }, minHeight: { md: 560 }, overflow: "hidden", borderRadius: 2, bgcolor: "#ded1bf" }}>
               <Box component="img" src={imageA} alt="Eamon Dreads hairstyle and salon" sx={{ display: "block", width: "100%", height: "100vh", minHeight: { md: 700 }, objectFit: "cover" }} />
