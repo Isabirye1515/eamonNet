@@ -23,8 +23,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.66916667"
-     inkscape:cx="599.2528"
-     inkscape:cy="360.89664"
+     inkscape:cx="520.04981"
+     inkscape:cy="511.83063"
      inkscape:window-width="1867"
      inkscape:window-height="1011"
      inkscape:window-x="0"
@@ -32,7 +32,8 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg1" />
   <path
-     d="M0,800 C0,800 100,400 900,900 C1000,1000 1010,800 1200,120 L1200,1200 L0,1200 Z"
+     d="m 1.494396,798.5056 c 0,0 98.505604,-510.5853 898.505604,-10.5853 100,100 110,-107.47198 300,-787.47198459 L 1201.4944,1198.5056 H 1.494396 Z"
      fill="#17065c"
-     id="path1" />
+     id="path1"
+     sodipodi:nodetypes="cccccc" />
 </svg>

@@ -246,9 +246,7 @@ const Home = () => {
             minHeight: "90vh",
             display: "flex",
             alignItems: "center",
-            backgroundImage:
-              "linear-gradient(110deg, rgba(10,18,34,.94), rgba(20,39,68,.72)), url('./assets/svgs/svg-1.svg')",
-            backgroundSize: "cover",
+            
             backgroundPosition: "center",
           }}
         >
@@ -537,7 +535,7 @@ const Home = () => {
 
       {/* Gallery */}
       <Section id="gallery" minHeight="auto">
-        <Box sx={{ ...sectionSx, bgcolor: "#182235" }}>
+        <Box sx={{ ...sectionSx, }}>
           <Container maxWidth="lg">
             <SectionTitle>Our Gallery</SectionTitle>
             <Typography sx={{ ...bodySx, maxWidth: 720, mb: 4 }}>
