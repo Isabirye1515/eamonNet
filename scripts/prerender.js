@@ -77,22 +77,7 @@ for (const extension of sourceExtensions) {
 
 for (const extension of [".css", ".scss", ...assetExtensions]) {
   require.extensions[extension] = (module, filename) => {
-    if (!assetExtensions.includes(extension)) {
-      module.exports = {};
-      return;
-    }
-
-    const assetName = path.basename(filename);
-    const assetStem = path.basename(filename, extension);
-    const builtAsset = mediaFiles.find(
-      (file) =>
-        file.startsWith(`${assetStem}.`) && file.endsWith(extension)
-    );
-    if (!builtAsset) {
-      throw new Error(`Could not find built asset for ${filename}`);
-    }
-
-    module.exports = `/static/media/${builtAsset}`;
+    module.exports = assetExtensions.includes(extension) ? filename : {};
   };
 }
 

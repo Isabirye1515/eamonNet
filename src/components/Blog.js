@@ -113,6 +113,7 @@ export default function Blog() {
             Stories, styles & inspiration
           </Typography>
           <Typography sx={{ ...bodySx, mt: 2 }}>
+          <Typography sx={{ color: COLORS.muted, mt: 2, lineHeight: 1.8 }}>
             Explore dreadlock styles created by Eamon Dreads in Kampala, along
             with updates and inspiration from our salon. These posts offer a
             look at our work and the many ways to wear and care for locs.
