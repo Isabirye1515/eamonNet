@@ -14,6 +14,7 @@ const sourceRoot = path.join(projectRoot, "src");
 const buildRoot = path.join(projectRoot, "build");
 const mediaRoot = path.join(buildRoot, "static", "media");
 const mediaFiles = fs.readdirSync(mediaRoot);
+const imageManifestPath = path.join(buildRoot, "images.json");
 const routes = [
   {
     path: "/",
@@ -57,6 +58,32 @@ const assetExtensions = [".jpg", ".jpeg", ".png", ".webp", ".svg"];
 const sourceExtensions = [".js", ".jsx"];
 const defaultJsLoader = Module._extensions[".js"];
 
+function getEmittedAsset(filename) {
+  const sourceName = path.basename(filename);
+  const sourceExtension = path.extname(sourceName);
+  const sourceStem = path.basename(sourceName, sourceExtension);
+  const emittedFiles = mediaFiles.filter(
+    (file) =>
+      file.startsWith(`${sourceStem}.`) && file.endsWith(sourceExtension)
+  );
+
+  if (emittedFiles.length !== 1) {
+    throw new Error(
+      `Expected one emitted asset for ${filename}, found ${emittedFiles.length}.`
+    );
+  }
+
+  return `/static/media/${emittedFiles[0]}`;
+}
+
+const imageManifest = JSON.parse(fs.readFileSync(imageManifestPath, "utf8"));
+for (const [key, assetPath] of Object.entries(imageManifest)) {
+  if (!assetPath.startsWith("/")) {
+    imageManifest[key] = getEmittedAsset(assetPath);
+  }
+}
+fs.writeFileSync(imageManifestPath, `${JSON.stringify(imageManifest, null, 2)}\n`);
+
 function loadSourceModule(module, filename) {
   if (!filename.startsWith(sourceRoot + path.sep)) {
     return defaultJsLoader(module, filename);
@@ -77,7 +104,12 @@ for (const extension of sourceExtensions) {
 
 for (const extension of [".css", ".scss", ...assetExtensions]) {
   require.extensions[extension] = (module, filename) => {
-    module.exports = assetExtensions.includes(extension) ? filename : {};
+    if (!assetExtensions.includes(extension)) {
+      module.exports = {};
+      return;
+    }
+
+    module.exports = getEmittedAsset(filename);
   };
 }
 
