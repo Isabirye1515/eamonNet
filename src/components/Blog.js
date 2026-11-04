@@ -85,20 +85,7 @@ export default function Blog() {
       <Container  maxWidth="xl">
         {/* Page introduction */}
         <Box  sx={{ maxWidth: 760, mx: "auto", textAlign: "center", mb: { xs: 5, md: 7 } }}>
-          <Typography
-          id="description"
-            component="p"
-            sx={{
-              color: COLORS.brown,
-              fontSize: "0.78rem",
-              fontWeight: 800,
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              mb: 1.5,
-            }}
-          >
-            Eamon Dreads · Kampala
-          </Typography>
+        
           <Typography
           id="description"
             component="h1"
@@ -112,8 +99,7 @@ export default function Blog() {
           >
             Stories, styles & inspiration
           </Typography>
-          <Typography sx={{ ...bodySx, mt: 2 }}>
-          <Typography sx={{ color: COLORS.muted, mt: 2, lineHeight: 1.8 }}>
+          <Typography sx={{...bodySx, color: COLORS.muted, mt: 2, lineHeight: 1.8 }}>
             Explore dreadlock styles created by Eamon Dreads in Kampala, along
             with updates and inspiration from our salon. These posts offer a
             look at our work and the many ways to wear and care for locs.

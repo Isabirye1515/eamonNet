@@ -120,7 +120,7 @@ function Data() {
       {/* Header */}
       <Stack id="description" direction="row" spacing={1} sx={{ mb: 4, alignItems: "center" }}>
         <Typography sx={{...headingSx}}  variant="h1">Dreadlock Styles Gallery in Kampala</Typography>
-      </Stack>
+    </Stack>
       <Box  sx={{
                        m: { xs: 2, md: 2 },
                       height: "100%",
@@ -134,9 +134,8 @@ function Data() {
                         bgcolor: "rgba(255,255,255,.11)",
                       },
                     }}> 
-      <Typography sx={{ ...bodySx, lineHeight: 1.8 }}>
-        <Typography component="h1" variant="h2">Dreadlock Styles Gallery in Kampala</Typography>
-      </Stack>
+  
+        <Typography sx={{ ...bodySx, lineHeight: 1.8 }} component="h1" variant="h2">Dreadlock Styles Gallery in Kampala</Typography>
       <Typography sx={{ maxWidth: 850, mb: 4, color: 'text.secondary', lineHeight: 1.8 }}>
         Browse styles from the Eamon Dreads portfolio for ideas for your next
         look. Our gallery includes a range of dreadlock lengths and finishes;
