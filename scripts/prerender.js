@@ -12,6 +12,8 @@ const { StaticRouter } = require("react-router-dom/server");
 const projectRoot = path.resolve(__dirname, "..");
 const sourceRoot = path.join(projectRoot, "src");
 const buildRoot = path.join(projectRoot, "build");
+const mediaRoot = path.join(buildRoot, "static", "media");
+const mediaFiles = fs.readdirSync(mediaRoot);
 const routes = [
   {
     path: "/",
@@ -75,7 +77,22 @@ for (const extension of sourceExtensions) {
 
 for (const extension of [".css", ".scss", ...assetExtensions]) {
   require.extensions[extension] = (module, filename) => {
-    module.exports = assetExtensions.includes(extension) ? filename : {};
+    if (!assetExtensions.includes(extension)) {
+      module.exports = {};
+      return;
+    }
+
+    const assetName = path.basename(filename);
+    const assetStem = path.basename(filename, extension);
+    const builtAsset = mediaFiles.find(
+      (file) =>
+        file.startsWith(`${assetStem}.`) && file.endsWith(extension)
+    );
+    if (!builtAsset) {
+      throw new Error(`Could not find built asset for ${filename}`);
+    }
+
+    module.exports = `/static/media/${builtAsset}`;
   };
 }
 
