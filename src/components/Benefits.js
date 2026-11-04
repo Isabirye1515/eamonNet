@@ -19,6 +19,8 @@ import imageh from "../assets/pics/education.jpg";
 import imagei from "../assets/pics/relax.jpg";
 import imagej from "../assets/pics/satifaction.jpg";
 
+import {  bodySx } from "./utils";
+
 const BENEFITS = [
   {
     id: 1,
@@ -162,6 +164,7 @@ export default function Benefits() {
 
           <Typography
             sx={{
+              ...bodySx,
               color: palette.muted,
               maxWidth: 580,
               fontSize: { xs: "0.95rem", sm: "1.05rem" },
@@ -293,6 +296,7 @@ export default function Benefits() {
 
                   <Typography
                     sx={{
+                      ...bodySx,
                       color: palette.muted,
                       fontSize: {
                         xs: "0.93rem",

@@ -12,6 +12,8 @@ const { StaticRouter } = require("react-router-dom/server");
 const projectRoot = path.resolve(__dirname, "..");
 const sourceRoot = path.join(projectRoot, "src");
 const buildRoot = path.join(projectRoot, "build");
+const mediaRoot = path.join(buildRoot, "static", "media");
+const mediaFiles = fs.readdirSync(mediaRoot);
 const routes = [
   {
     path: "/",

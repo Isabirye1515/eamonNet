@@ -1,6 +1,7 @@
 
 import { Column, Grid } from '@carbon/react';
 import React, { useEffect, useState } from 'react';
+import { bodySx,headingSx } from './utils';
 import Aos from 'aos';
 import "aos/dist/aos.css"
 export default function Faqs() {
@@ -31,13 +32,14 @@ export default function Faqs() {
 
   return (
     <div className="bg-light p-5 mt-5" data-aos="fade-up">
-      <center><h5>Frequently Asked Questions?</h5></center>
-      <h6 style={{ color: "#aaa", marginLeft: "3%" }}>Questions and answers:</h6>
+      <center><h5  style={{...headingSx}} >Frequently Asked Questions?</h5></center>
+      <h6 style={{...headingSx, color: "#aaa", marginLeft: "3%" }}>Questions and answers:</h6>
 
       {faqs.map((faq) => (
         <Grid key={faq.id} className="my-4">
           <Column lg={8} md={4} sm={2}>
             <p  style={{
+              ...bodySx,
                   maxWidth: "100%",
                   padding: "10px 15px",
                   backgroundColor: "#ffffff",
@@ -46,7 +48,7 @@ export default function Faqs() {
                 }} className="text-start fw-bold text-dark">{faq.question}</p>
           </Column>
           <Column lg={8} md={4} sm={2}>
-            <p                  style={{
+            <p                  style={{...bodySx,
                   maxWidth: "100%",
                   padding: "10px 15px",
                   backgroundColor: "#dcf8c6", // WhatsApp green

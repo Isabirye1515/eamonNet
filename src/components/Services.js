@@ -7,6 +7,7 @@ import { Box, Grid, Paper, Stack, Typography } from '@mui/material';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Faqs from './Faqs';
+import { headingSx, bodySx, COLORS } from './utils';
 
 // Hoisted out of the component so it isn't rebuilt on every render
 const DREADLOCK_SKILLS = [
@@ -50,9 +51,9 @@ export default function Services() {
         {/* ---------------- Customer services ---------------- */}
         <Stack id="description" direction="row" spacing={1} sx={{ mb: 3, alignItems: "center" }}>
           
-          <Typography component="h1" variant="h2">Dreadlock Services in Kampala</Typography>
+          <Typography variant="h1"  sx={{...headingSx}}>Dreadlock Services in Kampala</Typography>
         </Stack>
-        <Typography sx={{ maxWidth: 850, mb: 4, color: 'text.secondary', lineHeight: 1.8 }}>
+        <Typography sx={{ ...bodySx, lineHeight: 1.8 }}>
           Eamon Dreads Solutions offers dreadlock installation, maintenance,
           repair, extensions, and styling in Kampala. We discuss your hair,
           preferred look, and care routine so you can choose a service that
@@ -79,7 +80,7 @@ export default function Services() {
                   '&:hover': { transform: 'translateY(-4px)', boxShadow: 6 },
                 }}
               >
-                <Typography fontWeight="500" sx={{ mb: 1 }}>
+                <Typography fontWeight="500" sx={{ ...bodySx,mb: 1, color: COLORS.muted }}>
                   {service.name}
                 </Typography>
                 <Box
@@ -104,7 +105,9 @@ export default function Services() {
         {/* ---------------- Student services ---------------- */}
         <Stack id="description" direction="row" spacing={1} sx={{ mt: 8, mb: 3, alignItems: "center" }}>
 
-          <Typography variant="h3">Student Services</Typography>
+          <Typography variant="h3" sx={{ ...headingSx }}>
+            Student Services
+          </Typography>
         </Stack>
 
         <Grid container spacing={2}>
@@ -128,7 +131,7 @@ export default function Services() {
                 <Typography fontWeight="500" sx={{ mb: 0.5 }}>
                   {skill.name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" sx={{...bodySx, color:"black"}} color="text.secondary">
                   {skill.description}
                 </Typography>
               </Paper>

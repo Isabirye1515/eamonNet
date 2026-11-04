@@ -8,6 +8,7 @@ import imageA from "../assets/pics/aj.png";
 import facebook from "../assets/pics/facebook.svg";
 import tiktok from "../assets/pics/tiktok.svg";
 import instagram from "../assets/pics/instagram.svg";
+import {bodySx, headingSx, COLORS} from "./utils";
 
 const SOCIAL = [
   { id: 1, name: "Facebook", url: "https://www.facebook.com/eamon256", user: "EAMON Dreadlock Solutions Uganda | Kampala", photo: facebook },
@@ -78,35 +79,15 @@ export default function Contact() {
     <Box component="main" id="contact" sx={{ bgcolor: "#f6f1e8", color: "#29251f", minHeight: "100vh", py: { xs: 5, md: 9 }, mt:5 }}>
       <Container maxWidth="lg">
         <Box sx={{ maxWidth: 760, mx: "auto", textAlign: "center", mb: { xs: 4, md: 6 } }}>
-          <Typography id="description"  sx={{ color: "#896744", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", fontSize: "0.78rem", mb: 1.5 }}>
-            Eamon Dreads · Kampala
-          </Typography>
-          <Typography component="h1" sx={{ fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 700, fontSize: { xs: "2.4rem", sm: "3.2rem", md: "3.8rem" }, lineHeight: 1.1, letterSpacing: "-0.035em" }}>
+          <Typography component="h1" sx={{ ...headingSx, lineHeight: 1.1, letterSpacing: "-0.035em" }}>
             Let’s talk about your style
           </Typography>
-          <Typography sx={{ mt: 2, mx: "auto", maxWidth: 620, color: "#62594e", fontSize: { xs: "1rem", md: "1.1rem" }, lineHeight: 1.8 }}>
+          <Typography sx={{ ...bodySx, mt: 2, mx: "auto", maxWidth: 620, color: COLORS.paper, fontSize: { xs: "1rem", md: "1.1rem" }, lineHeight: 1.8 }}>
             Questions about dreadlock styling, maintenance, or appointments? Send us a message or connect with us on social media.
           </Typography>
         </Box>
 
-        <Box sx={{ maxWidth: 900, mx: "auto", mb: { xs: 5, md: 7 } }}>
-          <Typography component="h2" sx={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: { xs: "1.5rem", md: "1.8rem" }, fontWeight: 700, mb: 1.5 }}>
-            Tell us what you have in mind
-          </Typography>
-          <Typography sx={{ color: "#62594e", lineHeight: 1.8 }}>
-            Use the form to ask about starting dreadlocks, refreshing an
-            existing style, repairs, or extensions. Include a short description
-            of your hair and the look you want so our team can understand your
-            request. You can also call us or send a message through our social
-            pages if that is more convenient.
-          </Typography>
-          <Typography sx={{ color: "#62594e", lineHeight: 1.8, mt: 2 }}>
-            Eamon Dreads Solutions is at Pack View Shopping Center in Kampala.
-            If you plan to visit, contact us first to discuss the service you
-            need and any questions about your appointment. We look forward to
-            hearing from you and helping you find a style that feels right.
-          </Typography>
-        </Box>
+        
 
         <Grid container spacing={{ xs: 3, md: 4 }} sx={{ alignItems: "stretch" }}>
           <Grid size={{ xs: 12, md: 5 }}>
@@ -187,6 +168,37 @@ export default function Contact() {
               </Grid>
             ))}
           </Grid>
+
+          <Box sx={{
+                       mt: { xs: 5, md: 7 },
+                      height: "100%",
+                      p: { xs: 3, md: 4 },
+                      borderRadius: 3,
+                      bgcolor:"rgba(255,255,255,.13)" ,
+                      border: "1px solid rgba(255,255,255,.13)",
+                      transition: "transform .2s, background .2s",
+                      "&:hover": {
+                        transform: "translateY(-5px)",
+                        bgcolor: "rgba(255,255,255,.11)",
+                      },
+                    }}>
+          <Typography component="h2" sx={{ ...headingSx, fontFamily: 'Georgia, "Times New Roman", serif', fontSize: { xs: "1.5rem", md: "1.8rem" }, fontWeight: 700, mb: 1.5 }}>
+            Tell us what you have in mind
+          </Typography>
+          <Typography sx={{ ...bodySx, lineHeight: 1.8 }}>
+            Use the form to ask about starting dreadlocks, refreshing an
+            existing style, repairs, or extensions. Include a short description
+            of your hair and the look you want so our team can understand your
+            request. You can also call us or send a message through our social
+            pages if that is more convenient.
+          </Typography>
+          <Typography sx={{ ...bodySx, lineHeight: 1.8, mt: 2 }}>
+            Eamon Dreads Solutions is at Pack View Shopping Center in Kampala.
+            If you plan to visit, contact us first to discuss the service you
+            need and any questions about your appointment. We look forward to
+            hearing from you and helping you find a style that feels right.
+          </Typography>
+        </Box>
         </Box>
       </Container>
     </Box>
