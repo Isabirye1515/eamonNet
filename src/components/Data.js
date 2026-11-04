@@ -50,6 +50,7 @@ import ax from '../assets/pics/ax.jpg';
 
 import { Box, Grid, Stack, Typography } from '@mui/material';
 import { useEffect } from 'react';
+import { headingSx, bodySx } from './utils';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -118,33 +119,29 @@ function Data() {
     <Box  id="gallery" sx={{ p: { xs: 2, md: 5 }, mt:5 }}>
       {/* Header */}
       <Stack id="description" direction="row" spacing={1} sx={{ mb: 4, alignItems: "center" }}>
-        <Typography component="h1" variant="h2">Dreadlock Styles Gallery in Kampala</Typography>
+        <Typography sx={{...headingSx}}  variant="h1">Dreadlock Styles Gallery in Kampala</Typography>
       </Stack>
-      <Typography sx={{ maxWidth: 850, mb: 4, color: 'text.secondary', lineHeight: 1.8 }}>
+      <Box  sx={{
+                       m: { xs: 2, md: 2 },
+                      height: "100%",
+                      p: { xs: 3, md: 4 },
+                      borderRadius: 3,
+                      bgcolor:"rgba(255,255,255,.13)" ,
+                      border: "1px solid rgba(255,255,255,.13)",
+                      transition: "transform .2s, background .2s",
+                      "&:hover": {
+                        transform: "translateY(-5px)",
+                        bgcolor: "rgba(255,255,255,.11)",
+                      },
+                    }}> 
+      <Typography sx={{ ...bodySx, lineHeight: 1.8 }}>
         Browse styles from the Eamon Dreads portfolio for ideas for your next
         look. Our gallery includes a range of dreadlock lengths and finishes;
         every style can be discussed and adapted to your hair and preferences.
         Visit our salon in Kampala or contact us to talk through installation,
         styling, or maintenance.
       </Typography>
-      <Box sx={{ maxWidth: 850, mb: 5 }}>
-        <Typography component="h2" variant="h5" sx={{ mb: 1.5 }}>
-          Find inspiration for your loc journey
-        </Typography>
-        <Typography sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-          A hairstyle that works well for you depends on your preferred length,
-          the way you like to wear your hair, and the time you can set aside for
-          care. Use these photos to collect ideas, then discuss the details with
-          your loctician. You can ask about parting, size, finishing, and how to
-          maintain the look between salon visits.
-        </Typography>
-        <Typography sx={{ color: 'text.secondary', lineHeight: 1.8, mt: 2 }}>
-          Eamon Dreads provides dreadlock installation, styling, maintenance,
-          repair, and extensions in Kampala. If you already have locs, tell us
-          what you would like to change or maintain. If you are starting out,
-          share your preferred style and any questions about caring for your
-          hair. We can help you discuss a suitable service before your visit.
-        </Typography>
+   
       </Box>
 
       {/* Image grid */}
@@ -177,6 +174,38 @@ function Data() {
           </Grid>
         ))}
       </Grid>
+
+         <Box sx={{
+                       mt: { xs: 5, md: 7 },
+                      height: "100%",
+                      p: { xs: 3, md: 4 },
+                      borderRadius: 3,
+                      bgcolor:"rgba(255,255,255,.13)" ,
+                      border: "1px solid rgba(255,255,255,.13)",
+                      transition: "transform .2s, background .2s",
+                      "&:hover": {
+                        transform: "translateY(-5px)",
+                        bgcolor: "rgba(255,255,255,.11)",
+                      },
+                    }}>
+        <Typography component="h2" variant="h5" sx={{ ...headingSx,mb: 1.5 }}>
+          Find inspiration for your loc journey
+        </Typography>
+        <Typography sx={{...bodySx, lineHeight: 1.8 }}>
+          A hairstyle that works well for you depends on your preferred length,
+          the way you like to wear your hair, and the time you can set aside for
+          care. Use these photos to collect ideas, then discuss the details with
+          your loctician. You can ask about parting, size, finishing, and how to
+          maintain the look between salon visits.
+        </Typography>
+        <Typography sx={{ ...bodySx, lineHeight: 1.8, mt: 2 }}>
+          Eamon Dreads provides dreadlock installation, styling, maintenance,
+          repair, and extensions in Kampala. If you already have locs, tell us
+          what you would like to change or maintain. If you are starting out,
+          share your preferred style and any questions about caring for your
+          hair. We can help you discuss a suitable service before your visit.
+        </Typography>
+        </Box>
     </Box>
   );
 }

@@ -12,6 +12,7 @@ import facebook from "../assets/pics/facebook.svg";
 import tiktok from "../assets/pics/tiktok.svg";
 import instagram from "../assets/pics/instagram.svg";
 import InstaEmbed from "./InstaEmbed";
+import {bodySx, headingSx, COLORS} from "./utils";
 
 const INSTAGRAM_POSTS = [
   { id: "1", url: "https://www.instagram.com/p/DJT1KFMtRus/" },
@@ -66,15 +67,7 @@ const SOCIAL_LINKS = [
   },
 ];
 
-const COLORS = {
-  page: "#f6f1e8",
-  paper: "#fffdf9",
-  ink: "#29251f",
-  muted: "#62594e",
-  brown: "#76563b",
-  border: "#e4d8c7",
-  accent: "#c6a47e",
-};
+
 
 export default function Blog() {
   return (
@@ -119,42 +112,14 @@ export default function Blog() {
           >
             Stories, styles & inspiration
           </Typography>
-          <Typography sx={{ color: COLORS.muted, mt: 2, lineHeight: 1.8 }}>
+          <Typography sx={{ ...bodySx, mt: 2 }}>
             Explore dreadlock styles created by Eamon Dreads in Kampala, along
             with updates and inspiration from our salon. These posts offer a
             look at our work and the many ways to wear and care for locs.
           </Typography>
         </Box>
 
-        <Box sx={{ maxWidth: 900, mx: "auto", mb: { xs: 6, md: 8 } }}>
-          <Typography
-            component="h2"
-            sx={{
-              fontFamily: 'Georgia, "Times New Roman", serif',
-              fontWeight: 700,
-              fontSize: { xs: "1.7rem", md: "2.2rem" },
-              color: COLORS.ink,
-              mb: 1.5,
-            }}
-          >
-            Ideas for healthy, expressive locs
-          </Typography>
-          <Typography sx={{ color: COLORS.muted, lineHeight: 1.8 }}>
-            Every loc journey is different. When choosing a style, think about
-            the length and shape you enjoy, how you usually wear your hair, and
-            the level of upkeep that fits your routine. Save examples you like
-            and bring them to a consultation so your stylist can discuss the
-            details with you.
-          </Typography>
-          <Typography sx={{ color: COLORS.muted, lineHeight: 1.8, mt: 2 }}>
-            Regular care helps keep locs comfortable and looking their best.
-            Follow guidance suited to your hair, and ask a loctician if you
-            notice a change that concerns you. Eamon Dreads shares salon work,
-            style ideas, and updates from Kampala here and on social media.
-            Explore the posts below for inspiration, then contact us to ask
-            about installation, styling, maintenance, or repair.
-          </Typography>
-        </Box>
+        
 
         {/* Instagram gallery */}
         <Box component="section" aria-labelledby="instagram-gallery-heading">
@@ -180,7 +145,7 @@ export default function Blog() {
               >
                 From our Instagram
               </Typography>
-              <Typography sx={{ color: COLORS.paper, mt: 0.75, lineHeight: 1.7 }}>
+              <Typography sx={{ ...bodySx, color: COLORS.paper, mt: 0.75, lineHeight: 1.7 }}>
                 A closer look at our work and recent posts.
               </Typography>
             </Box>
@@ -299,7 +264,7 @@ export default function Blog() {
                     <Typography sx={{ fontWeight: 800, color: COLORS.brown, mb: 0.5 }}>
                       {item.name}
                     </Typography>
-                    <Typography sx={{ color: COLORS.muted, fontSize: "0.9rem", lineHeight: 1.5, overflowWrap: "anywhere" }}>
+                    <Typography sx={{ color: COLORS.ink, fontSize: "0.9rem", lineHeight: 1.5, overflowWrap: "anywhere" }}>
                       {item.user}
                     </Typography>
                   </Box>
@@ -307,6 +272,45 @@ export default function Blog() {
               </Grid>
             ))}
           </Grid>
+          <Box                   sx={{
+                       mt: { xs: 5, md: 7 },
+                      height: "100%",
+                      p: { xs: 3, md: 4 },
+                      borderRadius: 3,
+                      bgcolor:"rgba(255,255,255,.13)" ,
+                      border: "1px solid rgba(255,255,255,.13)",
+                      transition: "transform .2s, background .2s",
+                      "&:hover": {
+                        transform: "translateY(-5px)",
+                        bgcolor: "rgba(255,255,255,.11)",
+                      },
+                    }}>
+          <Typography
+            component="h2"
+            sx={{
+              ...headingSx,
+              color: COLORS.paper,
+              mb: 1.5,
+            }}
+          >
+            Ideas for healthy, expressive locs
+          </Typography>
+          <Typography sx={{ ...bodySx, color: COLORS.muted }}>
+            Every loc journey is different. When choosing a style, think about
+            the length and shape you enjoy, how you usually wear your hair, and
+            the level of upkeep that fits your routine. Save examples you like
+            and bring them to a consultation so your stylist can discuss the
+            details with you.
+          </Typography>
+          <Typography sx={{ ...bodySx, color: COLORS.muted, lineHeight: 1.8, mt: 2 }}>
+            Regular care helps keep locs comfortable and looking their best.
+            Follow guidance suited to your hair, and ask a loctician if you
+            notice a change that concerns you. Eamon Dreads shares salon work,
+            style ideas, and updates from Kampala here and on social media.
+            Explore the posts below for inspiration, then contact us to ask
+            about installation, styling, maintenance, or repair.
+          </Typography>
+        </Box>
         </Box>
       </Container>
     </Box>
