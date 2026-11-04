@@ -4,7 +4,6 @@ import two from '../assets/pics/b.jpg';
 import three from '../assets/pics/c.jpg';
 import four from '../assets/pics/d.jpg';
 import { Box, Grid, Paper, Stack, Typography } from '@mui/material';
-import { Education, ServiceDesk } from '@carbon/icons-react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Faqs from './Faqs';

@@ -49,7 +49,6 @@ import aw from '../assets/pics/aw.jpg';
 import ax from '../assets/pics/ax.jpg';
 
 import { Box, Grid, Stack, Typography } from '@mui/material';
-import { DropPhoto } from '@carbon/icons-react';
 import { useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';

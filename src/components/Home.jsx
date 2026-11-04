@@ -9,7 +9,6 @@ import {
   Container,
   Divider,
   Grid,
-  Link,
   Stack,
   Tooltip,
   Typography,
@@ -17,12 +16,8 @@ import {
 
 import {
   Activity,
-  Blog,
   BringForward,
-  CallsIncoming,
   DownToBottom,
-  Email,
-  ImageStoreLocal,
   Location,
   MessageQueue,
   Phone,

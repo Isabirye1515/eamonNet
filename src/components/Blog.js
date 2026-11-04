@@ -144,7 +144,7 @@ export default function Blog() {
               >
                 From our Instagram
               </Typography>
-              <Typography sx={{ color: COLORS.muted, mt: 0.75, lineHeight: 1.7, color:"#f9f4f0" }}>
+              <Typography sx={{ color: COLORS.paper, mt: 0.75, lineHeight: 1.7 }}>
                 A closer look at our work and recent posts.
               </Typography>
             </Box>
@@ -156,7 +156,7 @@ export default function Blog() {
               variant="outlined"
               sx={{
                 borderColor: COLORS.brown,
-                color: COLORS.brown,
+                color: COLORS.paper,
                 textTransform: "none",
                 fontWeight: 700,
                 borderRadius: 1.5,
@@ -165,7 +165,7 @@ export default function Blog() {
                 "&:hover": {
                   borderColor: COLORS.brown,
                   bgcolor: "rgba(118,86,59,0.07)",
-                },color:"#e6d9cd"
+                }
               }}
             >
               Follow on Instagram ↗
@@ -215,7 +215,7 @@ export default function Blog() {
             >
               Join our community
             </Typography>
-            <Typography sx={{ color: COLORS.muted, mt: 1, lineHeight: 1.8,color:"#d8c0ac" }}>
+            <Typography sx={{ color: COLORS.paper, mt: 1, lineHeight: 1.8 }}>
               Follow us across our social platforms for new styles, inspiration, and salon updates.
             </Typography>
           </Box>
