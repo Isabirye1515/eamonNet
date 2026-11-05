@@ -1,5 +1,5 @@
 {
-  "imagea": "a.jpg",
+  "imagea": "a.jpeg",
   "imageb": "b.jpg",
   "imagec": "c.jpg",
   "imaged": "d.jpg",
@@ -51,7 +51,7 @@
   "homeImageB": "ah.png",
   "homeImageC": "ad.png",
   "homeImageD": "au.png",
-  "serviceImageOne": "a.jpg",
+  "serviceImageOne": "a.jpeg",
   "serviceImageTwo": "b.jpg",
   "serviceImageThree": "c.jpg",
   "serviceImageFour": "d.jpg",

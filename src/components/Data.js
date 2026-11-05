@@ -1,5 +1,5 @@
 // Import images
-import a from '../assets/pics/a.jpg';
+import a from '../assets/pics/a.jpeg';
 import b from '../assets/pics/b.jpg';
 import c from '../assets/pics/c.jpg';
 import d from '../assets/pics/d.jpg';
