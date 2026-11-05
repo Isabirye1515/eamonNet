@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -15,7 +15,6 @@ import {
 } from "@mui/material";
 
 import {
-  Activity,
   BringForward,
   DownToBottom,
   Location,
@@ -26,15 +25,16 @@ import {
   TouchInteraction,
   UpToTop,
 } from "@carbon/icons-react";
-
-import imageA from "../assets/pics/p.jpg";
-import imageB from "../assets/pics/ah.jpg";
-import imageC from "../assets/pics/ad.jpg";
-import imageD from "../assets/pics/au.jpg";
+import imageE from "../assets/pics/a.jpeg";
+import imageA from "../assets/pics/p.png";
+import imageB from "../assets/pics/ah.png";
+import imageC from "../assets/pics/ad.png";
+import imageD from "../assets/pics/au.png";
 import facebook from "../assets/pics/facebook.svg";
 import instagram from "../assets/pics/instagram.svg";
 import tiktok from "../assets/pics/tiktok.svg";
 import Section from "./section";
+import { SOCIAL_LINKS } from "./utils";
 
 const PHONE = "+256703819029";
 const MAP_URL =
@@ -394,16 +394,16 @@ const Home = () => {
         <Box sx={{ ...sectionSx, bgcolor: "#182235" }}>
           <Container maxWidth="lg">
             <Grid container spacing={5} sx={{ alignItems: "center" }}>
-              <Grid size={{ xs: 12, md: 5 }}>
+              <Grid size={{ xs: 12,sm: 6, md: 6 }}>
                 <Photo
-                  src={imageB}
+                  src={imageE}
                   alt="Eamon Dreads hair care"
-                  sx={{ height: { xs: 320, md: 490 }, boxShadow: 5 }}
+                  sx={{ height: { xs: 320,sm: 400, md: 600, lg: 600 }, boxShadow: 5 }}
                   data-aos="fade-right"
                 />
               </Grid>
-              <Grid size={{ xs: 12, md: 7 }} data-aos="fade-left">
-                <SectionTitle icon={Activity}>About Eamon Dreads</SectionTitle>
+              <Grid size={{ xs: 12,sm: 6, md: 6 }} data-aos="fade-left">
+                <SectionTitle>About Eamon Dreads</SectionTitle>
                 <Typography sx={bodySx}>
                   With over 10 years of service, Eamon Dreads Solutions is
                   committed to providing quality hair care and dreadlock styling
@@ -440,7 +440,7 @@ const Home = () => {
         >
           <Container maxWidth="lg">
             <Grid container spacing={5} sx={{ alignItems: "center" }}>
-              <Grid size={{ xs: 12, md: 6 }}>
+              <Grid size={{ xs: 12,sm: 5, md: 6 }}>
                 <SectionTitle>Care that puts you first</SectionTitle>
                 <Typography sx={bodySx}>
                   We want every client to feel comfortable, listened to, and
@@ -453,11 +453,11 @@ const Home = () => {
                   “Your hair is part of your story. Let us help you express it.”
                 </Typography>
               </Grid>
-              <Grid size={{ xs: 12, md: 6 }}>
+              <Grid size={{ xs: 12,sm: 7, md: 6 }}>
                 <Photo
                   src={imageC}
                   alt="Dreadlock style created by Eamon Dreads"
-                  sx={{ height: { xs: 320, md: 460 }, boxShadow: 5 }}
+                  sx={{ height: { xs: 320,sm: 400, md: 600, lg: 600 }, boxShadow: 5 }}
                 />
               </Grid>
             </Grid>
@@ -482,7 +482,7 @@ const Home = () => {
                       p: { xs: 3, md: 4 },
                       m: 1,
                       borderRadius: 3,
-                      bgcolor: "black",
+                      bgcolor: "rgba(12, 0, 0, 0.74)",
                       border: "1px solid rgba(255,255,255,.13)",
 
                     }}>
@@ -513,12 +513,12 @@ const Home = () => {
                       height: "100%",
                       p: { xs: 3, md: 4 },
                       borderRadius: 3,
-                      bgcolor: "rgba(255,255,255,.07)",
-                      border: "1px solid rgba(255,255,255,.13)",
+                      bgcolor: "rgba(12, 0, 0, 0.66)",
+                      border: "1px solid rgba(14, 1, 1, 0.67)",
                       transition: "transform .2s, background .2s",
                       "&:hover": {
                         transform: "translateY(-5px)",
-                        bgcolor: "rgba(255,255,255,.11)",
+                        bgcolor: "rgba(66, 55, 34, 0.11)",
                       },
                     }}
                   >
@@ -548,7 +548,7 @@ const Home = () => {
             </Typography>
             <Grid container spacing={2}>
               {[imageA, imageC, imageD, imageB].map((src, index) => (
-                <Grid key={src} size={{ xs: 6, md: 3 }}>
+                <Grid key={src} size={{ xs: 12,sm:6, md: 6, l:6 }}>
                   <Box
                     onClick={() => navigate("/gallery")}
                     role="link"
@@ -560,7 +560,7 @@ const Home = () => {
                       cursor: "pointer",
                       overflow: "hidden",
                       borderRadius: 3,
-                      height: { xs: 200, sm: 300, md: 400 },
+                      height: { xs: 450,sm: 400, md: 600, lg: 600 },
                       "& img": { transition: "transform .35s" },
                       "&:hover img": { transform: "scale(1.06)" },
                     }}
@@ -598,30 +598,40 @@ const Home = () => {
                   Follow our social pages for hairstyle inspiration, recent
                   work, photos, reels, and updates from Eamon Dreads.
                 </Typography>
-                <Stack direction="row" spacing={2} sx={{ mt: 3 }}>
-                  {[
-                    { src: facebook, alt: "Facebook" },
-                    { src: instagram, alt: "Instagram" },
-                    { src: tiktok, alt: "TikTok" },
-                  ].map((social) => (
-                    <Box
-                      key={social.alt}
-                      component="img"
-                      src={social.src}
-                      alt={social.alt}
-                      sx={{
-                      cursor: "pointer",
-                      overflow: "hidden",
-                      borderRadius: 3,
-                      height: { xs: 200, sm: 300, md: 400 },
-                      "& img": { transition: "transform .35s" },
-                      "&:hover img": { transform: "scale(1.06)" },
-                    }}
-                    />
-                  ))}
-                </Stack>
+            <Stack direction="row" spacing={1} sx={{ mt: 2.5 }}>
+              {SOCIAL_LINKS.map((social) => (
+                <Link
+                  key={social.label}
+                  href={social.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Visit Eamon Dreads on ${social.label}`}
+                  sx={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: 100,
+                    height: 100,
+                    borderRadius: 2,
+                    bgcolor: "rgba(255,255,255,0.08)",
+                    transition: "transform .2s, background .2s",
+                    "&:hover": {
+                      bgcolor: "rgba(244,189,131,0.18)",
+                      transform: "translateY(-3px)",
+                    },
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={social.icon}
+                    alt=""
+                    sx={{ width: 100, height: 100, objectFit: "contain" }}
+                  />
+                </Link>
+              ))}
+            </Stack>
               </Grid>
-              <Grid size={{ xs: 12, md: 7 }}>
+              <Grid size={{ xs: 12, sm:12, md: 7 }}>
                 <Photo
                   src={imageD}
                   alt="Eamon Dreads hairstyle"

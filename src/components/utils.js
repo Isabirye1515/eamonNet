@@ -1,3 +1,7 @@
+import facebook from "../assets/pics/facebook.svg";
+import instagram from "../assets/pics/instagram.svg";
+import tiktok from "../assets/pics/tiktok.svg";
+
 export const headingSx = {
   color: "common.white",
   fontWeight: 800,
@@ -24,3 +28,21 @@ export const COLORS = {
   border: "#e4d8c7",
   accent: "#c6a47e",
 };
+
+export const SOCIAL_LINKS = [
+  {
+    label: "Facebook",
+    url: "https://www.facebook.com/eamon256",
+    icon: facebook,
+  },
+  {
+    label: "Instagram",
+    url: "https://www.instagram.com/eamon_dreads_kampala/",
+    icon: instagram,
+  },
+  {
+    label: "TikTok",
+    url: "https://www.tiktok.com/discover/eamon-dreadlocks-solution?lang=en",
+    icon: tiktok,
+  },
+];
